@@ -29,6 +29,7 @@ $(function(){
             bUseModeChanger : true,
         }
     });
+    $("input[name='subject']").val($("input[name='subject']").val()+"(수정)");
     //전송버튼
     $("#updateNotice").click(function(){
         //id가 smarteditor인 textarea에 에디터에서 대입
