@@ -7,7 +7,7 @@
 <body>
 <h1>
 	Hello world! <br>
-	20170725_mid_update
+	20170725_mid_sysdate 12:04
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
