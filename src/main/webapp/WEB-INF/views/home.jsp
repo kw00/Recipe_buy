@@ -7,7 +7,7 @@
 <body>
 <h1>
 	Hello world! <br>
-	20170724_test-update set1
+	20170725_mid_update
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
