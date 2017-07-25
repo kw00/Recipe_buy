@@ -10,7 +10,7 @@
 <body>
 <script type="text/javascript">
 function insert(){
-		location.href="insert.mainboard";
+		location.href="insert.nt";
 	}
 </script>
 </head>

@@ -1,54 +1,54 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="./../template/top.jsp" %>
-<!DOCTYPE>
+<%@include file="../template/top.jsp"%>
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<div align="center">
-		<form action="">
-			<table width="500" border="1" cellspacing="0" cellpadding="0" align="center">
-				<tr height="30">
-					<td align="center" width="125">글번호</td>
-					<td align="center" width="125">${notice.num}</td>
-					<td align="center" width="125">조회수</td>
-					<td align="center" width="125">${notice.readcount}</td>
-				</tr>
-			
-				<tr height="30">
-					<td align="center" width="125">작성자</td>
-					<td align="center" width="125">${notice.writer}</td>
-					<td align="center" width="125">작성일</td>
-					<td align="center" width="125">${notice.regdate}</td>
+		<div class="container" align="center">
+			<h2>공지</h2>
+			<br>
+			<table class="table" width="430" cellspacing="0" cellpadding="0">
+				<tr>
+					<td width="100" align="center">글쓴이</td>
+					<td width="330" align="left">${notice.writer}</td>
 				</tr>
 				
-				<tr height="30">
-					<td align="center" width="125">글제목</td>
-					<td align="center" width="375" colspan="3">${notice.subject}</td>
+				
+				<tr>
+					<td width="100" align="center">제 목</td>
+					<td width="330" align="left">${notice.subject}</td>
 				</tr>
 				
-				<tr height="30">
-					<td align="center" width="125">글내용</td>
-					<td align="left" width="375" colspan="3">${notice.content}</td>
+				
+				<tr>
+					<td width="100" align="center">내 용</td>
+					<td width="330" align="left">${notice.content}</td>
 				</tr>
 				
-				<tr height="30">
-					<td colspan="4" align="right">
-						<input type="button" value="글수정" onclick="document.location.href='update.nt?num=${notice.num}&pageNumber=${pageNumber}'">
-						&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="button" value="삭제" onclick="document.location.href='delete.nt?num=${notice.num}&pageNumber=${pageNumber}'">
-						&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="button" value="댓글달기" onclick="document.location.href='reply.nt?num=${notice.num}&ref=${notice.ref}&restep=${notice.restep}&relevel=${notice.relevel}'">
-						&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="button" value="글목록" onclick="document.location.href='list.nt?pageNumber=${pageNumber}'">
+				<c:set value="${notice.writer}" var="writer"/>
+				<c:set value="${loginfo.id}" var="id"/>
+				<tr>
+					<td colspan=2 align="right" height="30">
+					<c:if test="${id!=null}">
+						<c:if test="${fn:contains(writer, id) or fn:contains('admin', id)}">
+							<input type="button" class="btn btn-default" value="수정하기"	
+									OnClick="window.location='update.nt?num=${notice.num}'">
+							<input type="button" class="btn btn-default" value="삭제하기"	
+									OnClick="window.location='delete.nt?num=${notice.num}'">
+						</c:if>
+					</c:if>
+						<input type="button" class="btn btn-default" value="목록보기"	
+								OnClick="window.location='list.nt'">
 					</td>
 				</tr>
-			</table>
-		</form>
+			</table>	
 	</div>
-<%@ include file="./../template/bottom.jsp" %>
+	<br>
 </body>
 </html>
+
+<%@include file="../template/bottom.jsp"%>
