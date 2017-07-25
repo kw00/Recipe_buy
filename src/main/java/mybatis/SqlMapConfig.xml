@@ -9,13 +9,14 @@
 		<setting name="cacheEnabled" value="false" />
 		<setting name="useGeneratedKeys" value="false" />
 		<setting name="mapUnderscoreToCamelCase" value="true" />
-	</settings>
+	</settings> 
 	
 	<typeAliases>
 		<typeAlias alias="MyMember" type="member.model.Member"/>
 		<typeAlias alias="MyFood" type="food.model.food"/>
 		<typeAlias alias="MyRecipe" type="recipe.model.recipe"/>
 		<typeAlias alias="MyMainBoard" type="mainboard.model.MainBoard"/>
+		<typeAlias alias="MyNotice" type="notice.model.Notice"/>
 	</typeAliases>
 	
 	<mappers>
@@ -23,6 +24,7 @@
 		<mapper resource="mybatis/food.xml"/>
 		<mapper resource="mybatis/recipe.xml"/>
 		<mapper resource="mybatis/MainBoard.xml"/>
+		<mapper resource="mybatis/Notice.xml"/>
 	</mappers>
 	
 </configuration>

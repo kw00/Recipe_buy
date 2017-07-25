@@ -54,8 +54,8 @@
 			<td align="center" style="font-weight: bold;">포인트</td>
 			<td align="center" style="font-weight: bold;">입고일</td>
 			<c:if test="<%=check %>">
-			<td align="center" style="font-weight: bold;">삭제</td>
-			<td align="center" style="font-weight: bold;">수정</td>
+			<th>삭제</th>
+			<th>수정</th>
 			</c:if>
 		</tr>
 		<c:forEach items="${flists }" var="food">
