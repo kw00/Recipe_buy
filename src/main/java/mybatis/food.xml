@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="food.model.food">
+
+	<select id="GetTotalCount" resultType="int" parameterType="hashmap">
+		select count(*) from food
+		
+		<if test="whatColumn=='fname'">
+		where fname like #{keyword}
+		</if>
+		<if test="whatColumn=='fcontents'">
+		where fcontents like #{keyword}
+		</if>
+		<if test="whatColumn=='fcategory'">
+		where fcategory like #{keyword}
+		</if>
+		order by fnum desc
+		
+	</select>
+	
+	<select id="fSelectAll" resultType="MyFood"  parameterType="hashmap" >
+		select *from food 
+		<if test="whatColumn=='fname'">
+		where fname like #{keyword}
+		</if>
+		<if test="whatColumn=='fcontents'">
+		where fcontents like #{keyword}
+		</if>
+		<if test="whatColumn=='fcategory'">
+		where fcategory like #{keyword}
+		</if>
+		order by fnum desc
+	</select>
+
+ 	<insert id="Insertfood" parameterType="MyFood">
+		insert into
+		food
+		values(foodseq.nextval,
+		#{fname},#{fcategory},#{fimage},#{fqty},#{fprice},#{fcompany},#{fcontents},#{fpoint},#{finputdate})
+	</insert>
+
+	<delete id="Deletefood" parameterType="MyFood">
+		delete from food where
+		fnum=#{fnum}
+	</delete>
+
+	<update id="Updatefood" parameterType="MyFood">
+		update food set
+		fname=#{fname}, fcategory=#{fcategory},fimage=#{fimage}, fqty=#{fqty},
+		fprice=#{fprice}, fcompany=#{fcompany},
+		fcontents=#{fcontents}, fpoint=#{fpoint}, finputdate=#{finputdate}
+		where fnum=#{fnum}
+	</update>
+
+	<select id="Getfood" parameterType="int" resultType="MyFood">
+		select * from food
+		where fnum = #{fnum}
+	</select>
+	
+	<select id="Detailfood" resultType="MyFood">
+		select * from food where fnum=#{fnum}
+	</select>
+
+</mapper>

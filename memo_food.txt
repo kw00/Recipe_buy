@@ -1,0 +1,62 @@
+-- 상품 테이블
+drop sequence foodseq;
+create sequence foodseq nocache;
+
+drop table food purge ;
+create table food(
+	fnum 		int not null primary key,
+	fname 		varchar2(50) not null, 	-- 식재료 이름
+	fcategory  	varchar2(20) not null, 	-- 식재료 카테고리(채소, 육류, 어류, 가공, 얌념)
+	fimage   	varchar2(30),		-- 식재료 이미지
+	fqty		int default 0,		-- 식재료 수량
+	fprice   	int default 0,		-- 식재료 가격
+	fcompany        varchar2(20),   -- 식재료 제공회사
+	fcontents 	varchar2(300),		-- 식재료 설명
+	fpoint   	int default 0,		-- 식재료 포인트
+	finputdate 	varchar2(30) not null	-- 식재료 입고일
+);
+
+col fnum for 99;
+col fname for a15;
+col fcategory for a15;
+col fimage for a15;
+col fqty for 99;
+col fprice for 9999;
+col fcontents for a15;
+col fpoint for 99;
+col finputdate for a15;
+
+--채소 감자 당근 양파 
+--육류 소고기 돼지고기 닭고기
+--어류 광어 우럭 연어
+--가공 소시지 치즈 어묵
+--양념 고추장 된장 고춧가루
+
+
+insert into food values(foodseq.nextval, '감자', '채소', 'potato.jpg', 10, 500, '농협','고랭지 감자', 5, '2017-7-5');
+insert into food values(foodseq.nextval, '당근', '채소', 'carrot.jpg', 10, 300, '농협','충남의 당근', 3, '2017-7-5');
+insert into food values(foodseq.nextval, '양파', '채소', 'onion.jpg', 10, 100, '농협','속초의 양파', 1, '2017-7-5');
+
+insert into food values(foodseq.nextval, '소고기', '육류', 'Beef.jpg', 10, 1500, '농협','유럽산 소고기', 15, '2017-7-5');
+insert into food values(foodseq.nextval, '돼지고기', '육류', 'pork.jpg', 10, 2500, '농협','제주도 흑돼지', 25, '2017-7-5');
+insert into food values(foodseq.nextval, '닭고기', '육류', 'chicken.jpg', 10, 500, '농협','국내산 닭고기', 5, '2017-7-5');
+
+insert into food values(foodseq.nextval, '광어', '어류', 'flatfish.jpg', 10, 2500, '농협','국내산 광어', 25, '2017-7-5');
+insert into food values(foodseq.nextval, '우럭', '어류', 'rockfish.jpg', 10, 3500, '농협','자연산 우럭', 35, '2017-7-5');
+insert into food values(foodseq.nextval, '연어', '어류', 'salmon.jpg', 10, 1500, '농협','노르웨이 연어', 15, '2017-7-5');
+
+insert into food values(foodseq.nextval, '소시지', '가공', 'sausages.jpg', 10, 1200, '농협','수입산 소시지', 12, '2017-7-5');
+insert into food values(foodseq.nextval, '치즈', '가공', 'cheese.jpg', 10, 1300, '농협','파리 치즈', 13, '2017-7-5');
+insert into food values(foodseq.nextval, '어묵', '가공', 'fishcake.jpg', 10, 1000, '농협','국내산 어묵', 10, '2017-7-5'); 
+
+insert into food values(foodseq.nextval, '고추장', '양념', 'gochujang.jpg', 10, 100, '농협','국내산 고추장', 1, '2017-7-5');
+insert into food values(foodseq.nextval, '된장', '양념', 'doenjang.jpg', 10, 200, '농협','국내산 된장', 2, '2017-7-5');
+insert into food values(foodseq.nextval, '고춧가루', '양념', 'chilipowder.jpg', 10, 300, '농협','태양초 고춧가루', 3, '2017-7-5'); 
+
+
+
+commit;
+
+select * from food;
+
+

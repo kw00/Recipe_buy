@@ -1,0 +1,45 @@
+--게시판 테이블
+drop table board;
+
+create table board( 
+	num number not null primary key,
+	writer varchar2(50) not null,
+	email varchar2(50),
+	title varchar2(50) not null,
+	content varchar2(3000) not null,
+	inputdate date default sysdate,
+	views int default 0
+);
+
+drop sequence boardseq;
+create sequence boardseq
+  increment by 1
+  start with 1
+  minvalue 1
+  maxvalue 10000
+  nocache;
+  
+insert into board values(boardseq.nextval, 'admin[이정호]', 'dlrudgh@naver.com', '나는 가난시스를 간다.', '가난시스는 좋다.', SYSDATE, 0);
+insert into board values(boardseq.nextval, 'admin[이정호]', 'dlrudgh@naver.com', '나는 가난시스를 간다.', '가난시스는 좋다.', SYSDATE, 0);
+commit;
+
+--게시판 댓글
+drop table comments;
+create table comments( 
+	num number not null primary key,
+	board_num number not null,
+	mem_num number not null,
+	content varchar2(200),
+	indate date default sysdate,
+	id  varchar2(50),
+	name  varchar2(50)
+);
+
+
+drop sequence commentsseq;
+create sequence commentsseq
+  increment by 1
+  start with 1
+  minvalue 1
+  maxvalue 10000
+  nocache;

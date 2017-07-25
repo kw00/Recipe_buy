@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="member.model.Member">
+	<insert id="InsertMember" parameterType="MyMember">
+		insert into members values(memseq.nextval, #{name}, #{id}, #{password}, #{nickname}, #{email}, #{phone}, #{address}, 
+		#{zipcode}, #{ssn}, #{gender}, SYSDATE, #{admin})
+	</insert>
+	
+	<select id="selectId" resultType="member.model.CheckId" parameterType="string"><!--아이디 중복체크-->
+		select * from members where id = #{id}
+	</select>
+	
+	<select id="GetMember" resultType="MyMember" parameterType="string">
+		select * from members where id = #{id}
+	</select>
+</mapper>	

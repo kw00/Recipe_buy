@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="recipe.model.recipe">
+	<select id="TotalCount" resultType="int" parameterType="hashmap">
+		select count(*) from recipe
+		<if test="whatColumn == 'rname'">
+			where rname like#{keyword}
+		</if>
+		<if test="mcategory!=null">
+			where mcategory = #{mcategory}
+		</if>
+		order by rnum desc
+	</select>
+	
+	<select id="GetRecipeList" resultType="MyRecipe" parameterType="hashmap">
+		select * from recipe
+		<if test="whatColumn == 'rname'">
+			where rname like#{keyword}
+		</if>
+		<if test="mcategory!=null">
+			where mcategory = #{mcategory}
+		</if>
+		order by rnum desc
+	</select>
+	
+	<select id="GetmainCategory" resultType="MyRecipe">
+		select * from maincategory
+	</select>
+	
+	
+	<select id="GetFoodCount" resultType="int" parameterType="hashmap">
+		select count(*) from food
+		<if test="whatColumn == 'fname'">
+			where fname like#{keyword}
+		</if>
+		order by fnum desc
+	</select>
+	<select id="GetFoodList" resultType="MyFood" parameterType="hashmap">
+		select * from food
+		<if test="whatColumn == 'fname'">
+			where fname like#{keyword}
+		</if>
+		order by fnum desc
+	</select>
+	<insert id="InsertRecipe" parameterType="MyRecipe">
+		insert into recipe values(recipeseq.nextval,#{rwriter},#{mcategory},#{rname},#{rimage},#{ringredients}
+		,#{rcontent},#{rprice},10,#{rinputdate})
+	</insert>
+	<select id="DetailRecipe" resultType="MyRecipe">
+		select * from
+	</select>
+</mapper>

@@ -1,0 +1,77 @@
+
+drop sequence mcategoryseq;
+
+create sequence mcategoryseq nocache;
+
+drop table maincategory;
+
+create table maincategory(
+mnum number primary key, --카테고리 넘버
+mcategory varchar2(50) --인기, 밥류, 국류, 면류(메인 카테고리 이름) 서브카테고리와 조인할 외래키
+);
+
+
+
+insert into maincategory values(mcategoryseq.nextval, '밥류');
+insert into maincategory values(mcategoryseq.nextval, '국류');
+insert into maincategory values(mcategoryseq.nextval, '면류');
+insert into maincategory values(mcategoryseq.nextval, '기타');
+
+col mnum for 9;
+col mcategory for a9;
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+drop sequence recipeseq;
+create sequence recipeseq nocache;
+
+drop table recipe;
+
+create table recipe(
+rnum number primary key,
+rwriter varchar2(50) not null,
+mcategory varchar2(50),
+rname varchar2(50),  --닭도리탕,된장찌개, 스테이크
+rimage varchar2(100),
+ringredients varchar2(999),
+rcontent varchar2(3000),
+rprice int,
+rpoint int,
+rinputdate varchar2(10) default sysdate
+);
+
+insert into recipe values(recipeseq.nextval, 1, '국류','된장국','된장국.jpg','감자,된장,기타등등','없음',1000,10,'2017-7-14');
+insert into recipe values(recipeseq.nextval, 1, '국류','김치찌개','null','묵은지,두부,기타등등','없음',1000,10,'2017-7-14');
+insert into recipe values(recipeseq.nextval, 1, '국류','김치전골','null','묵은지,두부,기타등등','없음',1000,10,'2017-7-14');
+insert into recipe values(recipeseq.nextval, 1, '밥류','규동','null','소고기,밥,달걀','없음',1000,10,'2017-7-14');
+
+commit;
+
+col rnum for 9;
+col memnum for 9;
+col mcategory for a9;
+col scategory for a9;
+col rname for a9;
+col rimage for a9;
+col ringredients for a9;
+col rcontent for a9;
+col rprice for 9;
+col rpointpercent for 9;
+col rinpudate for a9;
+
+
+select * from maincategory;
+
+
+select * from recipe;
+
+
+
+SELECT mcategory, rname, ringredients, rcontent, rinputdate
+FROM maincategory NATURAL JOIN recipe;
+
+
+select m.mcategory, r.rname
+from maincategory m inner join recipe r 
+on m.mcategory = r.mcategory
+and r.mcategory = '국류';

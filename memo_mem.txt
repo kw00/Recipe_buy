@@ -1,0 +1,40 @@
+drop sequence memseq ;
+create sequence memseq nocache ;
+
+
+DROP TABLE members CASCADE CONSTRAINTS;
+
+-- 회원 테이블
+drop table members purge ;
+create table members(
+	num number primary key,
+	name varchar2(50) not null,
+	id varchar2(50) not null,
+	password varchar2(50),
+	nickname varchar2(50),
+	email varchar2(50),
+	phone varchar2(50),
+	address varchar2(200),
+	zipcode varchar2(50),
+	ssn varchar2(50),
+	gender varchar2(10),
+	joindate varchar2(50),
+	admin varchar2(10)
+);
+
+insert into members(num, name, id, password, nickname, email, phone, address, zipcode, ssn, gender, joindate, admin) 
+values(memseq.nextval, '어드민', 'admin', '1234', 'admin','admin@naver.com','01012345678', '서울 마포구 신촌로 176 중앙정보처리학원', '11532', '9001011111111', '남', '2017/06/09' , '0');
+
+commit;
+
+col name for  a10
+col id for a10
+col password for a12
+col nickName for a8
+col email for a12
+col phone for a12
+col zipcode for a15
+col ssn for a15
+col gender for a6
+col joindate for a12
+col admin for a12;
