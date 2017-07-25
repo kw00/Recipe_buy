@@ -36,7 +36,7 @@ function insert(){
 		</form>
 		
 		<table class="table">
-		<c:if test="">
+		<c:if test="${sessionScope.loginfo.id eq 'admin'}">
 			<tr>
 				<td colspan="9" align="right">
 					<input type="button" value="글쓰기" class="btn btn-default" onclick="insert()">
@@ -64,7 +64,6 @@ function insert(){
 				</tr>
 			</c:forEach>
 		</table>
-		
 		<div>
 			${pageInfo.pagingHtml}
 		</div>
