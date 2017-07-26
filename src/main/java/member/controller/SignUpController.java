@@ -1,9 +1,12 @@
 package member.controller;
 
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -21,7 +24,6 @@ import member.model.MemberDao;
 @Controller
 public class SignUpController {
    private static final String getPage = "SignUpForm";
-   private static final String gotoPage = "main.hp";
    private static final String command = "/signup.me";
    
    @Autowired
@@ -34,27 +36,23 @@ public class SignUpController {
    }
    
    @RequestMapping(value=command, method=RequestMethod.POST)
-   public ModelAndView doPostAction(@ModelAttribute("singup") @Valid Member member, BindingResult result){
+   public ModelAndView doPostAction(@ModelAttribute("singup") @Valid Member member, BindingResult result, HttpServletRequest request){
       System.out.println("---signup Post start---");
       
       ModelAndView mav = new ModelAndView();
       
       boolean check = member.isBool();
       
-      System.out.println("=========12231========"+check);
       
       String pwd1 = member.getPassword();
       String pwd2 = member.getPasswordcheck();
       
-      System.out.println(pwd1+"============"+pwd2);
       
       if(!pwd1.equals(pwd2)){
          check = false;
       }
       
       member.setBool(check);
-      
-      System.out.println("================="+check);
       
       if(result.hasErrors()){
          System.out.println("--- 유효성 검사 실패 ---");
@@ -66,26 +64,21 @@ public class SignUpController {
       String phone = member.getPhone1()+member.getPhone2()+member.getPhone3();
       member.setPhone(phone);
       
-      System.out.println(member);
-      
       
       int cnt = 0;
       
       cnt = memberDao.InsertMember(member);
       
       if(cnt>0){
-         System.out.println(member.getId()+"님 회원가입 축하드립니다.");
          
          mav.addObject("message", member.getId()+"님 회원가입을 축하합니다.");
-         mav.addObject("url", gotoPage);
-         mav.setViewName("../homepage/result");
+         mav.addObject("url", request.getContextPath());
+         mav.setViewName("../result/result");
          
       }else{
-         System.out.println("회원가입 실패.....");
-
          mav.addObject("message", "회원가입에 실패하였습니다.");
          mav.addObject("url", getPage);
-         return new ModelAndView("../homepage/result");
+         return new ModelAndView("../result/result");
       }
       
       System.out.println("---signup Post end---");

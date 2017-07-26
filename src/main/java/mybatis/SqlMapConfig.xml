@@ -17,6 +17,7 @@
 		<typeAlias alias="MyRecipe" type="recipe.model.recipe"/>
 		<typeAlias alias="MyMainBoard" type="mainboard.model.MainBoard"/>
 		<typeAlias alias="MyNotice" type="notice.model.Notice"/>
+		<typeAlias alias="MyComments" type="mainboard.model.Comments"/>
 	</typeAliases>
 	
 	<mappers>
@@ -25,6 +26,7 @@
 		<mapper resource="mybatis/recipe.xml"/>
 		<mapper resource="mybatis/MainBoard.xml"/>
 		<mapper resource="mybatis/Notice.xml"/>
+		<mapper resource="mybatis/Comments.xml"/>
 	</mappers>
 	
 </configuration>
