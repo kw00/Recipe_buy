@@ -6,21 +6,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-
 <script type="text/javascript">
 
 function cart(){
-	alert($("input[name='fnum']").val());
-location.href="add.mall?fnum="+$("input[name='fnum']").val()+"&fqty="+$("input[name='fqty']").val();
+	location.href="add.mall?fnum="+$("input[name='fnum']").val()+"&fqty="+$("input[name='fqty']").val();
 }
 
 </script>
+
 </head>
 <body>
 <form action="detail.fd?fnum=${food.fnum+1 }" method="post">
 <table align="center">
 	<tr>
-	<input type="hidden" name="fnum" value="${food.fnum }">
 		<td>
 			<img width="250" height="250" src="./resources/images/${food.fimage }">
 		</td>
@@ -28,7 +26,7 @@ location.href="add.mall?fnum="+$("input[name='fnum']").val()+"&fqty="+$("input[n
 			재료명 : ${food.fname }<br><br>
 			가격 : ${food.fprice }원<br><br>
 			포인트 : ${food.fpoint }점<br><br>
-			수량 : <input type="text" name="fqty" value="${food.fqty}"><br><br>
+			수량 : ${food.fqty}<br><br>
 			납품 회사 : ${food.fcompany }<br><br>
 			입고일 : ${food.finputdate }
 		</td>

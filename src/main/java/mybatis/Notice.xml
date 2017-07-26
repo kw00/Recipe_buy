@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="notice.model.Notice">
+	
+	<select id="GetTotalCount" resultType="int" parameterType="hashmap">
+		select count(*) from notice
+		
+		<if test="whatColumn == 'subject'">
+			where subject like #{keyword}
+		</if>
+		
+		<if test="whatColumn == 'writer'">
+			where writer like #{keyword}
+		</if>
+		
+		order by ref desc, restep asc
+	</select>
+	
+	<select id="getNoticeList" resultType="MyNotice" parameterType="hashmap">
+		select * from notice
+		
+		<if test="whatColumn == 'subject'">
+			where subject like #{keyword}
+		</if>
+		
+		<if test="whatColumn == 'writer'">
+			where writer like #{keyword}
+		</if>
+		order by ref desc, restep asc
+	</select>
+	
+	<insert id="InsertNotice">
+		insert into notice(num, writer, subject, passwd, regdate, readcount, ref, restep, relevel, content, ip)
+		values(noticeseq.nextval,#{writer},#{subject},#{passwd},SYSDATE,#{readcount, jdbcType=VARCHAR},noticeseq.nextval,0,0,#{content},#{ip})
+	</insert>
+	
+	<select id="getNotice" parameterType="int" resultType="MyNotice">
+		select * from notice where num = #{num}
+	</select>
+	
+	<delete id="DeleteNotice">
+		delete from notice where num = #{num}
+	</delete>
+	
+	<update id="UpdateNotice">
+		update notice set writer=#{writer}, subject=#{subject}, content=#{content} where num = #{num}
+	</update>
+	
+	<update id="UpReadCount">
+		update notice set readcount = readcount+1 where num = #{num}
+	</update>
+	
+	<insert id="ReplyNotice">
+		insert into notice(num, writer, subject, passwd, regdate, readcount, ref, restep, relevel, content, ip)
+		values(noticeseq.nextval,#{writer},#{subject},#{passwd},SYSDATE,#{readcount, jdbcType=VARCHAR},#{ref},#{restep},#{relevel},#{content},#{ip})
+	</insert>
+</mapper>
