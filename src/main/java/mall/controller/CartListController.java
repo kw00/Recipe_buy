@@ -51,14 +51,14 @@ public class CartListController { // CartAddController.java���� �Ѿ�
 
 			ShoppingInfo shopInfo = new ShoppingInfo() ;
 
-			/*int amount = fqty * bean.getFprice() ; // 5 * 1000
+			int amount = fqty * bean.getFprice() ; // 5 * 1000
 			totalAmount += amount ;
 			
-			shopInfo.setFamount( amount );*/
+			shopInfo.setFamount( amount );
 			shopInfo.setFname( bean.getFname() ); 
 			shopInfo.setFnum( fnum ); 
 			shopInfo.setFprice( bean.getFprice() );  
-			shopInfo.setFqty( fqty ) ;
+			shopInfo.setFqty( fqty ) ;	
 			shopInfo.setFpoint(bean.getFpoint());
 			shopInfo.setFcompany(bean.getFcompany());
 			shopInfo.setFimage(bean.getFimage());
