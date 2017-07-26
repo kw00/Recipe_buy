@@ -6,6 +6,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+
+function cart(){
+	location.href="add.mall?fnum="+$("input[name='fnum']").val()+"&fqty="+$("input[name='fqty']").val();
+}
+
+</script>
+
 </head>
 <body>
 <form action="detail.fd?fnum=${food.fnum+1 }" method="post">
@@ -30,9 +38,9 @@
 	</tr>
 	<tr>
 		<td align="left">
-			<a href="#">
-				<input type="button" value="장바구니">
-			</a>
+			<%-- <a href="add.mall?fnum=${food.fnum }&fqty=${food.fqty}"> --%>
+				<input type="button" value="장바구니" onclick="cart()">
+			<!-- </a> -->
 			<a href="#">
 				<input type="button" value="구매하기">
 			</a>
