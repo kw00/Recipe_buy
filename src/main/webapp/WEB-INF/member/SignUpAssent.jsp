@@ -11,6 +11,12 @@
 	color: red;
 	font-size: 9pt;
 }
+.sign_main{
+	font-size: 30px;
+}
+.sign_sub{
+	font-size: 18px;
+}
 </style>
 <html>
 <head>
@@ -18,17 +24,19 @@
 </head>
 <body>
 	<div class="container">
-	<br><br><br><br><br>
-		<div class="signAssert_header" align="center">
-			<h3>
-				개인 가입 약관 동의
-				<h3>
-					<br>
-					<h4>서비스 약관 및 개인정보 수집, 이용에 동의해 주세요.</h4>
-					<br>
-					<br>
-					<br>
+		<br>
+		<br>
+		<div class="sign_header" align="center">
+			<div class="sign_main">
+				<p>개인 가입 약관 동의</p>
+				<br>
+				<div class="sign_sub">
+				<p>서비스 약관 및 개인정보 수집, 이용에 동의해 주세요.</p>
+				<br>
+				</div>
+			</div>
 		</div>
+		<br><br>
 
 		<form class="form-horizontal" role="form" method="get"
 			action="signup.me">
@@ -37,7 +45,9 @@
 				<label for="provision" class="col-lg-2 control-label">RecipeBuy
 					서비스 약관 동의</label>
 				<div class="col-lg-10" id="provision">
-					<textarea class="form-control" rows="8" style="resize: none; cursor: text; background-color: white;" disabled="disabled" >
+					<textarea class="form-control" rows="8"
+						style="resize: none; cursor: text; background-color: white;"
+						disabled="disabled">
 제 1 장 총 칙
 
 제 1 조 목적
@@ -360,14 +370,15 @@
 				</div>
 			</div>
 
-			<br>
-			<br>
+			<br> <br>
 
 			<div class="form-group">
 				<label for="memberInfo" class="col-lg-2 control-label">RecipeBuy
 					개인정보 수집 및 이용 동의</label>
 				<div class="col-lg-10" id="memberInfo">
-					<textarea class="form-control" rows="8" style="resize: none; background-color: white; cursor: text;" disabled="disabled">
+					<textarea class="form-control" rows="8"
+						style="resize: none; background-color: white; cursor: text;"
+						disabled="disabled">
 (주)RecipeBuy는 아래의 목적으로 개인정보를 수집 및 이용하며, 회원의 개인정보를 안전하게 취급하는데 최선을 다합니다.
 
 1. 수집목적
@@ -399,15 +410,12 @@
 					</div>
 				</div>
 			</div>
-
 			<br>
-			<br>
-
-			<div class="form-group" align="center">
+			<div class="form-group" align="left">
 				<div class="col-lg-offset-2 col-lg-10">
 					<a href="#" onclick="history.go(-1)"><button
-							class="btn btn-default" type="button">이전으로</button></a>
-					<button type="submit" class="btn btn-default"
+							class="btn btn-warning" type="button">이전으로</button></a>
+					<button type="submit" class="btn btn-danger"
 						onClick="return check()">다음으로</button>
 				</div>
 			</div>

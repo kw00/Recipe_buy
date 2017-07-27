@@ -21,18 +21,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <meta name="keywords"
 	content="Cooks Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
-  <style type="text/css">
-	a{
-		text-decoration: none;
-	}
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+a {
+	text-decoration: none;
+}
 </style>
 <%
 	String contextPath = request.getContextPath();
-	String pattern="###,###";
+	String pattern = "###,###";
 	DecimalFormat df = new DecimalFormat(pattern);
 %>
 
@@ -50,17 +53,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="resources/bootstrap/js/jquery-1.11.1.min.js"></script>
 <!-- //js -->
 <!-- animation-effect -->
-<link href="resources/bootstrap/css/animate.min.css" rel="stylesheet">
 <script src="resources/bootstrap/js/wow.min.js"></script>
 <script>
 	new WOW().init();
 </script>
+<link href="resources/bootstrap/css/animate.min.css" rel="stylesheet">
 <!-- //animation-effect -->
 <link href='https://fonts.googleapis.com/css?family=Alex+Brush'
 	rel='stylesheet' type='text/css'>
 <link
 	href='https://fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic'
 	rel='stylesheet' type='text/css'>
+
+<link href="resources/bootstrap/css/responsive.css" rel="stylesheet">
+<style>
+.mainlogo {
+	font-size: 10px;
+}
+</style>
 </head>
 
 <body>
@@ -76,7 +86,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							class="icon-bar"></span> <span class="icon-bar"></span> <span
 							class="icon-bar"></span>
 					</button>
-					<div class="logo">
+					<div class="mainlogo">
 						<a class="navbar-brand" href="${pageContext.request.contextPath}">RecipeBuy</a>
 					</div>
 				</div>
@@ -131,16 +141,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											food</a></li>
 									<li><a href="list.fd?whatColumn=fcategory&keyword=양념">Seasoning</a></li>
 								</ul></li>
-							<li><a href="signupAssent.me">Signup</a></li>
-							<li><a href="find.me">Login</a></li>
+							<c:choose>
+								<c:when test="${sessionScope.loginfo==null}">
+								<li><a href="find.me">Login</a></li>
+								</c:when>
+								<c:otherwise>
+								<li><a href="find.me">Findinfo</a></li>
+								<li>
+									<a href="#">${sessionScope.loginfo.id} 님</a>
+									</li>
+								</c:otherwise>
+							</c:choose>
 							<li><a href="logout.me">Logout</a></li>
 						</ul>
 					</nav>
 					<div class="social-icons">
 						<ul>
-							<li><a class="icon-link round facebook" href="#"></a></li>
-							<li><a class="icon-link round p" href="#"></a></li>
-							<li><a class="icon-link round twitter" href="#"></a></li>
+							<li><a class="icon-link round twitter"
+								href="https://twitter.com/?lang=ko"></a></li>
+							<li><a class="icon-link round p"
+								href="https://www.pinterest.co.kr"></a></li>
+							<li><a class="icon-link round facebook"
+								href="https://www.facebook.com/"></a></li>
 							<li><a class="icon-link round dribble" href="#"></a></li>
 						</ul>
 					</div>
