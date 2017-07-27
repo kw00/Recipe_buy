@@ -23,8 +23,8 @@ function insert(){
 			<div class="form-group col-sm-2" style="padding-left: 0px; padding-right: 0px;">
 				<select class="form-control" name="whatColumn">
 					<option value="all">전체 검색
-					<option value="subject">제목
-					<option value="content">내용
+					<option value="title">제목
+					<option value="writer">글쓴이
 				</select>
 			</div>
 			<div class="form-group col-sm-5" style="padding-left: 0px; padding-right: 0px;">
