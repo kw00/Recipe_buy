@@ -29,7 +29,9 @@ $(function(){
             bUseModeChanger : true,
         }
     });
-    $("input[name='subject']").val($("input[name='subject']").val()+"(수정)");
+    if(!$("input[name='subject']").val().endsWith("(수정)")){
+	    $("input[name='subject']").val($("input[name='subject']").val()+"(수정)");
+    }
     //전송버튼
     $("#updateNotice").click(function(){
         //id가 smarteditor인 textarea에 에디터에서 대입
@@ -51,7 +53,7 @@ $(function(){
 					<td width="100" align="center">글쓴이</td>
 					<td width="330" align="left">
 					<input type="hidden" size="30" maxlength="10" name="writer" 
-							value="${loginfo.id}[${loginfo.name}]">${loginfo.id}[${loginfo.name}]</td>
+							value="관리자">관리자</td>
 				</tr>
 				
 				
