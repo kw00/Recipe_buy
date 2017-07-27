@@ -39,7 +39,7 @@
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="password">비밀번호:</label>
 				<div class="col-sm-10">
-					<input type="password" class="form-control" name="password" placeholder="패스워드" >
+					<input type="password" class="form-control" name="password" id="pwd" placeholder="패스워드" >
 					<form:errors cssClass="err" path="password" />
 				</div>
 			</div>
@@ -81,17 +81,17 @@
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="phone1">번호:</label>
 				<div class="col-sm-2">
-					<input type="text" class="form-control" name="phone1" placeholder="010" value="${member.phone1}">
+					<input type="text" class="form-control" name="phone1" placeholder="010" value="${member.phone1}" maxlength="3">
 					<form:errors cssClass="err" path="phone1" />
 				</div>
 				<label class="control-label col-sm-1">-</label>
 				<div class="col-sm-3">
-					<input type="text" class="form-control" name="phone2" placeholder="1234" value="${member.phone2}">
+					<input type="text" class="form-control" name="phone2" placeholder="1234" value="${member.phone2}" maxlength="4">
 					<form:errors cssClass="err" path="phone2" />
 				</div>
 				<label class="control-label col-sm-1">-</label>
 				<div class="col-sm-3">
-					<input type="text" class="form-control" name="phone3" placeholder="5678" value="${member.phone3}">
+					<input type="text" class="form-control" name="phone3" placeholder="5678" value="${member.phone3}" maxlength="4">
 					<form:errors cssClass="err" path="phone3" />
 				</div>
 			</div>
@@ -229,8 +229,8 @@
 	
 	$(function(){
 		$("#insert").click(function(){
-			var pwd1 = $("input[name=password]").val();
-			var pwd2 = $("input[name=passwordcheck]").val();		
+			var pwd1 = $("#pwd").val();
+			var pwd2 = $("input[name='passwordcheck']").val();		
 			var check;
 			
 			if(pwd1==pwd2){
@@ -250,7 +250,7 @@
 		});
 		
 		$("#close").click(function(){
-			document.location.href='main.hp';
+			document.location.href='${pageContext.request.contextPath}';
 		});
 		
 	});

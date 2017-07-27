@@ -1,0 +1,24 @@
+drop table notice;
+
+create table notice( 
+	num number not null primary key,
+	writer varchar2(10) not null,
+	subject varchar2(50) not null,
+	passwd varchar2(12) not null,
+	regdate date default sysdate,
+	readcount int default 0,
+	ref number not null,
+	restep number not null,
+	relevel number not null,
+	content varchar2(100) not null,
+	ip varchar2(15) not null
+);
+
+drop sequence noticeseq;
+create sequence noticeseq
+  increment by 1
+  start with 1
+  minvalue 1
+  maxvalue 10000
+  nocache;
+  

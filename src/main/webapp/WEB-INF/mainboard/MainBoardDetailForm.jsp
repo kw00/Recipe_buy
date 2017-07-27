@@ -51,7 +51,11 @@
 								OnClick="window.location='board.mainboard'">
 					</td>
 				</tr>
-			</table>	
+			</table>
+			
+			<c:import url="../mainboard/Comments.jsp">
+				<c:param name="board_num">${board.num}</c:param>
+			</c:import>	
 	</div>
 	<br>
 </body>

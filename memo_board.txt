@@ -30,16 +30,7 @@ create table comments(
 	board_num number not null,
 	mem_num number not null,
 	content varchar2(200),
-	indate date default sysdate,
-	id  varchar2(50),
-	name  varchar2(50)
+	indate date default sysdate
 );
 
 
-drop sequence commentsseq;
-create sequence commentsseq
-  increment by 1
-  start with 1
-  minvalue 1
-  maxvalue 10000
-  nocache;

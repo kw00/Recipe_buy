@@ -12,6 +12,9 @@
 	var message = '${message}'; 
 	var returnUrl = '${url}'; 
 	
+	if(returnUrl == ''){
+		returnUrl = '${pageContext.request.contextPath}';
+	}
 	alert(message); 
 	document.location.href = returnUrl; 
 </script>
