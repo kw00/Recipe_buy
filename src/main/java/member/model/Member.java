@@ -59,7 +59,7 @@ public class Member {
 	private String passwordcheck; //varchar2(20),
 	
 	//비밀번호 확인 체크
-	@AssertFalse(message="비밀번호가 같지 않습니다.")
+	@AssertTrue(message="비밀번호가 같지 않습니다.")
 	private boolean bool;
 
 	public String getPasswordcheck() {

@@ -18,8 +18,8 @@
 </head>
 <body>
 	<div class="container">
-
-		<div class="header" align="center">
+	<br><br><br><br><br>
+		<div class="signAssert_header" align="center">
 			<h3>
 				개인 가입 약관 동의
 				<h3>

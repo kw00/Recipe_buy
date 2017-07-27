@@ -16,14 +16,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Custom Theme files -->
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="resources/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="resources/bootstrap/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <!-- js -->
-<script src="js/jquery-1.11.1.min.js"></script>
+<script src="resources/bootstrap/js/jquery-1.11.1.min.js"></script>
 <!-- //js -->
 <!-- animation-effect -->
-<link href="css/animate.min.css" rel="stylesheet"> 
-<script src="js/wow.min.js"></script>
+<link href="resources/bootstrap/css/animate.min.css" rel="stylesheet"> 
+<script src="resources/bootstrap/js/wow.min.js"></script>
 <script>
  new WOW().init();
 </script>
@@ -33,6 +33,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 
 <body>
+
 <!-- banner -->
 	<div class="banner">
 		<div class="container">
@@ -42,7 +43,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<ul id="flexiselDemo1">			
 						<li>
 							<div class="banner-info1-grid">
-								<img src="images/1.png" alt=" " class="img-responsive" />
+								<img src="resources/bootstrap/images/1.png" alt=" " class="img-responsive" />
 								<h3>denouncing pleasure</h3>
 								<p>Duis aute irure dolor in reprehenderit in voluptate velit
 									esse cillum dolore eu fugiat nulla pariatur.</p>
@@ -50,7 +51,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</li>
 						<li>
 							<div class="banner-info1-grid">
-								<img src="images/2.png" alt=" " class="img-responsive" />
+								<img src="resources/bootstrap/images/2.png" alt=" " class="img-responsive" />
 								<h3>denouncing pleasure</h3>
 								<p>Duis aute irure dolor in reprehenderit in voluptate velit
 									esse cillum dolore eu fugiat nulla pariatur.</p>
@@ -58,7 +59,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</li>
 						<li>
 							<div class="banner-info1-grid">
-								<img src="images/3.png" alt=" " class="img-responsive" />
+								<img src="resources/bootstrap/images/3.png" alt=" " class="img-responsive" />
 								<h3>denouncing pleasure</h3>
 								<p>Duis aute irure dolor in reprehenderit in voluptate velit
 									esse cillum dolore eu fugiat nulla pariatur.</p>
@@ -92,7 +93,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								
 							});
 					</script>
-					<script type="text/javascript" src="js/jquery.flexisel.js"></script>
+					<script type="text/javascript" src="resources/bootstrap/js/jquery.flexisel.js"></script>
 					<div class="more wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
 						<a href="single.html" class="hvr-curl-bottom-right">Read More</a>
 					</div>
@@ -117,7 +118,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="col-md-7 banner-bottom-grid wow flipInY" data-wow-duration="1000ms" data-wow-delay="300ms">
 					<div class="banner-bottom-grid1">
-						<img src="images/1.jpg" alt=" " class="img-responsive" />
+						<img src="resources/bootstrap/images/1.jpg" alt=" " class="img-responsive" />
 						<div class="banner-bottom-grid-pos">
 							<div class="progress">
 							  <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
@@ -142,7 +143,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="banner-bottom-grids">
 				<div class="col-md-6 banner-bottom-grid-1 wow flipInY" data-wow-duration="1000ms" data-wow-delay="300ms">
 					<div class="banner-bottom-grid-11">
-						<img src="images/2.jpg" alt=" " class="img-responsive" />
+						<img src="resources/bootstrap/images/2.jpg" alt=" " class="img-responsive" />
 						<div class="banner-bottom-grid-11-pos">
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
 								sed do eiusmod tempor incididunt ut labore et dolore magna 
@@ -192,13 +193,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 				</div>
 				<div class="col-md-6 newsletter-bottom-grid wow flipInY" data-wow-duration="1000ms" data-wow-delay="300ms">
-					<img src="images/4.jpg" alt=" " class="img-responsive" />
+					<img src="resources/bootstrap/images/4.jpg" alt=" " class="img-responsive" />
 				</div>
 				<div class="clearfix"> </div>
 			</div>
 			<div class="newsletter-bottom-grids">
 				<div class="col-md-6 newsletter-bottom-grid wow flipInY" data-wow-duration="1000ms" data-wow-delay="300ms">
-					<img src="images/5.jpg" alt=" " class="img-responsive" />
+					<img src="resources/bootstrap/images/5.jpg" alt=" " class="img-responsive" />
 				</div>
 				<div class="col-md-6 newsletter-bottom-grid  wow fadeInLeftBig" data-wow-duration="1000ms" data-wow-delay="300ms">
 					<h3>At vero eos et accusamus et iusto odio</h3>
@@ -222,7 +223,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="col-md-3 footer-grid wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
 					<h3>cumque nihil impedit</h3>
 					<div class="footer-grd-left">
-						<img src="images/6.jpg" class="img-responsive" alt=" " />
+						<img src="resources/bootstrap/images/6.jpg" class="img-responsive" alt=" " />
 					</div>
 					<div class="footer-grd-left">
 						<p>Nam libero tempore, cum 
@@ -257,23 +258,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="col-md-3 footer-grid wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
 					<h3>Flickr Posts</h3>
 					<div class="footer-grd">
-						<a href="#"><img src="images/7.jpg" class="img-responsive" alt=" " /></a>
+						<a href="#"><img src="resources/bootstrap/images/7.jpg" class="img-responsive" alt=" " /></a>
 					</div>
 					<div class="footer-grd">
-						<a href="#"><img src="images/8.jpg" class="img-responsive" alt=" " /></a>
+						<a href="#"><img src="resources/bootstrap/images/8.jpg" class="img-responsive" alt=" " /></a>
 					</div>
 					<div class="footer-grd">
-						<a href="#"><img src="images/7.jpg" class="img-responsive" alt=" " /></a>
+						<a href="#"><img src="resources/bootstrap/images/7.jpg" class="img-responsive" alt=" " /></a>
 					</div>
 					<div class="clearfix"> </div>
 					<div class="footer-grd">
-						<a href="#"><img src="images/8.jpg" class="img-responsive" alt=" " /></a>
+						<a href="#"><img src="resources/bootstrap/images/8.jpg" class="img-responsive" alt=" " /></a>
 					</div>
 					<div class="footer-grd">
-						<a href="#"><img src="images/7.jpg" class="img-responsive" alt=" " /></a>
+						<a href="#"><img src="resources/bootstrap/images/7.jpg" class="img-responsive" alt=" " /></a>
 					</div>
 					<div class="footer-grd">
-						<a href="#"><img src="images/8.jpg" class="img-responsive" alt=" " /></a>
+						<a href="#"><img src="resources/bootstrap/images/8.jpg" class="img-responsive" alt=" " /></a>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
@@ -288,7 +289,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 <!-- //footer -->
 <!-- for bootstrap working -->
-	<script src="js/bootstrap.js"></script>
+	<script src="resources/bootstrap/js/bootstrap.js"></script>
 <!-- //for bootstrap working -->
 </body>
 </html>

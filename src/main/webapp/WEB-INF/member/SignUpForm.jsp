@@ -12,11 +12,17 @@
 		font-size: 9pt;
 	}
 </style>
+<link href="resources/bootstrap/css/animate.min.css" rel="stylesheet">
 </head>
 <body>
+
+<div class="container">
+<br><br><br><br>
 	<div class="col-sm-2"></div>
 	<div class="col-sm-7">
+	<div class="signupform_header">
 	<h3 align="center">회원 가입</h3>
+	</div>
 	<br><br>
 		<form:form commandName="singup" action="signup.me" method="POST" class="form-horizontal" id="myForm">
 			
@@ -160,7 +166,7 @@
 					수신여부</label>
 				<div class="col-lg-10">
 					<label class="radio-inline"> <input type="radio"
-						id="smsReceiveYn" name="smsReceiveYn" value="Y">
+						id="smsReceiveYn" name="smsReceiveYn" value="Y" checked="checked">
 						동의합니다.
 					</label> <label class="radio-inline"> <input type="radio"
 						id="smsReceiveYn" name="smsReceiveYn" value="N"> 동의하지
@@ -171,8 +177,9 @@
 			
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10" align="right">
-					<input type="submit" class="btn btn-default" value="입력" id="insert" onClick="return check()">
-					<button type="button" class="btn btn-default" id="close">메인으로</button>
+				<a href="#" onclick="history.go(-1)"><button
+							class="btn btn-default" type="button">이전으로</button></a>
+					<input type="submit" class="btn btn-default" value="가입하기" id="insert" onClick="return check()">
 				</div>
 			</div>
 		</form:form>
