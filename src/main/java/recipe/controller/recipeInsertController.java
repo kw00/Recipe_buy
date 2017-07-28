@@ -10,6 +10,7 @@ import java.util.UUID;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.ServletContextAware;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
@@ -27,7 +29,7 @@ import recipe.model.recipeDao;
 
 @Controller
 public class recipeInsertController implements ServletContextAware{
-	private static final String command = "insertrecipe.recipe";
+	private static final String command = "/insertrecipe.recipe";
 	private static final String getPage = "recipeinsertForm";
 	private static final String gotoPage = "redirect:/recipeList.recipe";
 	@Autowired
@@ -39,12 +41,18 @@ public class recipeInsertController implements ServletContextAware{
 	ServletContext servletContext;
 	
 	@RequestMapping(value=command, method=RequestMethod.GET)
-	public String GetInsertForm(Model model){
-		
-		List<maincategory> category = recipedao.getmainCategory();
-		model.addAttribute("category", category);
-		
-		return getPage;
+	public String GetInsertForm(HttpSession session,Model model){
+		if(session.getAttribute("loginfo")==null){
+			session.setAttribute("destination", "redirect:/recipeList.recipe");
+			
+			model.addAttribute("message", "로그인을 하셔야 작성할 수 있습니다.");
+			model.addAttribute("url", "../ex/");
+			return "../result/result";
+		}else{
+			List<maincategory> category = recipedao.getmainCategory();
+			model.addAttribute("category", category);
+			return getPage;
+		}
 	}
 	
 	@RequestMapping(value=command, method=RequestMethod.POST)
@@ -57,10 +65,11 @@ public class recipeInsertController implements ServletContextAware{
 		System.out.println(recipe.toString());
 		MultipartFile multi = recipe.getUpload();
 		//multi���� name�� upload�� ���� ������ ����
-		System.out.println("product.getUpload() : "+recipe.getUpload());
+		System.out.println("recipe.getUpload() : "+recipe.getUpload());
 		//org.springframework.web.multipart.commons.CommonsMultipartFile@f1c
-		System.out.println("product.getImage() : "+recipe.getRimage());
+		System.out.println("recipe.getImage() : "+recipe.getRimage());
 		System.out.println("===========================================");
+		
 		System.out.println("===============���� ���� �̹��� UUID ó���۾�==================");
 		String filename = upload.getOriginalFilename();
 		System.out.println("filename : "+filename);

@@ -13,11 +13,19 @@ function insert(){
 		location.href="insert.nt";
 	}
 </script>
+<style>
+.notice_header{
+	font-size: 20px;
+}
+</style>
 </head>
 <body>
+<br><br>
 	<div align="center" class="container">
-		<h2>공지 게시판</h2>
-		<br>
+	<div class="notice_header">
+		<p>공지 게시판</p>
+		</div>
+		<br><br>
 		<form action="list.nt" method="get">
 			<div class="col-sm-2"></div>
 			<div class="form-group col-sm-2" style="padding-left: 0px; padding-right: 0px;">

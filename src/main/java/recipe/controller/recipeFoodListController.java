@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import food.model.food;
+import recipe.model.recipe;
 import recipe.model.recipeDao;
 import utility.Paging;
 import utility.Paging2;
@@ -35,6 +36,7 @@ public class recipeFoodListController {
 			@RequestParam(value="pageNumber", required=false) String pageNumber,
 			@RequestParam(value="pageSize", required=false) String pageSize,
 			@RequestParam(value="mcategory", required=false) String mcategory,
+			@RequestParam(value="rnum", required=false) String rnum,
 			HttpServletRequest req){
 		
 		System.out.println("============검색==============");
@@ -58,9 +60,19 @@ public class recipeFoodListController {
 		System.out.println("========url=========");
 		System.out.println(url);
 		System.out.println("=====================");
+		System.out.println("===========수정할때 받아온 rnum=========");
+		System.out.println("rnum : "+rnum);
+		System.out.println("===================================");
+		recipe Recipe = null;
+		if(rnum!=null){
+			Recipe =  recipedao.DetailRecipe(Integer.parseInt(rnum));
+			System.out.println(Recipe.getRingredients());
+		}
 		ModelAndView mav = new ModelAndView();
 		Paging2 pageInfo = new Paging2(pageNumber, pageSize, totalCount, url, whatColumn, keyword);
 		List<food> food = recipedao.getFoodList(pageInfo,map);
+		System.out.println("Recipe : "+Recipe);
+		mav.addObject("recipe",Recipe);
 		mav.addObject("food", food);
 		mav.addObject("pageInfo", pageInfo);
 		mav.addObject("totalcount", totalCount);

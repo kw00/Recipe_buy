@@ -33,9 +33,9 @@
 </style>
 </head>
 <body>
-<div class="container">
 <br><br>
-	<div class="food_header">
+<div class="container">
+	<div class="food_header" align="center">
 	<p>상품 목록</p>
 	</div>
 	<br><br>

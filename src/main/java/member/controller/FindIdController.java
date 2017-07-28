@@ -21,7 +21,7 @@ import member.model.MemberDao;
 @Controller
 public class FindIdController {
    private static final String getPage = "FindId";
-   private static final String gotoPage = "redirect:/";
+   private static final String gotoPage = "../views/home";
    private static final String command = "/findid.me";
 
    @Autowired
@@ -80,6 +80,7 @@ public class FindIdController {
             writer.println("history.back();");  
             writer.println("</script>");
             writer.flush();
+            
             
             return new ModelAndView( gotoPage ) ;
 

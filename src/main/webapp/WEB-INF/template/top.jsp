@@ -27,7 +27,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 <style type="text/css">
 a {
 	text-decoration: none;
@@ -69,6 +68,9 @@ a {
 <style>
 .mainlogo {
 	font-size: 10px;
+}
+.modal-title{
+	font-size: 20px;
 }
 </style>
 </head>
@@ -140,19 +142,17 @@ a {
 									<li><a href="list.fd?whatColumn=fcategory&keyword=가공">Processed
 											food</a></li>
 									<li><a href="list.fd?whatColumn=fcategory&keyword=양념">Seasoning</a></li>
-								</ul>
-							</li>
+								</ul></li>
 							<c:choose>
 								<c:when test="${sessionScope.loginfo==null}">
 								<li><a href="find.me">Login</a></li>
-								<li><a href="find.me">Findinfo</a></li>
 								</c:when>
 								<c:otherwise>
-								<li><a href="#">${sessionScope.loginfo.id} 님</a></li>
-								<c:if test="${sessionScope.loginfo.admin == 0}">
-									<li><a href="list.me">관리자메뉴</a></li>
-								</c:if>
-								<li><a href="logout.me">Logout</a></li>
+								<li><a href="find.me">Findinfo</a></li>
+								<li>
+									<a data-toggle="modal" href="#myModal">${sessionScope.loginfo.id} 님</a>
+									</li>
+									<li><a href="logout.me">Logout</a></li>
 								</c:otherwise>
 							</c:choose>
 						</ul>
@@ -160,20 +160,78 @@ a {
 					<div class="social-icons">
 						<ul>
 							<li><a class="icon-link round twitter"
-								href="https://twitter.com/?lang=ko"></a></li>
+								href="https://www.facebook.com/"></a></li>
 							<li><a class="icon-link round p"
 								href="https://www.pinterest.co.kr"></a></li>
 							<li><a class="icon-link round facebook"
-								href="https://www.facebook.com/"></a></li>
+								href="https://twitter.com/?lang=ko"></a></li>
 							<li><a class="icon-link round dribble" href="#"></a></li>
 						</ul>
 					</div>
 				</div>
 				<!-- /.navbar-collapse -->
 			</nav>
-			<!-- header -->
 		</div>
 	</div>
+	<!-- header -->
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
 
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">×</button>
+					<div class="modal-title">
+					<p>MY PAGE</p>
+					</div>
+				</div>
+				<div style="height: 550px;">
+
+
+					<table class="table table-hover">
+						<br><br>
+						<tr>
+							<td>아이디</td>
+							<td>${sessionScope.loginfo.id}</td>
+						</tr>
+						<tr>
+							<td>이름</td>
+							<td>${sessionScope.loginfo.name}</td>
+						</tr>
+						<tr>
+							<td>성별</td>
+							<td>${sessionScope.loginfo.gender}</td>
+						</tr>
+						<tr>
+							<td>별명</td>
+							<td>${sessionScope.loginfo.nickname}</td>
+						</tr>
+						<tr>
+							<td>이메일</td>
+							<td>${sessionScope.loginfo.email}</td>
+						</tr>
+						<tr>
+							<td>핸드폰번호</td>
+							<td>
+							${sessionScope.loginfo.phone}	
+							</td>
+						</tr>
+						<tr>
+							<td>우편번호</td>
+							<td>${sessionScope.loginfo.zipcode}</td>
+						</tr>
+						<tr>
+							<td>주소</td>
+							<td>${sessionScope.loginfo.address}</td>
+						</tr>
+					</table>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
 </body>
 </html>
