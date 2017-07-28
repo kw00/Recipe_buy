@@ -11,7 +11,7 @@ import member.model.MemberDao;
 
 @Controller
 public class MemberDeleteController {
-	private static final String getPage = "MemberList";
+	private static final String getPage = "redirect:/list.me";
 	private static final String command = "/delete.me";
 	
 	@Autowired
@@ -19,7 +19,7 @@ public class MemberDeleteController {
 	private MemberDao memberDao;
 	
 	@RequestMapping(value=command)
-	public String doGetAction(@RequestParam("id") String id, Model model){
+	public String doGetAction(@RequestParam("id") String id){
 		int cnt = 0;
 		
 		cnt = memberDao.DeleteMember(id);

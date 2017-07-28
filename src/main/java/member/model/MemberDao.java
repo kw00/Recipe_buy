@@ -101,4 +101,12 @@ public class MemberDao {
 		return cnt;
 	}
 
+	public int DeleteMember(String id) {
+		int cnt = 0;
+		
+		cnt = sqlSessionTemplate.delete(namespace+".DeleteMember", id);
+		
+		return cnt;
+	}
+
 }
