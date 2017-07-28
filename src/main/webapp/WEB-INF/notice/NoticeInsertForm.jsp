@@ -50,6 +50,7 @@ $(function(){
 					<td width="100" align="center">글쓴이</td>
 					<td width="330" align="left">
 					<input type="hidden" size="30" maxlength="10" name="writer" 
+							value="${loginfo.id}[${loginfo.name}]">${loginfo.id}[${loginfo.name}]
 					<input type="hidden" name="passwd" value="${loginfo.password }">
 					</td>
 				</tr>
