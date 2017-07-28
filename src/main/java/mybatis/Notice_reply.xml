@@ -6,9 +6,12 @@
 <mapper namespace="notice.model.Notice_reply">
 	
 	<select id="getNoticeReplyList" resultType="MyNoticeReply">
-		select * from notice_reply where ref = #{num} order by ref asc, restep asc, num
+		select * from notice_reply where ref = #{num} order by restep asc, relevel asc
 	</select>
 	<insert id="replyNotice" parameterType="MyNoticeReply">
-		insert into notice_reply values(notice_replyseq.nextval,#{id}, sysdate, #{ref}, #{restep}, #{relevel}, #{content}, #{ip})
+		insert into notice_reply values(notice_replyseq.nextval,#{id}, sysdate, #{ref}, notice_replyseq.nextval, #{relevel}, #{content}, #{ip})
 	</insert>
-</mapper>
+	<insert id="replyReNotice" parameterType="MyNoticeReply">
+		insert into notice_reply values(notice_replyseq.nextval,#{id}, sysdate, #{ref}, #{restep}, notice_replyseq.nextval, #{content}, #{ip})
+	</insert>
+</mapper> 
