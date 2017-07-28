@@ -46,6 +46,45 @@
 					</td>
 				</tr>
 			</table>	
+			<table width="80%" cellspacing="0" cellpadding="0" border="1">
+				<c:forEach items="${replyLists}" var="reply">
+					<tr>
+						<th colspan="2">
+							${reply.id}
+						</th>
+					</tr>
+					<tr>
+						<td>
+							${reply.content }
+						</td>
+						<td width="80" align="right">
+							<input type="button" class="btn btn-default" value="답글달기">
+						</td>
+					</tr>
+				</c:forEach>
+			</table>
+			<c:if test="${!(loginfo.id eq null) }">
+			<form action="reply.nt" method="post">
+				<table class="table" width="430" cellspacing="0" cellpadding="0">
+					<tr>
+						<td align="center" width="23%">
+							댓글 작성
+						</td>
+						<td align="center" width="280">
+							<input type="hidden" name="id" value="${loginfo.id }">
+							<input type="hidden" name="num" value="${notice.num }">
+							<input type="hidden" name="ref" value="${notice.ref }">
+							<input type="hidden" name="re_step" value="${notice.restep }">
+							<input type="hidden" name="re_level" value="${notice.relevel }">
+							<textarea rows="3" cols="80" name="content"></textarea>
+						</td>
+						<td>
+							<input class="btn btn-default" type="submit" value="댓글달기">
+						</td>
+					</tr>
+				</table>
+			</form>
+			</c:if>
 	</div>
 	<br>
 </body>

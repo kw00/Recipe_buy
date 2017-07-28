@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="notice.model.Notice_reply">
+	
+	<select id="getNoticeReplyList" resultType="MyNoticeReply">
+		select * from notice_reply where ref = #{num} order by ref asc, restep asc, num
+	</select>
+	<insert id="replyNotice" parameterType="MyNoticeReply">
+		insert into notice_reply values(notice_replyseq.nextval,#{id}, sysdate, #{ref}, #{restep}, #{relevel}, #{content}, #{ip})
+	</insert>
+</mapper>

@@ -16,57 +16,34 @@ import org.springframework.web.servlet.ModelAndView;
 
 import notice.model.Notice;
 import notice.model.NoticeDao;
+import notice.model.Notice_reply;
+import notice.model.Notice_replyDao;
 
 @Controller
 public class NoticeReplyController {
-	private static final String getPage = "NoticeReplyForm";
-	private static final String gotoPage = "redirect:/list.nt";
+	private static final String gotoPage = "redirect:/detail.nt";
 	private static final String command = "/reply.nt";
 	
 	@Autowired
-	@Qualifier("myNoticeDao")
-	private NoticeDao noticeDao;
-	
-	@RequestMapping(value=command, method=RequestMethod.GET)
-	public String doActionGET(Model model, 
-			@RequestParam(value="pageNumber", required=false) String pageNumber,
-			@RequestParam(value="ref", required=true) String ref,
-			@RequestParam(value="restep", required=true) String restep,
-			@RequestParam(value="relevel", required=true) String relevel){
-		
-		if(pageNumber==null){
-			pageNumber = "1";
-		}
-		
-		model.addAttribute("ref", ref);
-		model.addAttribute("restep", restep);
-		model.addAttribute("relevel", relevel);
-		model.addAttribute("pageNumber", pageNumber);
-		
-		return getPage;
-	}
+	@Qualifier("myNoticeReplyDao")
+	private Notice_replyDao noticeReplyDao;
 	
 	@RequestMapping(value=command, method=RequestMethod.POST)
-	public ModelAndView doActionPOST(@ModelAttribute("nt_reply") @Valid Notice notice, BindingResult result, HttpServletRequest request){
+	public ModelAndView doActionPOST(@ModelAttribute("notice_reply") Notice_reply noticeReply, HttpServletRequest request){
 		ModelAndView mav = new ModelAndView();
 		
 		int cnt = 0;
+		String id = request.getParameter("id");
+		noticeReply.setId(id);
+		noticeReply.setIp(request.getRemoteAddr());
+		int relevel = noticeReply.getRelevel();
+		int restep = noticeReply.getRestep();
+		noticeReply.setRelevel(relevel+1);
+		noticeReply.setRestep(restep+1);
 		
-		if(result.hasErrors()){
-			System.out.println("유효성 검사 오류.");
-			mav.setViewName(getPage);
-			return mav;
-		}
+		cnt = noticeReplyDao.ReplyNotice(noticeReply);
 		
-		notice.setIp(request.getRemoteAddr());
-		int relevel = notice.getRelevel();
-		int restep = notice.getRestep();
-		notice.setRelevel(relevel+1);
-		notice.setRestep(restep+1);
-		
-		cnt = noticeDao.ReplyNotice(notice);
-		
-		mav.setViewName(gotoPage);
+		mav.setViewName(gotoPage+"?num="+noticeReply.getRef());
 		
 		return mav;
 	}

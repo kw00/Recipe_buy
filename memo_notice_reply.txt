@@ -1,0 +1,21 @@
+drop table notice_reply;
+
+create table notice_reply( 
+	num number not null primary key,
+	id varchar2(20) not null,
+	regdate date default sysdate,
+	ref number not null,
+	restep number not null,
+	relevel number not null,
+	content varchar2(3000) not null,
+	ip varchar2(50) not null
+);
+
+drop sequence notice_replyseq;
+create sequence notice_replyseq
+  increment by 1
+  start with 1
+  minvalue 1
+  maxvalue 10000
+  nocache;
+  
