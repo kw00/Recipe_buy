@@ -43,7 +43,6 @@ $(function(){
 </script>
 <body>
 	RecieInsertForm.jsp<br>
-	<a href="<%=request.getContextPath() %>">메인화면</a>
 	<div align="center">
 		<h1>레시피 등록 폼</h1>
 		<form action="insertrecipe.recipe" id="insertRecipe" enctype="multipart/form-data"  method="post" >
@@ -51,7 +50,7 @@ $(function(){
 			<div align="left">
 			<label>레시피 이름</label>
 			<input type="text" name="rname" id="rname">
-			<input type="hidden" name="rwriter" value="관리자">
+			<input type="hidden" name="rwriter" value="${sessionScope.loginfo.nickname}">
 			</div>
 			
 			<div align="left">
@@ -84,12 +83,7 @@ $(function(){
 			<input type="text" id="rprice"name="rprice" readonly="readonly">
 			<input type="hidden" id="rprice2" value="0">
 			</div>
-			
-			<div align="left">
-			<label>등록날짜</label>
-			<input type="date" name="rinputdate">
-			</div>
-			
+						
 			<div align="center">
 			<button type="submit" id="btnInsert">레시피 등록하기</button>
 			<button type="reset">다시쓰기</button>

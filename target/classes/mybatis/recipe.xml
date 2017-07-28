@@ -47,9 +47,9 @@
 	</select>
 	<insert id="InsertRecipe" parameterType="MyRecipe">
 		insert into recipe values(recipeseq.nextval,#{rwriter},#{mcategory},#{rname},#{rimage},#{ringredients}
-		,#{rcontent},#{rprice},10,#{rinputdate})
+		,#{rcontent},#{rprice},10,sysdate)
 	</insert>
 	<select id="DetailRecipe" resultType="MyRecipe">
-		select * from
+		select * from recipe where rnum = #{rnum}
 	</select>
 </mapper>

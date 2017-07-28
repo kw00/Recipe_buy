@@ -21,11 +21,14 @@ public class recipeDetailController {
 	private recipeDao recipedao;
 	
 	@RequestMapping(value=command)
-	public String detailRecipe(@RequestParam(value="num", required=true) int num, Model model){
-		System.out.println("========================받아온 레시피 넘버=================================");
-		System.out.println(num);
+	public String detailRecipe(@RequestParam(value="rnum", required=true) int rnum, Model model){
+		System.out.println("========================�޾ƿ� ������ �ѹ�=================================");
+		System.out.println(rnum);
 		System.out.println("======================================================================");
-		recipe Recipe =  recipedao.DetailRecipe(num);
+		recipe Recipe =  recipedao.DetailRecipe(rnum);
+		System.out.println("==============불러온 레시피 정보==================");
+		System.out.println(Recipe.toString());
+		System.out.println("============================================");
 		model.addAttribute("Recipe", Recipe);
 		return getPage;
 	}
