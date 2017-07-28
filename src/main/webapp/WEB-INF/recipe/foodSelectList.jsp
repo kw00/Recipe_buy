@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -23,14 +24,14 @@ $(document).ready(function(){
 			var price = $("input[name="+check+"]").val();
 			var qty = $("input[name='"+check+"Qty']").val();
 			/* alert(qty);
-			alert(check);
-			alert(price); */
+			alert(check);*/	
+			/* alert(price); */
 			sum = parseInt(sum)+(parseInt(price)*parseInt(qty));
 			stx = "<input type='checkbox' id='"+check+"' name='ringredients' value='"
-					+check+"-"+qty+"'checked disabled='disabled'><font id='"+check+"' color='blue'>"
+					+check+"-"+qty+"-"+price+"'checked disabled='disabled'><font id='"+check+"' color='blue'>"
 					+check+"</font><font id='"+check+"' color='red'>"+qty+"</font>"+
 					"<input type='hidden' id='"+check+"' name='ringredients' value='"
-						+check+"-"+qty+"'checked readonly='readonly'>";
+						+check+"-"+qty+"-"+price+"'checked readonly='readonly'>";
 			$('#result', opener.document).append(stx);
 			$('#rprice', opener.document).val(sum);
 			$('#rprice2', opener.document).val(sum);
@@ -78,11 +79,33 @@ $(document).ready(function(){
 		</form>
 		전체 재료 갯수 : ${totalcount}
 		</div>
+		
 			<c:forEach items="${food}" var="lists" varStatus="status">
 			<div>
 				<img src="#" alt="${lists.fname }" width="100" height="100">
 				<br>
-				<input type="checkbox" id="foodname" value="${lists.fname }">${lists.fname }
+				<c:choose>
+					<c:when test="${recipe != null }">
+					<c:forEach items="${fn:split(recipe.ringredients,',') }" var="i" varStatus="a">
+						<c:forTokens items="${i}" delims="-" var="ingred" varStatus="status">
+							<c:if test="${status.count==1 }">
+								<c:set value="${ingred}" var="fname"/>
+							</c:if>
+						</c:forTokens>
+						<c:if test="${fn:contains(fname,lists.fname) }">
+							<input type="checkbox" id="foodname" value="${lists.fname }"
+								<c:if test="${fn:contains(fname,lists.fname) }">
+								checked
+								</c:if>
+								>${lists.fname }
+						</c:if>
+					</c:forEach>
+						<input type="checkbox" id="foodname" value="${lists.fname }">${lists.fname }
+					</c:when>
+					<c:otherwise>
+					<input type="checkbox" id="foodname" value="${lists.fname }">${lists.fname }
+					</c:otherwise>
+				</c:choose>
 				<br>
 				<input type="text" id="foodQty" name="${lists.fname }Qty" size="1" value="1" disabled="disabled">
 				<button onclick="Plus('${lists.fname}Qty')">+</button>

@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -26,7 +27,7 @@ public class recipeListController {
 	@Qualifier("myRecipe")
 	private recipeDao recipedao;
 	
-	@RequestMapping(value=command)
+	@RequestMapping(value=command,method=RequestMethod.GET)
 	public ModelAndView getList(
 			@RequestParam(value="whatColumn", required=false) String whatColumn,
 			@RequestParam(value="keyword", required=false) String keyword,

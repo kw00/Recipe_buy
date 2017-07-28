@@ -1,17 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@include file="./../template/top.jsp" %>
+<%@include file="./../template/top.jsp"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="author" content="">
-
-<!-- Le styles -->
-<link href="assets/css/bootstrap.css" rel="stylesheet">
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
 <style type="text/css">
 body {
 	padding-top: 40px;
@@ -49,6 +43,26 @@ body {
 }
 </style>
 
+<script>
+function check(){
+	if (!$("input[name=id]").val()) {
+	       alert('아이디를 입력해주세요');
+	       $("input[name=id]").focus();
+	       return false;
+	    }
+	if (!$("input[name=name]").val()) {
+	       alert('이름을 입력해주세요');
+	       $("input[name=name]").focus();
+	       return false;
+	    }
+	if (!$("input[name=ssn]").val()) {
+	       alert('주민등록번호를 입력해주세요');
+	       $("input[name=ssn]").focus();
+	       return false;
+	    }
+}
+</script>
+
 <body>
 <br><br><br><br><br>
 	<div class="container">
@@ -59,12 +73,12 @@ body {
 				</div>
 				<br> <input type="text" class="form-control" name="id" placeholder="아이디를 입력하세요."><br>
 					<input type="text" class="form-control" name="name" placeholder="이름을 입력하세요."><br>
-					<input type="tel" class="form-control" name="ssn" placeholder="-를 제외한 주민등록번호를 입력하세요.">
+					<input type="text" class="form-control" name="ssn" placeholder="-를 제외한 주민등록번호를 입력하세요.">
 				<div class="checkbox">
 					<label> <input type="checkbox" value="remember-me">Remember me</label>
 				</div>
 				<br>
-			<button class="btn btn-sm btn-warning" type="submit" align="center">FindPw</button>
+			<button class="btn btn-sm btn-warning" type="submit" align="center" onClick="return check()">FindPw</button>
 			<a href="#" onclick="history.go(-1)"><button class="btn btn-sm btn-danger" type="button">Cancel</button></a>
 				</div>
 			</div>

@@ -14,11 +14,9 @@
 </script>
 <body>
 	RecipeList.jsp<br><br>
-	<%=request.getContextPath() %>
-	<a href="<%=request.getContextPath() %>">메인화면</a>
 	<h1 align="center">게시판 목록보기</h1>
 	<div align="center">
-		<form action="/recipeList.recipe" method="get">
+		<form action="recipeList.recipe" method="get">
 			<select name="whatColumn">
 				<option value="rname">제목</option>
 			</select>

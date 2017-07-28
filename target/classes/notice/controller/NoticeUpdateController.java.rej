@@ -1,0 +1,79 @@
+diff a/src/main/java/notice/controller/NoticeUpdateController.java b/src/main/java/notice/controller/NoticeUpdateController.java	(rejected hunks)
+@@ -24,40 +24,61 @@
+ 	private static final String getPage = "NoticeUpdateForm";
+ 	private static final String gotoPage = "redirect:/list.nt";
+ 	private static final String command = "/update.nt";
+-
++	
+ 	@Autowired
+ 	@Qualifier("myNoticeDao")
+ 	private NoticeDao noticeDao;
+-
++	
+ 	@RequestMapping(value=command, method=RequestMethod.GET)
+ 	public String doActionGET(@RequestParam("num") int num, Model model, 
+-			@RequestParam(value="pageNumber", required=false) String pageNumber){
+-
++		@RequestParam(value="pageNumber", required=false) String pageNumber){
++		
+ 		Notice notice = new Notice();
+-
++		
+ 		notice = noticeDao.getNotice(num);
+-
++		
+ 		if(pageNumber==null){
+ 			pageNumber = "1";
+ 		}
+-
++		
+ 		model.addAttribute("notice", notice);
+ 		model.addAttribute("pageNumber", pageNumber);
+-
++		
+ 		return getPage;
+ 	}
+-
++	
+ 	@RequestMapping(value=command, method=RequestMethod.POST)
+ 	public ModelAndView doActionPOST(Notice notice, HttpServletRequest request, HttpServletResponse response, HttpSession session) throws IOException{
+-
++		
+ 		ModelAndView mav = new ModelAndView();
+-
++		
++		Notice db_notice = noticeDao.getNotice(notice.getNum());
++		
++		PrintWriter writer;
+ 		response.setContentType("text/html; charset=UTF-8");
+-
+-		int cnt = 0;
+-		cnt = noticeDao.UpdateNotice(notice);
+-		mav.setViewName(gotoPage);
+-
++		
++		if(notice.getPasswd()==null){
++			writer = response.getWriter();
++			writer.println("<script type='text/javascript'>");
++			writer.println("alert('��й�ȣ�� �Է��� �ּ���.')");
++			writer.println("</script>");
++			writer.flush();
++			mav.setViewName(getPage);
++		}else{
++			if(notice.getPasswd().equals(db_notice.getPasswd())){
++				int cnt = 0;
++				cnt = noticeDao.UpdateNotice(notice);
++				mav.setViewName(gotoPage);
++			}else{
++				writer = response.getWriter();
++				writer.println("<script type='text/javascript'>");
++				writer.println("alert('��й�ȣ�� Ʋ�Ƚ��ϴ�.')");
++				writer.println("</script>");
++				writer.flush();
++				return new ModelAndView(getPage);
++			}
++		}
++		
+ 		return mav;
+ 	}
+ }

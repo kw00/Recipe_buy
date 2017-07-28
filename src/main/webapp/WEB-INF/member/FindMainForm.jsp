@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="./../template/top.jsp"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
-<link href="resources/bootstrap/css/responsive.css" rel="stylesheet">
-
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
 <style type="text/css">
 body {
 	padding-top: 40px;
@@ -41,6 +42,20 @@ body {
 	font-size: 30px;
 }
 </style>
+<script>
+function check(){
+	if (!$("input[name=id]").val()) {
+	       alert('아이디를 입력해주세요');
+	       $("input[name=id]").focus();
+	       return false;
+	    }
+	if (!$("input[name=password]").val()) {
+	       alert('비밀번호를 입력해주세요');
+	       $("input[name=password]").focus();
+	       return false;
+	    }
+}
+</script>
 </head>
 
 <body>
@@ -59,7 +74,7 @@ body {
 				</div>
 				<br>
 				<div class="button">
-					<button class="btn btn-sm btn-warning" type="submit">LogIn</button>
+					<button class="btn btn-sm btn-warning" type="submit" onClick="return check()">LogIn</button>
 					<button class="btn btn-sm btn-warning" type="button" value="회원 가입"
 						onclick="javascript:location.href='signupAssent.me'">SignIn</button>
 					<button class="btn btn-sm btn-warning" type="button" value="아이디 찾기"
