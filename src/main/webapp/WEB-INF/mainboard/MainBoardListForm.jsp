@@ -73,10 +73,12 @@ function insert(){
 			</c:forEach>
 		</table>
 		
-		<div>
-			${pageInfo.pagingHtml}
+		<div class="container">
+			<ul class="pagination">
+				${pageInfo.pagingHtml}
+			</ul>
 		</div>
-	</div>
+	</div>	
 </body>
 </html>
 

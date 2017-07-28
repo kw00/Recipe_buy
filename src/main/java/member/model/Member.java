@@ -44,7 +44,7 @@ public class Member {
 	private String joindate; //varchar2(20),
 	
 	@NotNull(message="사용자를 선택해주세요.")
-	private char admin; //char(20)
+	private String admin; //varchar2(10)
 	
 	//DB에 저장은 되지 않는 것들
 	@NotEmpty(message="번호를 입력하세요.")
@@ -164,10 +164,10 @@ public class Member {
 	public void setJoindate(String joindate) {
 		this.joindate = joindate;
 	}
-	public char getAdmin() {
+	public String getAdmin() {
 		return admin;
 	}
-	public void setAdmin(char admin) {
+	public void setAdmin(String admin) {
 		this.admin = admin;
 	}
 	

@@ -29,14 +29,10 @@ public class LoginController {
 	@RequestMapping(value=command, method=RequestMethod.POST)
 	public ModelAndView doActionPOST(Member member, HttpServletRequest request, HttpServletResponse response, HttpSession session) throws IOException{
 		System.out.println(this.getClass()+"POST방식");
-		System.out.println("아이디 : " + member.getId());
-		System.out.println("비밀번호 : " + member.getPassword());
 		
 		ModelAndView mav = new ModelAndView();
 		
 		Member login = this.memberDao.GetMember(member.getId());
-		
-		
 		
 		if(login==null){
 			mav.addObject("message", "존재하지 않는 회원입니다.");
@@ -46,8 +42,8 @@ public class LoginController {
 		}else{
 			if(member.getId().equals(login.getId())&&member.getPassword().equals(login.getPassword())){
 				session.setAttribute("loginfo", login);
+				session.setMaxInactiveInterval(1800); 
 				System.out.println("갈 곳 : "+ session.getAttribute("destination"));
-				
 				if(session.getAttribute("destination")==null){
 					mav.setViewName(gotoPage);
 					

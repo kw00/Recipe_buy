@@ -8,30 +8,32 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<table class="table" id="commentslist" style="width:70%; border: 1px solid lightgray;">
-		<tbody class="title">
-			<tr align="center">
-				<!-- 
-					<th>num</th>
-					<th>memnum</th> 
-					<td>이름</td>
-				-->
-				<td style="width:10%;">아이디</td>
-				<td style="width:60%;">내용</td>
-				<td style="width:20%;">글쓴날</td>
-				<td style="width:10%;">삭제</td>
-			</tr>
-		</tbody>
-		<tbody class="list">
-		</tbody>
-	</table>
-		<div id="pagingDiv"></div>
-	<form action="<c:url value='/comments/insert.do'/>">
-		<textarea rows="4" cols="100" name="content"></textarea>
-		<button type="button" onclick="comm_insert(this.form)">작성</button>
-		<input type="hidden" name="boardnum" value="${param.num}">
-		<input type="hidden" name="memnum" value="${loginfo.num}"> 
-	</form>
+	<div align="center">
+		<table class="table" id="commentslist" style="width:80%; border: 1px solid lightgray;">
+			<tbody class="title">
+				<tr align="center">
+					<!-- 
+						<th>num</th>
+						<th>memnum</th> 
+						<td>이름</td>
+					-->
+					<td style="width:20%;">아이디</td>
+					<td style="width:50%;">내용</td>
+					<td style="width:20%;">글쓴날</td>
+					<td style="width:10%;">삭제</td>
+				</tr>
+			</tbody>
+			<tbody class="list">
+			</tbody>
+		</table>
+			<div id="pagingDiv"></div>
+		<form action="<c:url value='/comments/insert.do'/>">
+			<textarea rows="4" cols="100" name="content"></textarea>
+			<button type="button" onclick="comm_insert(this.form)">작성</button>
+			<input type="hidden" name="boardnum" value="${param.num}">
+			<input type="hidden" name="memnum" value="${loginfo.num}"> 
+		</form>
+	</div>
 <script>
 window.onload = function(){
 	loadComments();

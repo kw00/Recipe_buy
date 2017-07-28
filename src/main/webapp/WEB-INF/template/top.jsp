@@ -148,11 +148,11 @@ a {
 								<li><a href="find.me">Login</a></li>
 								</c:when>
 								<c:otherwise>
-								<li><a href="find.me">Findinfo</a></li>
-								<li>
-									<a data-toggle="modal" href="#myModal">${sessionScope.loginfo.id} 님</a>
-									</li>
-									<li><a href="logout.me">Logout</a></li>
+								<li><a data-toggle="modal" href="#myModal">${sessionScope.loginfo.id} 님</a></li>
+								<c:if test="${sessionScope.loginfo.admin == 0}">
+									<li><a href="list.me">관리자메뉴</a></li>
+								</c:if>
+								<li><a href="logout.me">Logout</a></li>
 								</c:otherwise>
 							</c:choose>
 						</ul>

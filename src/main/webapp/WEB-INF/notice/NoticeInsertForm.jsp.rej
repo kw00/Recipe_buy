@@ -1,0 +1,9 @@
+diff a/src/main/webapp/WEB-INF/notice/NoticeInsertForm.jsp b/src/main/webapp/WEB-INF/notice/NoticeInsertForm.jsp	(rejected hunks)
+@@ -51,6 +51,7 @@
+ 					<td width="330" align="left">
+ 					<input type="hidden" size="30" maxlength="10" name="writer" 
+ 							value="관리자">관리자
++					<input type="hidden" name="passwd" value="${loginfo.password }">
+ 					</td>
+ 				</tr>
+ 				

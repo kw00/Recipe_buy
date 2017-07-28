@@ -164,11 +164,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					a man who chooses to enjoy a pleasure that has no annoying
 					consequences</p>
 				<form class="wow fadeInLeftBig" data-wow-duration="1000ms"
-					data-wow-delay="300ms">
+					data-wow-delay="300ms" action="list.me">
 					<input type="mail" value="Search for the desired recipe"
 						onfocus="this.value = '';"
-						onblur="if (this.value == '') {this.value = 'Enter Your Email';}"
-						required=""> <input type="submit" value="Search">
+						onblur="if (this.value == '') {this.value = 'Enter Your Recipe';}"
+						required=""> 
+					<input type="submit" value="Search">
 				</form>
 			</div>
 		</div>
