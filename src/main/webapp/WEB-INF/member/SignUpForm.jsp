@@ -82,7 +82,7 @@
 			</div>
 			
 			<div class="form-group">
-				<label class="control-label col-sm-2" for="phone1">번호:</label>
+				<label class="control-label col-sm-2" for="phone1">핸드폰번호:</label>
 				<div class="col-sm-2">
 					<input type="text" class="form-control" name="phone1" placeholder="010" value="${member.phone1}" maxlength="3">
 					<form:errors cssClass="err" path="phone1" />

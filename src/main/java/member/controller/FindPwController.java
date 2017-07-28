@@ -29,7 +29,7 @@ import member.model.MemberDao;
 @Controller
 public class FindPwController {
 	private static final String getPage = "FindPw";
-	private static final String gotoPage = "redirect:/";
+	private static final String gotoPage = "../views/home";
 	private static final String command = "/findpw.me";
 	
 	@Autowired

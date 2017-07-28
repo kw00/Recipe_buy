@@ -16,4 +16,13 @@
 	<select id="GetMember" resultType="MyMember" parameterType="string">
 		select * from members where id = #{id}
 	</select>
+	
+	<select id="GetId" resultType="MyMember" parameterType="string">
+		select * from members where name = #{name}
+	</select>
+	<select id="GetPw" resultType="MyMember" parameterType="string">
+		select * from members where id = #{id}
+	</select>
+	
+	
 </mapper>	

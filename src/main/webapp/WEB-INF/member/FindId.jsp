@@ -1,16 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@include file="./../template/top.jsp" %>
+<%@include file="./../template/top.jsp"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="author" content="">
-
-<!-- Le styles -->
-<link href="assets/css/bootstrap.css" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>FindId</title>
 
 <style type="text/css">
 body {
@@ -48,7 +43,20 @@ body {
 	font-size: 30px;
 }
 </style>
-
+<script>
+function check(){
+	if (!$("input[name=name]").val()) {
+	       alert('이름를 입력해주세요');
+	       $("input[name=name]").focus();
+	       return false;
+	    }
+	if (!$("input[name=ssn]").val()) {
+	       alert('주민등로번호를 입력해주세요');
+	       $("input[name=ssn]").focus();
+	       return false;
+	    }
+}
+</script>
 </head>
 
 <body>
@@ -60,7 +68,7 @@ body {
 				<p>Please Find Id</p>
 				</div>
 				<br> <input type="text" class="form-control" name="name"
-					placeholder="이름을 입력하세요."><br> <input type="tel"
+					placeholder="이름을 입력하세요."><br> <input type="text"
 					class="form-control" name="ssn" placeholder="-를 제외한 주민등록번호를 입력하세요.">
 				<div class="checkbox">
 					<label> <input type="checkbox" value="remember-me">Remember
@@ -68,7 +76,7 @@ body {
 					</label>
 				</div>
 				<br>
-				<button class="btn btn-sm btn-warning" type="submit">FindId</button>
+				<button class="btn btn-sm btn-warning" type="submit" onClick="return check()">FindId</button>
 				<a href="#" onclick="history.go(-1)"><button
 						class="btn btn-sm btn-danger" type="button">Cancel</button></a>
 			</div>
