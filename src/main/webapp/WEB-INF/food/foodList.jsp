@@ -24,9 +24,21 @@
 		location.href='update.fd?fnum='+fnum;
 	}
 </script>
+<link href="../../bootstrap/css/font-awesome.css" rel="stylesheet" type="text/css">
 <title>Insert title here</title>
+<style>
+.food_header{
+	font-size: 20px;
+}
+</style>
 </head>
 <body>
+<div class="container">
+<br><br>
+	<div class="food_header">
+	<p>상품 목록</p>
+	</div>
+	<br><br>
 <!-- <center> 
 	<form action="list.fd" method="get">
 		<select name="whatColumn">
@@ -84,6 +96,8 @@
 	<center>
 		${pageInfo.pagingHtml}
 	</center>
+	</div>
+	<br><br>
 <%@ include file="./../template/bottom.jsp" %>
 </body>
 </html>

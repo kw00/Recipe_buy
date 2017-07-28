@@ -18,7 +18,7 @@ import member.model.MemberDao;
 @Controller
 public class FindMainController {
 	private static final String getPage = "FindMainForm";
-	private static final String gotoPage = "../views/home";
+	private static final String gotoPage = "redirect:/";
 	private static final String command = "/find.me";
 	
 	@Autowired

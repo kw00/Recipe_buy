@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div class="footer-bottom wow fadeInUp" data-wow-duration="1000ms"
+		data-wow-delay="300ms">
+		<div class="container">
 	<div class="col-sm-12" align="center">
 		<hr>
 		<div>
@@ -19,10 +22,12 @@
 			<a href="#"> 확률형 아이템 목록</a>
 		</div>
 		<div style="font-size: 9pt; color: gray;">
-			(주) 네오플 대표이사 김명현 제주특별자치도 제주시 1100로 3198-8 (노형동, NXC센터) 전화 1588-7701 팩스 0502-258-8390<br>
+			<p>(주) 네오플 대표이사 김명현 제주특별자치도 제주시 1100로 3198-8 (노형동, NXC센터) 전화 1588-7701 팩스 0502-258-8390<br>
 			E-mail : privacy@neople.co.kr 사업자등록번호 201-81-64417 통신판매업 신고 제2015-제주노형-0003호 사업자정보확인<br>
-			copyright (C) Neople inc. All rights reserved.
+			copyright (C) Neople inc. All rights reserved.</p>
 		</div>
+	</div>
+	</div>
 	</div>
 </body>
 </html>

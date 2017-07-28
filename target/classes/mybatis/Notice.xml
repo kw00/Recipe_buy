@@ -12,8 +12,8 @@
 			where subject like #{keyword}
 		</if>
 		
-		<if test="whatColumn == 'content'">
-			where content like #{keyword}
+		<if test="whatColumn == 'writer'">
+			where writer like #{keyword}
 		</if>
 		
 		order by ref desc, restep asc
@@ -25,16 +25,16 @@
 		<if test="whatColumn == 'subject'">
 			where subject like #{keyword}
 		</if>
-			
-		<if test="whatColumn == 'content'">
-			where content like #{keyword}
+		
+		<if test="whatColumn == 'writer'">
+			where writer like #{keyword}
 		</if>
 		order by ref desc, restep asc
 	</select>
 	
 	<insert id="InsertNotice">
 		insert into notice(num, writer, subject, passwd, regdate, readcount, ref, restep, relevel, content, ip)
-		values(noticeseq.nextval,#{writer},#{subject},#{passwd, jdbcType=VARCHAR},SYSDATE,#{readcount, jdbcType=VARCHAR},noticeseq.nextval,0,0,#{content},#{ip})
+		values(noticeseq.nextval,#{writer},#{subject},#{passwd},SYSDATE,#{readcount, jdbcType=VARCHAR},noticeseq.nextval,0,0,#{content},#{ip})
 	</insert>
 	
 	<select id="getNotice" parameterType="int" resultType="MyNotice">

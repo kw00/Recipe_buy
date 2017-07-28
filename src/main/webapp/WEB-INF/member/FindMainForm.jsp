@@ -1,6 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@include file="./../template/top.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<link href="resources/bootstrap/css/responsive.css" rel="stylesheet">
 
 <style type="text/css">
 body {
@@ -34,33 +37,39 @@ body {
 	margin-bottom: 15px;
 	padding: 7px 9px;
 }
-
+.form-signin-heading{
+	font-size: 30px;
+}
 </style>
 </head>
 
 <body>
-
+<br><br><br><br><br>
 	<div class="container">
-
 		<form class="form-signin" action="login.me" method="post">
 			<div class="form-group">
-				<h2 class="form-signin-heading">Please Sign In</h2>
+			<div class="form-signin-heading">
+				<p>Please Sign In</p>
+				</div>
 				<br> 
-				<input type="text" class="form-control" name="id" placeholder="¾ÆÀÌµð"><br> 
-				<input type="password" class="form-control" name="password" placeholder="ºñ¹Ð¹øÈ£">
+				<input type="text" class="form-control" name="id" placeholder="ì•„ì´ë””"><br> 
+				<input type="password" class="form-control" name="password" placeholder="ë¹„ë°€ë²ˆí˜¸">
 				<div class="checkbox">
 				<label> <input type="checkbox" value="remember-me">Remember me</label>
 				</div>
+				<br>
 				<div class="button">
-					<button class="btn btn-sm btn-primary" type="submit">LogIn</button>
-					<button class="btn btn-sm btn-primary" type="button" value="È¸¿ø °¡ÀÔ"
-						onclick="javascript:location.href='signup.me'">SignIn</button>
-					<button class="btn btn-sm btn-primary" type="button" value="¾ÆÀÌµð Ã£±â"
+					<button class="btn btn-sm btn-warning" type="submit">LogIn</button>
+					<button class="btn btn-sm btn-warning" type="button" value="íšŒì› ê°€ìž…"
+						onclick="javascript:location.href='signupAssent.me'">SignIn</button>
+					<button class="btn btn-sm btn-warning" type="button" value="ì•„ì´ë”” ì°¾ê¸°"
 						onclick="javascript:location.href='findid.me'">FindId</button>
-					<button class="btn btn-sm btn-primary" type="button" value="ºñ¹ø Ã£±â"
-						onclick="javascript:location.href='findpw.me'">FindPw</button><br><br>
-						<a href="#" onclick="history.go(-1)"><button class="btn btn-sm btn-primary" type="button">Cancel</button></a>
+					<button class="btn btn-sm btn-warning" type="button" value="ë¹„ë²ˆ ì°¾ê¸°"
+						onclick="javascript:location.href='findpw.me'">FindPw</button>
+						<a href="#" onclick="history.go(-1)">
+						<button class="btn btn-sm btn-danger" type="button">Cancel</button></a>
 				</div>
+				<br>
 			</div>
 		</form>
 	</div>

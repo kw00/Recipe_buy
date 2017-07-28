@@ -18,7 +18,7 @@ import member.model.MemberDao;
 
 @Controller
 public class LoginController {
-	private static final String gotoPage = "../views/home";
+	private static final String gotoPage = "redirect:/";
 	private static final String command = "/login.me";
 	private static final String command2 = "/logout.me";
 	

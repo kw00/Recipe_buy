@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@include file="./../template/top.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,19 +9,19 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-
-
+<!-- Le styles -->
+<link href="assets/css/bootstrap.css" rel="stylesheet">
 
 <style type="text/css">
 body {
 	padding-top: 40px;
 	padding-bottom: 40px;
-	background-image: url("img/background.jpg");
+	background-image:url("img/background.jpg");
 	background-size: 100%;
 }
 
 .form-signin {
-	max-width: 30%;
+	max-width: 33%;
 	padding: 19px 29px 29px;
 	margin: 0 auto 20px;
 	background-color: #fff;
@@ -37,23 +38,27 @@ body {
 	margin-bottom: 10px;
 }
 
-.form-signin input[type="text"], .form-signin input[type="tel"] {
-	font-size: 12px;
+.form-signin input[type="text"], .form-signin input[type="password"] {
+	font-size: 16px;
 	height: auto;
 	margin-bottom: 15px;
 	padding: 7px 9px;
+}
+.form-signin-heading{
+	font-size: 30px;
 }
 </style>
 
 </head>
 
 <body>
-
+<br><br><br><br><br>
 	<div class="container">
-
-		<form class="form-findid" action="findid.me" method="post">
+		<form class="form-signin" action="findid.me" method="post">
 			<div class="form-group">
-				<h2 class="form-signin-heading">Please Find Id</h2>
+				<div class="form-signin-heading">
+				<p>Please Find Id</p>
+				</div>
 				<br> <input type="text" class="form-control" name="name"
 					placeholder="이름을 입력하세요."><br> <input type="tel"
 					class="form-control" name="ssn" placeholder="-를 제외한 주민등록번호를 입력하세요.">
@@ -62,13 +67,13 @@ body {
 						me
 					</label>
 				</div>
-				<button class="btn btn-sm btn-primary" type="submit">FindId</button>
+				<br>
+				<button class="btn btn-sm btn-warning" type="submit">FindId</button>
 				<a href="#" onclick="history.go(-1)"><button
-						class="btn btn-sm btn-primary" type="button">Cancel</button></a>
+						class="btn btn-sm btn-danger" type="button">Cancel</button></a>
 			</div>
 	</div>
 	</form>
-
 	</div>
 </body>
 </html>
