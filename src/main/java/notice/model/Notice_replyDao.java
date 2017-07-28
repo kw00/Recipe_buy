@@ -27,6 +27,13 @@ public class Notice_replyDao {
 		int cnt = -1;
 		cnt = sqlSessionTemplate.insert(namespace+".replyNotice", noticeReply);
 		return cnt;
+	}
+
+	public int ReplyReNotice(Notice_reply noticeReply) {
+		// TODO Auto-generated method stub
+		int cnt = -1;
+		cnt = sqlSessionTemplate.insert(namespace+".replyReNotice", noticeReply);
+		return cnt;
 	} 
 	
 }
