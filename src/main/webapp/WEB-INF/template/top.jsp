@@ -140,19 +140,21 @@ a {
 									<li><a href="list.fd?whatColumn=fcategory&keyword=가공">Processed
 											food</a></li>
 									<li><a href="list.fd?whatColumn=fcategory&keyword=양념">Seasoning</a></li>
-								</ul></li>
+								</ul>
+							</li>
 							<c:choose>
 								<c:when test="${sessionScope.loginfo==null}">
 								<li><a href="find.me">Login</a></li>
+								<li><a href="find.me">Findinfo</a></li>
 								</c:when>
 								<c:otherwise>
-								<li><a href="find.me">Findinfo</a></li>
-								<li>
-									<a href="#">${sessionScope.loginfo.id} 님</a>
-									</li>
+								<li><a href="#">${sessionScope.loginfo.id} 님</a></li>
+								<c:if test="${sessionScope.loginfo.admin == 0}">
+									<li><a href="list.me">관리자메뉴</a></li>
+								</c:if>
+								<li><a href="logout.me">Logout</a></li>
 								</c:otherwise>
 							</c:choose>
-							<li><a href="logout.me">Logout</a></li>
 						</ul>
 					</nav>
 					<div class="social-icons">

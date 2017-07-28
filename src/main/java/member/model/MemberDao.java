@@ -1,8 +1,15 @@
 package member.model;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.ibatis.session.RowBounds;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import utility.Paging;
 
 @Component("myMemberDao")
 public class MemberDao {
@@ -45,7 +52,7 @@ public class MemberDao {
 		
 		return idFlag;
 	}
-
+	
 	//로그인 확인
 	public Member GetMember(String id) {
 		Member member = null;
@@ -65,6 +72,33 @@ public class MemberDao {
 		Member bean = null;
 		bean = sqlSessionTemplate.selectOne(namespace + ".GetPw",	id);
 		return bean;
+	}
+	
+	public int GetTotalCount(Map<String, String> map) {
+		int cnt = 0;
+		
+		cnt = sqlSessionTemplate.selectOne(namespace+".GetTotalCount", map);
+		
+		return cnt;
+	}
+
+	public List<Member> getMemberList(Paging pageInfo, Map<String, String> map) {
+		
+		List<Member> lists = new ArrayList<Member>();
+		
+		RowBounds rowBounds = new RowBounds(pageInfo.getOffset(), pageInfo.getLimit());
+		
+		lists = sqlSessionTemplate.selectList(namespace+".getMemberList", map, rowBounds);
+		
+		return lists;
+	}
+
+	public int UpdateMember(Member member) {
+		int cnt = 0;
+		
+		cnt = sqlSessionTemplate.update(namespace+".UpdateMember", member);
+		
+		return cnt;
 	}
 
 }

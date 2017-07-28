@@ -225,22 +225,22 @@ public class Paging {
 		String added_param = "&whatColumn=" + whatColumn + "&keyword=" + keyword ; 
 		
 		if (this.beginPage != 1) { //앞쪽, pageSize:한 화면에 보이는 레코드 수
-			result += "&nbsp;<a href='" + url  
-					+ "?pageNumber=" + ( 1 ) + "&pageSize=" + this.pageSize + "'>맨 처음</a>&nbsp;" ;
-			result += "&nbsp;<a href='" + url 
+			result += "&nbsp;<li><a href='" + url  
+					+ "?pageNumber=" + ( 1 ) + "&pageSize=" + this.pageSize + "'>맨 처음</a></li>&nbsp;" ;
+			result += "&nbsp;<li><a href='" + url 
 					+ "?pageNumber=" + (this.beginPage - 1 ) + "&pageSize=" + this.pageSize 
-					+ added_param + "'>이전</a>&nbsp;" ;
+					+ added_param + "'>이전</a></li>&nbsp;" ;
 		}
 		
 		//가운데
 		for (int i = this.beginPage; i <= this.endPage ; i++) {
 			if ( i == this.pageNumber ) {
-				result += "&nbsp;<font color='red'>" + i + "</font>&nbsp;"	;
+				result += "&nbsp;<li class='active'><a herf='#'>" + i + "</a></li>&nbsp;"	;
 						
 			} else {
-				result += "&nbsp;<a href='" + url   
+				result += "&nbsp;<li><a href='" + url   
 						+ "?pageNumber=" + i + "&pageSize=" + this.pageSize 
-						+ added_param + "'>" + i + "</a>&nbsp;" ;
+						+ added_param + "'>" + i + "</a></li>&nbsp;" ;
 				
 			}
 		}
@@ -250,13 +250,13 @@ public class Paging {
 		
 		if ( this.endPage != this.totalPage) { // 뒤쪽
 			
-			result += "&nbsp;<a href='" + url  
+			result += "&nbsp;<li><a href='" + url  
 					+ "?pageNumber=" + (this.endPage + 1 ) + "&pageSize=" + this.pageSize 
-					+ added_param + "'>다음</a>&nbsp;" ;
+					+ added_param + "'>다음</a></li>&nbsp;" ;
 			
-			result += "&nbsp;<a href='" + url  
+			result += "&nbsp;<li><a href='" + url  
 					+ "?pageNumber=" + (this.totalPage ) + "&pageSize=" + this.pageSize 
-					+ added_param + "'>맨 끝</a>&nbsp;" ;
+					+ added_param + "'>맨 끝</a></li>&nbsp;" ;
 		}		
 		
 		return result ;

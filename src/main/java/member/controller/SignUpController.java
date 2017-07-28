@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import member.model.CheckId;
+import member.model.CheckPwd;
 import member.model.Member;
 import member.model.MemberDao;
 
@@ -84,7 +85,6 @@ public class SignUpController {
       System.out.println("---signup Post end---");
       return mav;
    }
-   
    
    //Controller 클래스의 @Controller를 @RestController로 바꾸는 방법과
    //해당 메소드를 @ResponseBody를 사용하는 방법이 있다.
