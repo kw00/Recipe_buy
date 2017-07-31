@@ -52,4 +52,8 @@
 	<select id="DetailRecipe" resultType="MyRecipe">
 		select * from recipe where rnum = #{rnum}
 	</select>
+	<update id="UpdateReicpe" parameterType="MyRecipe">
+		update recipe set mcategory=#{mcategory},rname=#{rname},rimage=#{rimage},ringredients=#{ringredients}
+		,rcontent=#{rcontent},rprice=#{rprice} where rnum = #{rnum}
+	</update>
 </mapper>

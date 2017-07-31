@@ -72,4 +72,10 @@ public class recipeDao {
 		recipe Recipe = sqlSessionTemplate.selectOne(namespace+".DetailRecipe",num);
 		return Recipe;
 	}
+	public int UpdateRecipe(recipe recipe) {
+		// TODO Auto-generated method stub
+		int update = 0;
+		update = sqlSessionTemplate.update(namespace+".UpdateReicpe",recipe);
+		return update;
+	}
 }
