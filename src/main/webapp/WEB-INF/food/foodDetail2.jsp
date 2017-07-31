@@ -23,8 +23,7 @@ location.href="add.mall?fnum="+$("input[name='fnum']").val()+"&fqty="+$("input[n
 </head>
 <body>
 <br><br>
-
-
+<table class="table" border=0>
 <div class="container">
 	<div class="food_detailheader" align="center">
 	<p>상품 목록</p>
