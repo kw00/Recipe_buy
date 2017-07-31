@@ -94,7 +94,11 @@
 		</c:forEach>
 	</table>
 	<center>
-		${pageInfo.pagingHtml}
+		<div class="container">
+			<ul class="pagination">
+				${pageInfo.pagingHtml}
+			</ul>
+		</div>
 	</center>
 	</div>
 	<br><br>

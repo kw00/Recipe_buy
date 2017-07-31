@@ -24,5 +24,40 @@
 		select * from members where id = #{id}
 	</select>
 	
+	<!-- 게시판 전채 갯수 불러오기 -->
+	<select id="GetTotalCount" resultType="int" parameterType="hashmap">
+		select count(*) from members
+		
+		<if test="whatColumn == 'id' ">
+			where id like #{keyword}
+		</if>
+		<if test="whatColumn == 'name' ">
+			where name like #{keyword}
+		</if>
+		
+		order by num desc
+	</select>
 	
+	<!-- 게시판 글 전채 불러오기 -->
+	<select id="getMemberList" resultType="MyMember" parameterType="hashmap">
+		select * from members
+		
+		<if test="whatColumn == 'id' ">
+			where id like #{keyword}
+		</if>
+		<if test="whatColumn == 'name' ">
+			where name like #{keyword}
+		</if>
+			
+		order by num desc
+	</select>
+	
+	<update id="UpdateMember">
+		update members set password=#{password}, nickname=#{nickname}, email=#{email}, phone=#{phone}, address=#{address}, 
+		zipcode=#{zipcode}, ssn=#{ssn}, gender=#{gender}, admin=#{admin} where id = #{id}
+	</update>
+	
+	<delete id="DeleteMember">
+		delete from members where id = #{id} 
+	</delete>
 </mapper>	

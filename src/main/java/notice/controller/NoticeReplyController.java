@@ -34,14 +34,27 @@ public class NoticeReplyController {
 		
 		int cnt = 0;
 		String id = request.getParameter("id");
+		//int restep = noticeReply.getRestep();
 		noticeReply.setId(id);
 		noticeReply.setIp(request.getRemoteAddr());
-		int relevel = noticeReply.getRelevel();
-		int restep = noticeReply.getRestep();
-		noticeReply.setRelevel(relevel+1);
-		noticeReply.setRestep(restep+1);
+		//noticeReply.setRestep(restep+1);
 		
 		cnt = noticeReplyDao.ReplyNotice(noticeReply);
+		
+		mav.setViewName(gotoPage+"?num="+noticeReply.getRef());
+		
+		return mav;
+	}
+	@RequestMapping(value=command, method=RequestMethod.GET)
+	public ModelAndView doActionGET(@ModelAttribute("notice_reply") Notice_reply noticeReply, HttpServletRequest request){
+		ModelAndView mav = new ModelAndView();
+		
+		int cnt = 0;
+		noticeReply.setIp(request.getRemoteAddr());
+		int relevel = noticeReply.getRelevel();
+		noticeReply.setRelevel(relevel+1);
+		
+		cnt = noticeReplyDao.ReplyReNotice(noticeReply);
 		
 		mav.setViewName(gotoPage+"?num="+noticeReply.getRef());
 		

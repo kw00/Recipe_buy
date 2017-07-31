@@ -9,7 +9,6 @@ public class Notice {
 	private String writer; //varchar2(10) not null,
 	@NotEmpty(message="제목을 입력하세요.")
 	private String subject; //varchar2(20) not null,
-	@NotEmpty(message="패스워드를 입력하세요.")
 	private String passwd; //varchar2(12) not null,
 	private Timestamp regdate; //date default sysdate,
 	private int readcount; //int default 0,

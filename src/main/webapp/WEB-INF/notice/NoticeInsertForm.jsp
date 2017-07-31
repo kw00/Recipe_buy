@@ -43,14 +43,16 @@ $(function(){
 <body>
 	<div class="container" align="center">
 	  <h2><b>공지</b></h2>
-	  	<form method="post" id="insertNoticeForm" action="insert.nt"> 
+	  	<form:form method="post" id="insertNoticeForm" action="insert.nt"> 
 			<table class="table" width="430" border="0" cellspacing="0" cellpadding="0" align="center">
 				
 				<tr>
 					<td width="100" align="center">글쓴이</td>
 					<td width="330" align="left">
 					<input type="hidden" size="30" maxlength="10" name="writer" 
-							value="${loginfo.id}[${loginfo.name}]">${loginfo.id}[${loginfo.name}]</td>
+							value="${loginfo.id}[${loginfo.name}]">${loginfo.id}[${loginfo.name}]
+					<input type="hidden" name="passwd" value="${loginfo.password }">
+					</td>
 				</tr>
 				
 				
@@ -80,7 +82,7 @@ $(function(){
 					</td>
 				</tr>
 			</table>	
-		</form>
+		</form:form>
 	</div>
 	<br>
 	

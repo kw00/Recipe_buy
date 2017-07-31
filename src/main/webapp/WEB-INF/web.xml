@@ -150,4 +150,9 @@
 		<url-pattern>*.mall</url-pattern>
 	</servlet-mapping>
 	
+	<!-- 세션 시간 설정 -->
+	<session-config>
+	    <session-timeout>20</session-timeout>
+	</session-config>
+
 </web-app>

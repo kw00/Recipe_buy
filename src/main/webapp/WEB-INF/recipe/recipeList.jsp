@@ -44,8 +44,10 @@
 			</c:if>
 		</c:forEach>
 		<hr>
-		<div align="center">
-		${pageInfo.pagingHtml}
+		<div class="container">
+			<ul class="pagination">
+				${pageInfo.pagingHtml}
+			</ul>
 		</div>
 	</div>
 </body>

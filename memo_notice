@@ -2,7 +2,7 @@ drop table notice;
 
 create table notice( 
 	num number not null primary key,
-	writer varchar2(10) not null,
+	writer varchar2(50) not null,
 	subject varchar2(50) not null,
 	passwd varchar2(12) not null,
 	regdate date default sysdate,
@@ -10,7 +10,7 @@ create table notice(
 	ref number not null,
 	restep number not null,
 	relevel number not null,
-	content varchar2(100) not null,
+	content varchar2(3000) not null,
 	ip varchar2(15) not null
 );
 
