@@ -79,40 +79,58 @@ $(document).ready(function(){
 		</form>
 		전체 재료 갯수 : ${totalcount}
 		</div>
-		
+			<c:set var="fname" value=""/>
 			<c:forEach items="${food}" var="lists" varStatus="status">
 			<div>
 				<img src="#" alt="${lists.fname }" width="100" height="100">
 				<br>
 				<c:choose>
 					<c:when test="${recipe != null }">
+					<c:set value="0" var="cnt"/>
 					<c:forEach items="${fn:split(recipe.ringredients,',') }" var="i" varStatus="a">
 						<c:forTokens items="${i}" delims="-" var="ingred" varStatus="status">
 							<c:if test="${status.count==1 }">
 								<c:set value="${ingred}" var="fname"/>
 							</c:if>
+							<c:if test="${status.count==2 }">
+								<c:set value="${ingred }" var="qty"/>
+							</c:if>
 						</c:forTokens>
-						<c:if test="${fn:contains(fname,lists.fname) }">
+						<c:if test="${fn:contains(fname,lists.fname)}">
+							<c:if test="${cnt == 0 }">
 							<input type="checkbox" id="foodname" value="${lists.fname }"
 								<c:if test="${fn:contains(fname,lists.fname) }">
 								checked
 								</c:if>
 								>${lists.fname }
+							<input type="text" id="foodQty" name="${lists.fname }Qty" size="1" value="${qty }" disabled="disabled">
+							</c:if>
+							<c:if test = "${cnt > 0}">
+							<input type="checkbox" id="foodname" value="${lists.fname }">${lists.fname }
+							<input type="text" id="foodQty" name="${lists.fname }Qty" size="1" value="1" disabled="disabled">
+							</c:if>
+						</c:if>
+						<c:set value="${cnt+1 }" var="cnt" />
+						<c:if test="${not fn:contains(fname,lists.fname)}">
+						<c:set value="${cnt-1 }" var="cnt" />
 						</c:if>
 					</c:forEach>
-						<input type="checkbox" id="foodname" value="${lists.fname }">${lists.fname }
+						<c:if test = "${cnt == 0}">
+							<input type="checkbox" id="foodname" value="${lists.fname }">${lists.fname }
+							<input type="text" id="foodQty" name="${lists.fname }Qty" size="1" value="1" disabled="disabled">
+						</c:if>
 					</c:when>
 					<c:otherwise>
 					<input type="checkbox" id="foodname" value="${lists.fname }">${lists.fname }
+					<input type="text" id="foodQty" name="${lists.fname }Qty" size="1" value="1" disabled="disabled">
 					</c:otherwise>
 				</c:choose>
 				<br>
-				<input type="text" id="foodQty" name="${lists.fname }Qty" size="1" value="1" disabled="disabled">
 				<button onclick="Plus('${lists.fname}Qty')">+</button>
 				<button onclick="Minus('${lists.fname}Qty')">-</button>
 				<input type="hidden" id="foodprice" name="${lists.fname }" value="${lists.fprice }">
 				<input type="hidden" id="rprice2" value="">
-				<font color="red">${lists.fprice}</font>원
+				단가 : <font color="red">${lists.fprice}</font>원
 			</div>
 			</c:forEach>
 			<div align="center">
@@ -120,5 +138,6 @@ $(document).ready(function(){
 		</div>
 				<button onclick="javascript:self.close();">닫기</button>
 	</div>
+	
 </body>
 </html>
