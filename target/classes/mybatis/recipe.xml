@@ -52,4 +52,14 @@
 	<select id="DetailRecipe" resultType="MyRecipe">
 		select * from recipe where rnum = #{rnum}
 	</select>
+	<update id="UpdateReicpe" parameterType="MyRecipe">
+		update recipe set mcategory=#{mcategory},rname=#{rname},rimage=#{rimage},ringredients=#{ringredients}
+		,rcontent=#{rcontent},rprice=#{rprice} where rnum = #{rnum}
+	</update>
+	<insert id="UpdateGood" parameterType="hashmap">
+		insert into recipegoodbad values(recipegoodbadseq.nextval,#{rnum},#{memid},1,0)
+	</insert>
+	<select id="CheckGood" parameterType="hashmap">
+		select * from recipegoodbad where rnum=#{rnum} and memid=#{memid}
+	</select>
 </mapper>

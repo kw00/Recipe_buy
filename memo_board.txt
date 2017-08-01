@@ -27,8 +27,8 @@ commit;
 drop table comments;
 create table comments( 
 	num number not null primary key,
-	board_num number not null,
-	mem_num number not null,
+	boardnum number not null,
+	memnum number not null,
 	content varchar2(200),
 	indate date default sysdate
 );

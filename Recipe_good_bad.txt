@@ -1,0 +1,14 @@
+drop sequence recipegoodbadseq;
+
+create sequence recipegoodbadseq nocache;
+
+drop table recipegoodbad;
+
+create table recipegoodbad(
+gbnum number not null primary key, --추천테이블 고유키
+rnum number not null,--해당 레시피 번호
+memid varchar2(50) not null, --추천 또는 비추천을 준 회원 아이디
+good int,
+bad int
+);
+

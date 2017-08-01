@@ -7,20 +7,51 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="resources/editor/js/HuskyEZCreator.js" charset="utf-8"></script>
 <script type="text/javascript">
 function openWin(rnum){  
     window.open("foodlist.recipe?rnum="+rnum, "재료 선택","width=800, height=700");
 }
+$(function(){
+    //전역변수
+    var obj = [];             
+    //스마트에디터 프레임생성
+    nhn.husky.EZCreator.createInIFrame({
+        oAppRef: obj,
+        elPlaceHolder: "rcontent",
+        sSkinURI: "resources/editor/SmartEditor2Skin.html",
+        htParams : {
+            // 툴바 사용 여부
+            bUseToolbar : true,           
+            // 입력창 크기 조절바 사용 여부
+            bUseVerticalResizer : true,   
+            // 모드 탭(Editor | HTML | TEXT) 사용 여부
+            bUseModeChanger : true,
+        }
+    });
+    //전송버튼
+    $("#btnUpdate").click(function(){
+        //id가 smarteditor인 textarea에 에디터에서 대입
+        obj.getById["rcontent"].exec("UPDATE_CONTENTS_FIELD", []);
+        //폼 submit
+        $("#UpdateRecipe").submit();
+    });
+});
 </script>
 <body>
 	<div>
 		recipeUpdateForm.jsp<br>
 		<div>
-			<form action="recipeupdate.recipe" enctype="multipart/form-data"  method="post">
+			<form action="recipeupdate.recipe" enctype="multipart/form-data"  method="post" id="UpdateRecipe">
+				<input type="hidden" value="${Recipe.rnum }" name="rnum">
 				<div align="left">
 					<img src="<%=request.getContextPath()%>/resources/${Recipe.rimage}" width="300" height="300">
 					<input type="hidden" value="${Recipe.rimage}" name="upload2">
-					<input type="file"name="upload1">
+					<input type="file"name="upload" value="">
+				</div>
+				<div align="center">
+					<input tpye="text" value="${Recipe.rname }" name="rname">
 				</div>
 				<div align="center">
 					<label>카테고리</label>
@@ -60,6 +91,19 @@ function openWin(rnum){
 						<br>
 						</c:if>
 					</c:forEach>
+				</div>
+				<div>
+				<label>조리방법</label>
+					<textarea name="rcontent" id="rcontent" cols="100" rows="15">${Recipe.rcontent }</textarea>
+				</div>
+				<div align="left">
+					<label>가격</label>
+					<input type="text" id="rprice"name="rprice" readonly="readonly" value="${Recipe.rprice}">
+					<input type="hidden" id="rprice2" value="${Recipe.rprice }">
+				</div>
+				<div align="center">
+					<button type="submit" id="btnUpdate">레시피 등록하기</button>
+					<a href="<%=request.getContextPath() %>">메인화면</a>
 				</div>
 			</form>
 		</div>
