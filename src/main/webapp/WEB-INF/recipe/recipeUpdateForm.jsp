@@ -41,7 +41,7 @@ $(function(){
 </script>
 <body>
 	<div>
-		recipeUpdateForm.jsp<br>
+		<br><br>
 		<div>
 			<form action="recipeupdate.recipe" enctype="multipart/form-data"  method="post" id="UpdateRecipe">
 				<input type="hidden" value="${Recipe.rnum }" name="rnum">
