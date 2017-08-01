@@ -24,6 +24,8 @@ create table members(
 
 insert into members(num, name, id, password, nickname, email, phone, address, zipcode, ssn, gender, joindate, admin) 
 values(memseq.nextval, '어드민', 'admin', '1234', 'admin','admin@naver.com','01012345678', '서울 마포구 신촌로 176 중앙정보처리학원', '11532', '9010101234567', '남', '2017/06/09' , '0');
+insert into members(num, name, id, password, nickname, email, phone, address, zipcode, ssn, gender, joindate, admin) 
+values(memseq.nextval, 'test', 'test', '1234', 'test','test@naver.com','01012345678', '서울 마포구 신촌로 176 중앙정보처리학원', '11532', '9010101234567', '남', '2017/06/09' , '1');
 
 commit;
 

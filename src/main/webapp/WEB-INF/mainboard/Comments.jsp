@@ -32,6 +32,7 @@
 			<button type="button" onclick="comm_insert(this.form)">작성</button>
 			<input type="hidden" name="boardnum" value="${param.num}">
 			<input type="hidden" name="memnum" value="${loginfo.num}"> 
+			
 		</form>
 	</div>
 <script>
@@ -110,7 +111,7 @@ var comm_delete = function(num, memNum){
 				if('${loginfo.num}' == ''){
 					var comfirm = window.confirm("로그인시 이용 가능합니다.")
 					if(confirm){
-						location.href=contextPath+"/detail.mainboard?num=${param.num}";
+						location.href=contextPath+"/detail.mainboard?num=${param.rnum}";
 					}
 				}else if('${loginfo.num}' != memNum){
 					alert("글쓴이만 수정/삭제 권한이 있습니다.")
