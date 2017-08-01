@@ -150,6 +150,21 @@
 		<url-pattern>*.mall</url-pattern>
 	</servlet-mapping>
 	
+	
+	<servlet>
+		<servlet-name>search</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring/appServlet/search-servlet.xml</param-value>
+		</init-param>
+	</servlet>
+		
+	<servlet-mapping>
+		<servlet-name>search</servlet-name>
+		<url-pattern>*.search</url-pattern>
+	</servlet-mapping>
+	
 	<!-- 세션 시간 설정 -->
 	<session-config>
 	    <session-timeout>20</session-timeout>
