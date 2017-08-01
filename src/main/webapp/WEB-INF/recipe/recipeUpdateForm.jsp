@@ -11,7 +11,7 @@
 <script type="text/javascript" src="resources/editor/js/HuskyEZCreator.js" charset="utf-8"></script>
 <script type="text/javascript">
 function openWin(rnum){  
-    window.open("foodselected.recipe?rnum="+rnum, "재료 선택","width=800, height=700");
+    window.open("foodselected.recipe?rnum="+rnum, "재료 선택","width=680, height=800");
 }
 $(function(){
     //전역변수

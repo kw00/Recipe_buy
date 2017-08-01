@@ -13,7 +13,7 @@
 
 
 function openWin(){  
-    window.open("foodlist.recipe", "재료 선택","width=800, height=800");
+    window.open("foodlist.recipe", "재료 선택","width=680, height=800");
 }
 $(function(){
     //전역변수

@@ -143,11 +143,8 @@ $(document).ready(function(){
 				<input type="hidden" id="rprice2" value="">
 				단가 : <font color="red">${lists.fprice}</font>원
 			</div>
-			<c:if test="${status.count%3==0 }">
-			<br>
-			</c:if>
 			</c:forEach>
-			<div class="container">
+		<div class="container">
 			<ul class="pagination">
 				${pageInfo.pagingHtml}
 			</ul>
