@@ -29,7 +29,7 @@ public class GoodBadUpdateController {
 		System.out.println(rnum);
 		System.out.println(memid);
 		System.out.println("============================================");
-		map.put("rnum", "7");
+		map.put("rnum", rnum);
 		map.put("memid",memid);
 		int check = 0;
 		check = recipedao.CheckGood(map);

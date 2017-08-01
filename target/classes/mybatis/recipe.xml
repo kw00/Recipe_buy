@@ -59,7 +59,7 @@
 	<insert id="UpdateGood" parameterType="hashmap">
 		insert into recipegoodbad values(recipegoodbadseq.nextval,#{rnum},#{memid},1,0)
 	</insert>
-	<select id="CheckGood" parameterType="hashmap">
-		select * from recipegoodbad where rnum=#{rnum} and memid=#{memid}
+	<select id="CheckGood" resultType="int" parameterType="hashmap">
+		select count(*) from recipegoodbad where rnum=#{rnum} and memid=#{memid}
 	</select>
 </mapper>
