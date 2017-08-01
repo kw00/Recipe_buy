@@ -1,5 +1,7 @@
 package member.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -10,62 +12,46 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import member.model.CheckId;
-import member.model.CheckPwd;
 import member.model.Member;
 import member.model.MemberDao;
+import utility.Paging;
 
 @Controller
-public class MemberUpdateController {
-	private static final String getPage = "UpdateMemberForm";
+public class MyInfoController {
+	private static final String getPage = "MemberInfo";
 	private static final String gotoPage = "/list.me";
-	private static final String command = "/update.me";
+	private static final String command = "/meminfo.me";
 
 	@Autowired
 	@Qualifier("myMemberDao")
 	private MemberDao memberDao;
 
 	@RequestMapping(value = command, method = RequestMethod.GET)
-	public String doGetAction(@RequestParam("id") String id, Model model, HttpSession session, HttpServletRequest request){
+	public String doGetAction(@RequestParam("num") int num, Model model, HttpSession session, HttpServletRequest request){
+		System.out.println(num);
 		Member mem = (Member) session.getAttribute("loginfo");
-		
-		/*if(mem==null){
-			
-			model.addAttribute("message", "관리자로 로그인 하셔야 이용 가능합니다.");
-			model.addAttribute("url", request.getContextPath());
-			
-			return "../result/result";
-		}else{
-			if(mem.getAdmin().equals("1")){
-				
-			model.addAttribute("message", "관리자만 사용 가능합니다.");
-			model.addAttribute("url", request.getContextPath());
-			
-			return "../result/result";
-			}
-		}*/
-		
+
 		Member member = new Member();
-		
-		member = memberDao.GetMember(id);
+
+		member = memberDao.GetMemberInfo(num);
+		System.out.println(member);
+		System.out.println(num);
 		
 		String phone = member.getPhone();
-		
+
 		member.setPhone1(phone.substring(0,3));
 		member.setPhone2(phone.substring(3,7));
 		member.setPhone3(phone.substring(7,11));
-		
+
 		model.addAttribute("member", member);
 		return getPage;
 	}
-
+	
 	@RequestMapping(value = command, method = RequestMethod.POST) 
 	public ModelAndView doPostAction(@ModelAttribute("update") @Valid Member member, BindingResult result, HttpServletRequest request) {
 		System.out.println("---signup Post start---");
@@ -112,5 +98,4 @@ public class MemberUpdateController {
 		System.out.println("---signup Post end---");
 		return mav;
 	}
-
 }

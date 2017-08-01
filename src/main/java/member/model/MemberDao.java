@@ -109,4 +109,11 @@ public class MemberDao {
 		return cnt;
 	}
 
+	public Member GetMemberInfo(int num) {
+		// TODO Auto-generated method stub
+		Member member = null;
+		member = sqlSessionTemplate.selectOne(namespace+".GetMemberInfo", num);
+		return member;
+	}
+
 }

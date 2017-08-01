@@ -31,6 +31,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 a {
 	text-decoration: none;
 }
+
+.navbar-brand {
+	font-size: 20px;
+}
+
+#login-modal .modal-dialog {
+	width: 350px;
+}
+
+#login-modal input[type=text], input[type=password] {
+	margin-top: 10px;
+}
+
+.modal-logo {
+	align: "center";
+}
+
+.mainlogo {
+	font-size: 10px;
+}
+
+.form-control {
+	border-radius: 0px;
+}
+
+.cl-effect-13{
+	font-size: 13px;
+}
 </style>
 <%
 	String contextPath = request.getContextPath();
@@ -40,7 +68,15 @@ a {
 
 <script type="application/x-javascript">
 	
+	
+	
+	
+	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+
+
+
+
 
 </script>
 <!-- Custom Theme files -->
@@ -65,14 +101,6 @@ a {
 	rel='stylesheet' type='text/css'>
 
 <link href="resources/bootstrap/css/responsive.css" rel="stylesheet">
-<style>
-.mainlogo {
-	font-size: 10px;
-}
-.modal-title{
-	font-size: 20px;
-}
-</style>
 </head>
 
 <body>
@@ -117,20 +145,6 @@ a {
 							<li role="presentation" class="dropdown"><a
 								class="dropdown-toggle" data-toggle="dropdown" href="#"
 								role="button" aria-haspopup="true" aria-expanded="false">
-									Board <span class="caret"></span>
-							</a>
-								<ul class="dropdown-menu">
-									<li><a href="list.nt">Notice</a></li>
-									<li><a href="board.mainboard">Free</a></li>
-									<li><a href="#">Question</a></li>
-									<li><a href="#">Demand</a></li>
-									<li><a href="#">Gallery</a></li>
-								</ul></li>
-
-							<!-- dropdown -->
-							<li role="presentation" class="dropdown"><a
-								class="dropdown-toggle" data-toggle="dropdown" href="#"
-								role="button" aria-haspopup="true" aria-expanded="false">
 									ingredient <span class="caret"></span>
 							</a>
 								<ul class="dropdown-menu">
@@ -143,15 +157,41 @@ a {
 											food</a></li>
 									<li><a href="list.fd?whatColumn=fcategory&keyword=양념">Seasoning</a></li>
 								</ul></li>
+								
+								<!-- dropdown -->
+							<li role="presentation" class="dropdown"><a
+								class="dropdown-toggle" data-toggle="dropdown" href="#"
+								role="button" aria-haspopup="true" aria-expanded="false">
+									Board <span class="caret"></span>
+							</a>
+								<ul class="dropdown-menu">
+									<li><a href="list.nt">Notice</a></li>
+									<li><a href="board.mainboard">Free</a></li>
+									<li><a href="#">Question</a></li>
+									<li><a href="#">Demand</a></li>
+									<li><a href="#">Gallery</a></li>
+								</ul></li>
+								
+								<li><a href="about.cp">About</a></li>
 							<c:choose>
 								<c:when test="${sessionScope.loginfo==null}">
-								<li><a href="find.me">Login</a></li>
+									<li><a data-toggle="modal" href="#login-modal">Login</a></li>
 								</c:when>
 								<c:otherwise>
-								<li><a data-toggle="modal" href="#myModal">${sessionScope.loginfo.id} 님</a></li>
-								<c:if test="${sessionScope.loginfo.admin == 0}">
-									<li><a href="list.me">관리자메뉴</a></li>
-								</c:if>
+								<!-- dropdown -->
+								<li><a href="fridge.fr">My fridge</a></li>
+							<li role="presentation" class="dropdown"><a
+								class="dropdown-toggle" data-toggle="dropdown" href="#"
+								role="button" aria-haspopup="true" aria-expanded="false">
+									${sessionScope.loginfo.id} 님 <span class="caret"></span>
+							</a>
+								<ul class="dropdown-menu">
+									<c:if test="${sessionScope.loginfo.admin == 0 }">
+										<li><a href="list.me">Administration</a></li>
+									</c:if>
+									<li><a href="mypage.me">My page</a></li>
+									<%-- <li><a href="meminfo.me?num=${sessionScope.loginfo.num}">My page</a></li> --%>
+								</ul>
 								<li><a href="logout.me">Logout</a></li>
 								</c:otherwise>
 							</c:choose>
@@ -165,7 +205,8 @@ a {
 								href="https://www.pinterest.co.kr"></a></li>
 							<li><a class="icon-link round facebook"
 								href="https://twitter.com/?lang=ko"></a></li>
-							<li><a class="icon-link round dribble" href="#"></a></li>
+							<li><a class="icon-link round dribble" 
+								href="https://dribbble.com/"></a></li>
 						</ul>
 					</div>
 				</div>
@@ -173,64 +214,65 @@ a {
 			</nav>
 		</div>
 	</div>
-	<!-- header -->
-	<div class="modal fade" id="myModal" role="dialog">
-		<div class="modal-dialog">
 
+	<!-- header -->
+	<div class="modal fade" id="login-modal" role="dialog" height="400px">
+		<div class="modal-dialog">
 			<!-- Modal content-->
 			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">×</button>
-					<div class="modal-title">
-					<p>MY PAGE</p>
+				<div class="modal-header" align="center">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+					</button>
+					<br>
+					<div class="modal-logo">
+						<img src="resources/bootstrap/images/logo.png" width="70px">
 					</div>
+					<div class="modal-title">
+						<p>Please Sign In</p>
+					</div>
+					<br>
 				</div>
-				<div style="height: 550px;">
+				<div class="modal-body">
+					<form class="form-signin" action="login.me" method="post">
+						<div class="form-group">
+							<input type="text" class="form-control" name="id"
+								placeholder="아이디" /><br> <input type="password"
+								class="form-control" name="password" placeholder="비밀번호">
+							<br>
+						</div>
+						<div class="form-group">
+							<div class="checkbox">
+								<label> <input type="checkbox" value="remember-me">Remember
+									me
+								</label>
+							</div>
+						</div>
+						<div class="modal-footer">
 
-
-					<table class="table table-hover">
-						<br><br>
-						<tr>
-							<td>아이디</td>
-							<td>${sessionScope.loginfo.id}</td>
-						</tr>
-						<tr>
-							<td>이름</td>
-							<td>${sessionScope.loginfo.name}</td>
-						</tr>
-						<tr>
-							<td>성별</td>
-							<td>${sessionScope.loginfo.gender}</td>
-						</tr>
-						<tr>
-							<td>별명</td>
-							<td>${sessionScope.loginfo.nickname}</td>
-						</tr>
-						<tr>
-							<td>이메일</td>
-							<td>${sessionScope.loginfo.email}</td>
-						</tr>
-						<tr>
-							<td>핸드폰번호</td>
-							<td>
-							${sessionScope.loginfo.phone}	
-							</td>
-						</tr>
-						<tr>
-							<td>우편번호</td>
-							<td>${sessionScope.loginfo.zipcode}</td>
-						</tr>
-						<tr>
-							<td>주소</td>
-							<td>${sessionScope.loginfo.address}</td>
-						</tr>
-					</table>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							<div>
+								<a class="btn btn-link"
+									onclick="javascript:location.href='findid.me'">Forgot Your
+									ID?</a> <a class="btn btn-link"
+									onclick="javascript:location.href='findpw.me'"> Forgot Your
+									Password? </a>
+							</div>
+							<br>
+							<div>
+								<button type="submit" class="btn btn-danger btn-lg btn-block"
+									onClick="return check()">Login</button>
+							</div>
+							<br>
+							<div class="form-group" align="center">
+								Don't have an account? <a class="btn btn-link"
+									onclick="javascript:location.href='signupAssent.me'">Sign
+									up</a>
+							</div>
+						</div>
+					</form>
 				</div>
 			</div>
-
 		</div>
 	</div>
 </body>

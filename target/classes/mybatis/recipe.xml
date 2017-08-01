@@ -4,7 +4,6 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 	
 <mapper namespace="recipe.model.recipe">
-	
 	<select id="TotalCount" resultType="int" parameterType="hashmap">
 		select count(*) from recipe
 		<if test="whatColumn == 'rname'">
@@ -39,7 +38,6 @@
 		</if>
 		order by fnum desc
 	</select>
-	
 	<select id="GetFoodList" resultType="MyFood" parameterType="hashmap">
 		select * from food
 		<if test="whatColumn == 'fname'">
@@ -47,27 +45,21 @@
 		</if>
 		order by fnum desc
 	</select>
-	
 	<insert id="InsertRecipe" parameterType="MyRecipe">
 		insert into recipe values(recipeseq.nextval,#{rwriter},#{mcategory},#{rname},#{rimage},#{ringredients}
 		,#{rcontent},#{rprice},10,sysdate)
 	</insert>
-	
 	<select id="DetailRecipe" resultType="MyRecipe">
 		select * from recipe where rnum = #{rnum}
 	</select>
-	
 	<update id="UpdateReicpe" parameterType="MyRecipe">
 		update recipe set mcategory=#{mcategory},rname=#{rname},rimage=#{rimage},ringredients=#{ringredients}
 		,rcontent=#{rcontent},rprice=#{rprice} where rnum = #{rnum}
 	</update>
-	
 	<insert id="UpdateGood" parameterType="hashmap">
 		insert into recipegoodbad values(recipegoodbadseq.nextval,#{rnum},#{memid},1,0)
 	</insert>
-	
 	<select id="CheckGood" resultType="int" parameterType="hashmap">
 		select count(*) from recipegoodbad where rnum=#{rnum} and memid=#{memid}
 	</select>
-	
 </mapper>

@@ -145,7 +145,7 @@ var good = function(rnum,memid){
 					location.href=contextPath+"/detailRecipe.recipe?rnum=${param.rnum}";
 				}
 			}else{				
-				if(insertJson["check"]!=1){
+				if(insertJson["check"]==0){
 					InsertGood(rnum,memid);
 				}else{
 					alert("이미 추천하였습니다:)");
