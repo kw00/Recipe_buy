@@ -79,10 +79,10 @@ public class recipeDao {
 		return update;
 	}
 
-	public int UpdateGood(Map<String, String> map) {
+	public int InsertGood(Map<String, String> map) {
 		// TODO Auto-generated method stub
 		int update = 0;
-		update = sqlSessionTemplate.update(namespace+".UpdateGood",map);
+		update = sqlSessionTemplate.insert(namespace+".UpdateGood",map);
 		return update;
 	}
 

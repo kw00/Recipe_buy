@@ -29,7 +29,7 @@ public class GoodBadUpdateController {
 		System.out.println(rnum);
 		System.out.println(memid);
 		System.out.println("============================================");
-		map.put("rnum", "7");
+		map.put("rnum", rnum);
 		map.put("memid",memid);
 		int check = 0;
 		check = recipedao.CheckGood(map);
@@ -49,7 +49,7 @@ public class GoodBadUpdateController {
 		Map<String,String >map = new HashMap<String,String>();
 		map.put("rnum", rnum);
 		map.put("memid",memid);
-		int insert = recipedao.UpdateGood(map);
+		int insert = recipedao.InsertGood(map);
 		System.out.println(insert);
 		return "{\"insert\":"+insert+"}";
 	}
