@@ -92,4 +92,18 @@ public class recipeDao {
 		check = sqlSessionTemplate.selectOne(namespace+".CheckGood",map);
 		return check;
 	}
+
+	public int CheckBad(Map<String, String> map) {
+		// TODO Auto-generated method stub
+		int check = 0;
+		check = sqlSessionTemplate.selectOne(namespace+".CheckGood",map);
+		return check;
+	}
+
+	public int InsertBad(Map<String, String> map) {
+		// TODO Auto-generated method stub
+		int update = 0;
+		update = sqlSessionTemplate.insert(namespace+".InsertBad",map);
+		return update;
+	}
 }

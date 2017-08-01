@@ -70,4 +70,8 @@
 		select count(*) from recipegoodbad where rnum=#{rnum} and memid=#{memid}
 	</select>
 	
+	<insert id="InsertBad" parameterType="hashmap">
+		insert into recipegoodbad values(recipegoodbadseq.nextval,#{rnum},#{memid},0,1)
+	</insert>
+	
 </mapper>

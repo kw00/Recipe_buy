@@ -87,7 +87,7 @@
 		<button class="good button5" onclick="good('${Recipe.rnum }','${sessionScope.loginfo.id}')">10<br>
 			<span class="glyphicon glyphicon-thumbs-up" style="font-size: x-large;"></span>
 		</button>
-		<button class="bad button5">20<br>
+		<button class="bad button5" onclick="bad('${Recipe.rnum }','${sessionScope.loginfo.id}')">20<br>
 			<span class="glyphicon glyphicon-thumbs-down" style="font-size: x-large;"></span>
 		</button>
 	</div>
@@ -148,7 +148,7 @@ var good = function(rnum,memid){
 				if(insertJson["check"]==0){
 					InsertGood(rnum,memid);
 				}else{
-					alert("이미 추천하였습니다:)");
+					alert("이미 추천또는 비추천하셨습니다");
 				}
 			}
 		}
@@ -174,7 +174,68 @@ var InsertGood = function(rnum,memid){
 			if(this.status == 200){
 			var insertJson = JSON.parse(this.responseText);
 			if(insertJson["insert"]>0){
-				alert("해당 레시피를 추천하셨습니다");
+				alert("이미 추천 또는 비추천 하셨습니다");
+				location.href=contextPath+"/detailRecipe.recipe?rnum=${param.rnum}";
+			}
+		}
+		}
+	}
+	http.open("POST", url, true);
+	http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+	http.send();
+}
+var bad = function(rnum,memid){
+	var http;
+	var url = "UpdateBad.recipe";
+	url+="?rnum="+rnum;
+	url+="&memid="+memid;
+	
+	if(window.XMLHttpRequest){
+		http = new XMLHttpRequest();
+	}else if(window.ActiveXObject){
+		http = new ActiveXObject();
+	}
+	
+	http.onreadystatechange = function(){
+		if(this.readyState==4){
+			if(this.status == 200){
+			var insertJson = JSON.parse(this.responseText);
+			if('${sessionScope.loginfo.id}' == ''){
+				var comfirm = window.confirm("로그인시 추천 가능합니다.")
+				if(confirm){
+					location.href=contextPath+"/detailRecipe.recipe?rnum=${param.rnum}";
+				}
+			}else{				
+				if(insertJson["check"]==0){
+					InsertBad(rnum,memid);
+				}else{
+					alert("이미 추천 또는 비추천 하셨습니다");
+				}
+			}
+		}
+	}
+}
+	http.open("GET", url, true);
+	http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+	http.send();
+}
+var InsertBad = function(rnum,memid){
+	var http;
+	var url = "UpdateGood.recipe";
+	url+="?rnum="+rnum;
+	url+="&memid="+memid;
+	
+	if(window.XMLHttpRequest){
+		http = new XMLHttpRequest();
+	}else if(window.ActiveXObject){
+		http = new ActiveXObject();
+	}
+	http.onreadystatechange = function(){
+		if(this.readyState==4){
+			if(this.status == 200){
+			var insertJson = JSON.parse(this.responseText);
+			if(insertJson["insert"]>0){
+				alert("해당 레시피를 비추천하셨습니다");
 				location.href=contextPath+"/detailRecipe.recipe?rnum=${param.rnum}";
 			}
 		}
