@@ -120,7 +120,7 @@ body {
 	background: -moz-linear-gradient(right, #76b852, #8DC26F);
 	background: -o-linear-gradient(right, #76b852, #8DC26F);
 	background: url("resources/bootstrap/images/background.jpg");
-	background-size: 100% 112%;
+	background-size: 100%;
 	font-family: "Roboto", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -143,7 +143,7 @@ body {
 			return false;
 		}
 		if (!$("input[name=ssn]").val()) {
-			alert('주민등로번호를 입력해주세요');
+			alert('주민등록번호를 입력해주세요');
 			$("input[name=ssn]").focus();
 			return false;
 		}

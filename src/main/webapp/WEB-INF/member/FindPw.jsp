@@ -120,7 +120,7 @@ body {
 	background: -moz-linear-gradient(right, #76b852, #8DC26F);
 	background: -o-linear-gradient(right, #76b852, #8DC26F);
 	background: url("resources/bootstrap/images/background.jpg");
-	background-size: 100% 112%;
+	background-size: 100%;
 	font-family: "Roboto", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;

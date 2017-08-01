@@ -42,7 +42,10 @@ body {
 	font-size: 30px;
 }
 </style>
-<script>
+<script type="text/javascript">
+function SetFocus(){
+	document.myform.id.focus();
+}
 function check(){
 	if (!$("input[name=id]").val()) {
 	       alert('아이디를 입력해주세요');
@@ -58,10 +61,10 @@ function check(){
 </script>
 </head>
 
-<body>
+<body onload="SetFocus()">
 <br><br><br><br><br>
 	<div class="container">
-		<form class="form-signin" action="login.me" method="post">
+		<form class="form-signin" action="login.me" method="post" name="myform">
 			<div class="form-group">
 			<div class="form-signin-heading">
 				<p>Please Sign In</p>

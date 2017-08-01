@@ -14,6 +14,9 @@
 	.signup_header{
 		font-size: 25px;
 	}
+	.signup_sub{
+		font-size: 15px;
+	}
 </style>
 <link href="resources/bootstrap/css/animate.min.css" rel="stylesheet">
 </head>
@@ -24,18 +27,21 @@
 	<div class="col-sm-2"></div>
 	<div class="col-sm-7">
 	<div class="signup_header">
-	<p align="center">회원 가입</p>
+	<p align="center">회원 수정 페이지</p><br>
+	</div>
+	<div class="signup_sub">
+	<p align="center"><b>${sessionScope.loginfo.id}</b> 님의 회원 정보입니다.<br>
+회원정보는 개인정보처리방침에 따라 안전하게 보호되며, 회원님의 명백한 동의 없이 공개 또는 제 3자에게 제공되지 않습니다. <a href="#">개인정보처리방침</a></p>
 	</div>
 	<br><br>
-		<form:form commandName="singup" action="signup.me" method="POST" class="form-horizontal" id="myForm">
+		<form:form commandName="update" action="update.me" method="POST" class="form-horizontal" id="myForm">
 			
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="id">아이디:</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" name="id" id="id" placeholder="아이디를 입력하세요." value="${member.id}" onblur="checkId(this.form.id.value)">
+					<input type="hidden" class="form-control" name="id" id="id" value="${member.id}">
+					<input type="text" class="form-control" name="id" id="id" value="${member.id}" disabled>
 					<form:errors cssClass="err" path="id" />
-					<label id="checkId"></label>
-					<input type="hidden" name="checkIdFlag" id="checkIdFlag" value="0">
 				</div>
 			</div>
 			
@@ -58,17 +64,10 @@
 			</div>
 			
 			<div class="form-group">
-				<label class="control-label col-sm-2" for="name">대표 이미지:</label>
-				<div class="col-sm-10">
-					<input type="file" name="upload" value="${member.image}">
-					<form:errors cssClass="err" path="name" />
-				</div>
-			</div>
-			
-			<div class="form-group">
 				<label class="control-label col-sm-2" for="name">이름:</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" name="name" placeholder="이름을 입력하세요" value="${member.name}">
+					<input type="hidden" class="form-control" name="name" value="${member.name}">
+					<input type="text" class="form-control" name="name" value="${member.name}" disabled>
 					<form:errors cssClass="err" path="name" />
 				</div>
 			</div>
@@ -90,7 +89,7 @@
 			</div>
 			
 			<div class="form-group">
-				<label class="control-label col-sm-2" for="phone1">핸드폰번호:</label>
+				<label class="control-label col-sm-2" for="phone1">번호:</label>
 				<div class="col-sm-2">
 					<input type="text" class="form-control" name="phone1" placeholder="010" value="${member.phone1}" maxlength="3">
 					<form:errors cssClass="err" path="phone1" />
@@ -135,11 +134,11 @@
 				<label class="control-label col-sm-2" for="gender">성별:</label>
 				<div class="col-lg-10">
 					<label class="radio-inline"> 
-					<input type="radio" name="gender" value="남" checked="checked"> 남
+					<input type="radio" name="gender" value="남" <c:if test="${member.gender eq '남'}">checked</c:if>> 남
 					
 					</label> 
 					<label class="radio-inline"> 
-					<input type="radio" name="gender" value="여"> 여
+					<input type="radio" name="gender" value="여" <c:if test="${member.gender eq '여'}">checked</c:if>> 여
 					</label>
 				</div>
 				<form:errors cssClass="err" path="gender" />
@@ -148,10 +147,10 @@
 				<label class="control-label col-sm-2" for="admin">관리권한:</label>
 				<div class="col-lg-10">
 					<label class="radio-inline"> 
-					<input type="radio" name="admin" value="0" checked="checked">관리자
+					<input type="radio" name="admin" value="0" <c:if test="${member.admin eq '0'}">checked</c:if>>관리자
 					</label> 
 					<label class="radio-inline"> 
-					<input type="radio" name="admin" value="1">사용자
+					<input type="radio" name="admin" value="1" <c:if test="${member.admin eq '1'}">checked</c:if>>사용자
 					</label>
 				</div>
 			</div>
@@ -162,7 +161,7 @@
 				<div class="col-lg-10">
 					<label class="radio-inline"> 
 					<input type="radio"
-						id="emailReceiveYn" name="emailReceiveYn" value="Y">
+						id="emailReceiveYn" name="emailReceiveYn" value="Y" checked="checked">
 						동의합니다.
 					</label> 
 					<label class="radio-inline"> 
@@ -190,7 +189,7 @@
 				<div class="col-sm-offset-2 col-sm-10" align="center">
 				<a href="#" onclick="history.go(-1)"><button
 							class="btn btn-warning" type="button">이전으로</button></a>
-					<input type="submit" class="btn btn-danger" value="가입하기" id="insert" onClick="return check()">
+					<input type="submit" class="btn btn-danger" value="수정하기" id="update" onClick="return check()">
 				</div>
 			</div>
 		</form:form>
@@ -199,49 +198,8 @@
 	</div>
 </body>
 <script type="text/javascript">
-	var checkIdLabel = document.getElementById("checkId");
-	var checkIdFlag = document.getElementById("checkIdFlag");
-	var uIdDom = document.getElementById("id");
-
-	var checkId= function(idVal){
-		if(idVal){
-			var url = "checkId.me/"+idVal;
-			var xhttp;
-			if(window.XMLHttpRequest){
-				xhttp = new XMLHttpRequest();
-			}else if (window.ActiveXObject){
-				xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-			}
-			xhttp.onreadystatechange = function(){ //여기를 작성하면 비동기 통신 시 dom을 조작 할 수 있다.
-				if(this.readyState==4 && this.status == 200){
-					readyIdCheck(JSON.parse(this.responseText));
-				}
-			}
-			xhttp.open("GET", url, true);
-			xhttp.send();
-		}
-	}
-
-	var readyIdCheck = function(idCheckJson){
-		console.log(idCheckJson["checkId"]);
-		var labelcolor = "red";
-		var msg = "사용 중인 아이디 입니다."
-		var checkIdFlagValue = "0";
-		if(!idCheckJson["checkId"]){
-			checkIdFlagValue = "1";
-			msg = "사용 가능한 아이디 입니다.";
-			labelcolor = "blue";
-		}else{
-			checkIdFlagValue = "0";
-		}
-		checkIdLabel.style.color = labelcolor;
-		checkIdLabel.innerHTML = msg;
-		checkIdFlag.value = checkIdFlagValue;
-		uIdDom.style.borderColor = labelcolor;
-	}
-	
 	$(function(){
-		$("#insert").click(function(){
+		$("#update").click(function(){
 			var pwd1 = $("#pwd").val();
 			var pwd2 = $("input[name='passwordcheck']").val();		
 			var check;
@@ -254,11 +212,7 @@
 			
 			var bool = $("input[name=bool]").val(check);
 			
-			if($("input[name=checkIdFlag]").val()=='1'){
-				$("#myForm").submit();
-			}else{
-				alert("아이디중복을 확인하세요.");
-			}
+			$("#myForm").submit();
 			
 		});
 		

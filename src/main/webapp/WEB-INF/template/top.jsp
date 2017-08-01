@@ -32,7 +32,7 @@ a {
 	text-decoration: none;
 }
 
-.navbar-brand{
+.navbar-brand {
 	font-size: 20px;
 }
 
@@ -55,6 +55,10 @@ a {
 .form-control {
 	border-radius: 0px;
 }
+
+.cl-effect-13{
+	font-size: 13px;
+}
 </style>
 <%
 	String contextPath = request.getContextPath();
@@ -67,7 +71,9 @@ a {
 	
 	
 	
+	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+
 
 
 
@@ -139,20 +145,6 @@ a {
 							<li role="presentation" class="dropdown"><a
 								class="dropdown-toggle" data-toggle="dropdown" href="#"
 								role="button" aria-haspopup="true" aria-expanded="false">
-									Board <span class="caret"></span>
-							</a>
-								<ul class="dropdown-menu">
-									<li><a href="list.nt">Notice</a></li>
-									<li><a href="board.mainboard">Free</a></li>
-									<li><a href="#">Question</a></li>
-									<li><a href="#">Demand</a></li>
-									<li><a href="#">Gallery</a></li>
-								</ul></li>
-
-							<!-- dropdown -->
-							<li role="presentation" class="dropdown"><a
-								class="dropdown-toggle" data-toggle="dropdown" href="#"
-								role="button" aria-haspopup="true" aria-expanded="false">
 									ingredient <span class="caret"></span>
 							</a>
 								<ul class="dropdown-menu">
@@ -165,13 +157,42 @@ a {
 											food</a></li>
 									<li><a href="list.fd?whatColumn=fcategory&keyword=양념">Seasoning</a></li>
 								</ul></li>
+								
+								<!-- dropdown -->
+							<li role="presentation" class="dropdown"><a
+								class="dropdown-toggle" data-toggle="dropdown" href="#"
+								role="button" aria-haspopup="true" aria-expanded="false">
+									Board <span class="caret"></span>
+							</a>
+								<ul class="dropdown-menu">
+									<li><a href="list.nt">Notice</a></li>
+									<li><a href="board.mainboard">Free</a></li>
+									<li><a href="#">Question</a></li>
+									<li><a href="#">Demand</a></li>
+									<li><a href="#">Gallery</a></li>
+								</ul></li>
+								
+								<li><a href="about.cp">About</a></li>
 							<c:choose>
 								<c:when test="${sessionScope.loginfo==null}">
 									<li><a data-toggle="modal" href="#login-modal">Login</a></li>
 								</c:when>
 								<c:otherwise>
-									<li><a href="#">${sessionScope.loginfo.id} 님</a></li>
-									<li><a href="logout.me">Logout</a></li>
+								<!-- dropdown -->
+								<li><a href="fridge.fr">My fridge</a></li>
+							<li role="presentation" class="dropdown"><a
+								class="dropdown-toggle" data-toggle="dropdown" href="#"
+								role="button" aria-haspopup="true" aria-expanded="false">
+									${sessionScope.loginfo.id} 님 <span class="caret"></span>
+							</a>
+								<ul class="dropdown-menu">
+									<c:if test="${sessionScope.loginfo.admin == 0 }">
+										<li><a href="list.me">Administration</a></li>
+									</c:if>
+									<li><a href="mypage.me">My page</a></li>
+									<%-- <li><a href="meminfo.me?num=${sessionScope.loginfo.num}">My page</a></li> --%>
+								</ul>
+								<li><a href="logout.me">Logout</a></li>
 								</c:otherwise>
 							</c:choose>
 						</ul>
@@ -184,7 +205,8 @@ a {
 								href="https://www.pinterest.co.kr"></a></li>
 							<li><a class="icon-link round facebook"
 								href="https://twitter.com/?lang=ko"></a></li>
-							<li><a class="icon-link round dribble" href="#"></a></li>
+							<li><a class="icon-link round dribble" 
+								href="https://dribbble.com/"></a></li>
 						</ul>
 					</div>
 				</div>
@@ -192,7 +214,7 @@ a {
 			</nav>
 		</div>
 	</div>
-	
+
 	<!-- header -->
 	<div class="modal fade" id="login-modal" role="dialog" height="400px">
 		<div class="modal-dialog">
