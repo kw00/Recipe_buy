@@ -172,7 +172,19 @@ a {
 									<li><a href="#">Gallery</a></li>
 								</ul></li>
 								
-								<li><a href="about.cp">About</a></li>
+								<!-- dropdown -->
+							<li role="presentation" class="dropdown"><a
+								class="dropdown-toggle" data-toggle="dropdown" href="#"
+								role="button" aria-haspopup="true" aria-expanded="false">
+									Company <span class="caret"></span>
+							</a>
+								<ul class="dropdown-menu">
+									<li><a href="intro.cp">Introduction</a></li>
+									<li><a href="service.cp">Service</a></li>
+									<li><a href="contact.cp">Contact</a></li>
+								</ul></li>
+								
+								<!-- <li><a href="contact.cp">Contact</a></li> -->
 							<c:choose>
 								<c:when test="${sessionScope.loginfo==null}">
 									<li><a data-toggle="modal" href="#login-modal">Login</a></li>
