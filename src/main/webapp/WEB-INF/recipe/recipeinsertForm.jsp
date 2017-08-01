@@ -42,7 +42,7 @@ $(function(){
 });
 </script>
 <body>
-	RecieInsertForm.jsp<br>
+	<br><br>
 	<div align="center">
 		<h1>레시피 등록 폼</h1>
 		<form action="insertrecipe.recipe" id="insertRecipe" enctype="multipart/form-data"  method="post" >

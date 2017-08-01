@@ -36,6 +36,8 @@
 
 </head>
 <body>
+
+<br><br>
 <c:set value="${sessionScope.loginfo.admin }" var="admin"/>
 <c:set value="${sessionScope.loginfo.nickname }" var="nickname"/>
 	
