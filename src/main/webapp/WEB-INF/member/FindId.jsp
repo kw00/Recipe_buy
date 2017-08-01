@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@include file="./../template/top.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,80 +7,188 @@
 <title>FindId</title>
 
 <style type="text/css">
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.login-page {
+	width: 330px;
+	padding: 3% 0 0;
+	margin: auto;
+}
+
+.form {
+	position: relative;
+	z-index: 1;
+	background: #FFFFFF;
+	max-width: 360px;
+	margin: 0 auto 100px;
+	padding: 45px;
+	text-align: center;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0
+		rgba(0, 0, 0, 0.24);
+}
+
+.form input {
+	font-family: "Roboto", sans-serif;
+	outline: 0;
+	background: #f2f2f2;
+	width: 100%;
+	border: 0;
+	margin: 0 0 15px;
+	padding: 15px;
+	box-sizing: border-box;
+	font-size: 14px;
+}
+
+.form button {
+	font-family: "Roboto", sans-serif;
+	text-transform: uppercase;
+	outline: 0;
+	background: #FF4848;
+	width: 100%;
+	border: 0;
+	padding: 15px;
+	color: #FFFFFF;
+	font-size: 14px;
+	-webkit-transition: all 0.3 ease;
+	transition: all 0.3 ease;
+	cursor: pointer;
+}
+
+.form button:hover, .form button:active, .form button:focus {
+	background: #FFBB00;
+}
+
+.form .message {
+	margin: 15px 0 0;
+	color: #b3b3b3;
+	font-size: 12px;
+}
+
+.form .message a {
+	color: #FF4848;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.form .register-form {
+	display: none;
+}
+
+.container {
+	position: relative;
+	z-index: 1;
+	max-width: 300px;
+	margin: 0 auto;
+}
+
+.container:before, .container:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.container .info {
+	margin: 50px auto;
+	text-align: center;
+}
+
+.container .info h1 {
+	margin: 0 0 15px;
+	padding: 0;
+	font-size: 36px;
+	font-weight: 300;
+	color: #1a1a1a;
+}
+
+.container .info span {
+	color: #4d4d4d;
+	font-size: 12px;
+}
+
+.container .info span a {
+	color: #000000;
+	text-decoration: none;
+}
+
+.container .info span .fa {
+	color: #EF3B3A;
+}
+
 body {
-	padding-top: 40px;
-	padding-bottom: 40px;
-	background-image:url("img/background.jpg");
+	background: #76b852; /* fallback for old browsers */
+	background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+	background: -moz-linear-gradient(right, #76b852, #8DC26F);
+	background: -o-linear-gradient(right, #76b852, #8DC26F);
+	background: url("resources/bootstrap/images/background.jpg");
 	background-size: 100%;
+	font-family: "Roboto", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
-.form-signin {
-	max-width: 33%;
-	padding: 19px 29px 29px;
-	margin: 0 auto 20px;
-	background-color: #fff;
-	border: 1px solid #e5e5e5;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
-	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
-	box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+.modal-logo {
+	align: center;
+	color: black;
+}
+.modal-title{
+	font-weight: bold;
 }
 
-.form-signin .form-signin-heading, .form-signin .checkbox {
-	margin-bottom: 10px;
-}
-
-.form-signin input[type="text"], .form-signin input[type="password"] {
-	font-size: 16px;
-	height: auto;
-	margin-bottom: 15px;
-	padding: 7px 9px;
-}
-.form-signin-heading{
-	font-size: 30px;
-}
 </style>
 <script>
-function check(){
-	if (!$("input[name=name]").val()) {
-	       alert('이름를 입력해주세요');
-	       $("input[name=name]").focus();
-	       return false;
-	    }
-	if (!$("input[name=ssn]").val()) {
-	       alert('주민등로번호를 입력해주세요');
-	       $("input[name=ssn]").focus();
-	       return false;
-	    }
-}
+	function check() {
+		if (!$("input[name=name]").val()) {
+			alert('이름를 입력해주세요');
+			$("input[name=name]").focus();
+			return false;
+		}
+		if (!$("input[name=ssn]").val()) {
+			alert('주민등록번호를 입력해주세요');
+			$("input[name=ssn]").focus();
+			return false;
+		}
+	}
 </script>
 </head>
 
 <body>
-<br><br><br><br><br>
-	<div class="container">
-		<form class="form-signin" action="findid.me" method="post">
-			<div class="form-group">
-				<div class="form-signin-heading">
-				<p>Please Find Id</p>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="login-page">
+		<div class="form">
+			<form class="register-form">
+				<input type="text" placeholder="name" /> <input type="password"
+					placeholder="password" /> <input type="text"
+					placeholder="email address" />
+				<button>create</button>
+				<p class="message">
+					Already registered? <a href="#">Sign In</a>
+				</p>
+			</form>
+			<form class="login-form" action="findid.me" method="post">
+				<div class="form-group">
+					<div class="modal-logo">
+						<img src="resources/bootstrap/images/logo.png" width="70px">
+					</div>
+					<div class="modal-title">
+						<p>Please Find ID</p>
+					</div>
 				</div>
 				<br> <input type="text" class="form-control" name="name"
 					placeholder="이름을 입력하세요."><br> <input type="text"
 					class="form-control" name="ssn" placeholder="-를 제외한 주민등록번호를 입력하세요.">
-				<div class="checkbox">
-					<label> <input type="checkbox" value="remember-me">Remember
-						me
-					</label>
-				</div>
-				<br>
-				<button class="btn btn-sm btn-warning" type="submit" onClick="return check()">FindId</button>
-				<a href="#" onclick="history.go(-1)"><button
-						class="btn btn-sm btn-danger" type="button">Cancel</button></a>
-			</div>
-	</div>
-	</form>
+
+				<button class="btn btn-sm btn-warning" type="submit"
+					onClick="return check()">FindId</button>
+				<p class="message">
+					Not registered? <a href="#" onclick="history.go(-1)">Return to
+						homepage</a>
+				</p>
+			</form>
+		</div>
 	</div>
 </body>
 </html>

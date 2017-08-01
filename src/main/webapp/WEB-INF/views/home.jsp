@@ -25,11 +25,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- 
+
+<!-- Custom Theme files -->
+<link href="resources/bootstrap/css/bootstrap.css" rel="stylesheet"
+	type="text/css" media="all" />
+
 <link href="resources/bootstrap/css/style.css" rel="stylesheet"
 	type="text/css" media="all" />
+	
+<!-- js -->
 <script src="resources/bootstrap/js/jquery-1.11.1.min.js"></script>
 
+<!-- animation-effect -->
 <link href="resources/bootstrap/css/animate.min.css" rel="stylesheet">
 <script src="resources/bootstrap/js/wow.min.js"></script>
 <script>
@@ -42,13 +49,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link
 	href='//fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic'
 	rel='stylesheet' type='text/css'>
-	
-<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"
-	media="screen" title="no title" />
- 
- 
- <style>
 
+<link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css" type="text/css"
+	media="screen" title="no title" />
+
+
+<style>
 .col-item {
 	border: 1px solid #E1E1E1;
 	border-radius: 5px;
@@ -255,7 +261,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 	<!-- //banner -->
-
+	<br><br>
 
 	<!-- products -->
 	<div class="products">
@@ -876,9 +882,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<!-- //products -->
 
 					<!-- procedure -->
-					<br>
-					<br>
-					<br>
+					<br> <br> <br>
 					<div class="procedure">
 						<table>
 							<h2 class="procedure-title" align="center">Dinner, the
@@ -903,9 +907,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</table>
 					</div>
 					<!-- //procedure -->
-					<br>
-					<br>
-					<br>
+					<br> <br> <br>
 					<!-- banner-bottom -->
 					<div class="banner-bottom">
 						<div class="container">
@@ -985,10 +987,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<!-- //banner-bottom -->
 
 
-					<br>
-					<br>
-					<br>
-					<br>
+					<br> <br> <br> <br>
 				</div>
 			</div>
 		</div>

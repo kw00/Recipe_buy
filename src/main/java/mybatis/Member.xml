@@ -17,6 +17,10 @@
 		select * from members where id = #{id}
 	</select>
 	
+	<select id="GetMemberInfo" resultType="MyMember">
+		select * from members where num = #{num}
+	</select>
+	
 	<select id="GetId" resultType="MyMember" parameterType="string">
 		select * from members where name = #{name}
 	</select>
@@ -60,4 +64,5 @@
 	<delete id="DeleteMember">
 		delete from members where id = #{id} 
 	</delete>
+	
 </mapper>	

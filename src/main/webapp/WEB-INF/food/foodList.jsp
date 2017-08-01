@@ -27,7 +27,7 @@
 <link href="../../bootstrap/css/font-awesome.css" rel="stylesheet" type="text/css">
 <title>Insert title here</title>
 <style>
-.food_header{
+.food_listheader{
 	font-size: 20px;
 }
 </style>
@@ -35,7 +35,7 @@
 <body>
 <br><br>
 <div class="container">
-	<div class="food_header" align="center">
+	<div class="food_listheader" align="center">
 	<p>상품 목록</p>
 	</div>
 	<br><br>
@@ -102,6 +102,6 @@
 	</center>
 	</div>
 	<br><br>
-<%@ include file="./../template/bottom.jsp" %>
 </body>
 </html>
+<%@ include file="./../template/bottom.jsp" %>

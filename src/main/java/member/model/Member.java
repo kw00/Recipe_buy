@@ -61,7 +61,15 @@ public class Member {
 	//비밀번호 확인 체크
 	@AssertTrue(message="비밀번호가 같지 않습니다.")
 	private boolean bool;
+	
+	private String rimage;// varchar2(100),
 
+	public String getRimage() {
+		return rimage;
+	}
+	public void setRimage(String rimage) {
+		this.rimage = rimage;
+	}
 	public String getPasswordcheck() {
 		return passwordcheck;
 	}
@@ -174,10 +182,10 @@ public class Member {
 	@Override
 	public String toString() {
 		return "Member [num=" + num + ", name=" + name + ", id=" + id + ", password=" + password + ", nickname="
-				+ nickname + ", email=" + email + ", phone=" + phone + ", phone1=" + phone1 + ", phone2=" + phone2
-				+ ", phone3=" + phone3 + ", address=" + address + ", zipcode=" + zipcode + ", ssn=" + ssn + ", gender="
-				+ gender + ", joindate=" + joindate + ", admin=" + admin + "]";
+				+ nickname + ", email=" + email + ", phone=" + phone + ", address=" + address + ", zipcode=" + zipcode
+				+ ", ssn=" + ssn + ", gender=" + gender + ", joindate=" + joindate + ", admin=" + admin + ", phone1="
+				+ phone1 + ", phone2=" + phone2 + ", phone3=" + phone3 + ", passwordcheck=" + passwordcheck + ", bool="
+				+ bool + ", rimage=" + rimage + "]";
 	}
-	
 	
 }

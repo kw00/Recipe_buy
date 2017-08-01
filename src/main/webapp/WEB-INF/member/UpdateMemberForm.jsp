@@ -14,6 +14,9 @@
 	.signup_header{
 		font-size: 25px;
 	}
+	.signup_sub{
+		font-size: 15px;
+	}
 </style>
 <link href="resources/bootstrap/css/animate.min.css" rel="stylesheet">
 </head>
@@ -24,7 +27,11 @@
 	<div class="col-sm-2"></div>
 	<div class="col-sm-7">
 	<div class="signup_header">
-	<p align="center">회원 수정 페이지</p>
+	<p>회원 수정 페이지</p><br>
+	</div>
+	<div class="signup_sub">
+	<p align="center"><b>${sessionScope.loginfo.id}</b> 님의 회원 정보입니다.<br>
+회원정보는 개인정보처리방침에 따라 안전하게 보호되며, 회원님의 명백한 동의 없이 공개 또는 제 3자에게 제공되지 않습니다. <a href="#">개인정보처리방침</a></p>
 	</div>
 	<br><br>
 		<form:form commandName="update" action="update.me" method="POST" class="form-horizontal" id="myForm">
