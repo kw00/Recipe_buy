@@ -19,6 +19,9 @@
 		<typeAlias alias="MyNotice" type="notice.model.Notice"/>
 		<typeAlias alias="MyComments" type="mainboard.model.Comments"/>
 		<typeAlias alias="MyNoticeReply" type="notice.model.Notice_reply"/>
+		<typeAlias alias="MyOrder" type="Orderdetail.model.Order"/>
+		<typeAlias alias="MyOrderDetail" type="Orderdetail.model.OrderDetail"/>
+		
 	</typeAliases>
 	
 	<mappers>
@@ -29,6 +32,8 @@
 		<mapper resource="mybatis/Notice.xml"/>
 		<mapper resource="mybatis/Comments.xml"/>
 		<mapper resource="mybatis/Notice_reply.xml"/>
+ 		<mapper resource="mybatis/order.xml"/>
+		<mapper resource="mybatis/orderdetail.xml"/>
 	</mappers>
 	
 </configuration>

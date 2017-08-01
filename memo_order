@@ -1,0 +1,26 @@
+-----------------------
+-- �ֹ� (����) ���̺�
+-----------------------
+drop sequence seqoid ;
+create sequence seqoid start with 1 increment by 1 nocache ;
+DROP TABLE orders CASCADE CONSTRAINTS;
+-- orders : �ֹ� ���̺� , -- mid : ȸ�� ��ȣ. orderdate �ֹ�����
+create table orders( 
+  oid number primary key, -- oid
+  mid number references members(num) on delete set null,
+  orderdate date default sysdate
+);
+----------------------------------------------
+-- orderdetails : �ֹ� �� ���̺�
+----------------------------------------------
+drop sequence seqodid;
+create sequence seqodid start with 1 increment by 1 nocache ;
+
+-- oid : �ֹ���ȣ,  pnum : ��ǰ ��ȣ,  qty : �ֹ� ����
+drop table orderdetails purge ;
+create table orderdetails(
+  odid number primary key,
+  oid number references orders(oid) on delete cascade,
+  pnum int references food(fnum) on delete set null,
+  qty number
+); 

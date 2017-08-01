@@ -69,7 +69,7 @@ public class recipeFoodListController {
 			System.out.println(Recipe.getRingredients());
 		}
 		ModelAndView mav = new ModelAndView();
-		Paging2 pageInfo = new Paging2(pageNumber, pageSize, totalCount, url, whatColumn, keyword);
+		Paging2 pageInfo = new Paging2(pageNumber, pageSize, totalCount, url, whatColumn, keyword, Integer.parseInt(rnum));
 		List<food> food = recipedao.getFoodList(pageInfo,map);
 		System.out.println("Recipe : "+Recipe);
 		mav.addObject("recipe",Recipe);
@@ -79,4 +79,6 @@ public class recipeFoodListController {
 		mav.setViewName(gotoPage);
 		return mav;
 	}
+	
+	
 }
