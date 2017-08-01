@@ -20,9 +20,9 @@ import utility.Paging;
 import utility.Paging2;
 
 @Controller
-public class recipeFoodListController {
+public class recipeFoodSelectedController {
 	
-	private static final String command = "/foodlist.recipe";
+	private static final String command = "/foodselected.recipe";
 	private static final String gotoPage = "foodSelectList";
 	
 	@Autowired
@@ -65,7 +65,11 @@ public class recipeFoodListController {
 		System.out.println("===================================");
 		recipe Recipe = null;
 		Paging2 pageInfo = null;
-		pageInfo = new Paging2(pageNumber, pageSize, totalCount, url, whatColumn, keyword);
+		if(rnum!=null){
+			Recipe =  recipedao.DetailRecipe(Integer.parseInt(rnum));
+			System.out.println(Recipe.getRingredients());
+			pageInfo = new Paging2(pageNumber, pageSize, totalCount, url, whatColumn, keyword, rnum);
+		}
 		ModelAndView mav = new ModelAndView();
 		List<food> food = recipedao.getFoodList(pageInfo,map);
 		System.out.println("Recipe : "+Recipe);
