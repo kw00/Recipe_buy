@@ -11,7 +11,7 @@
 <script type="text/javascript" src="resources/editor/js/HuskyEZCreator.js" charset="utf-8"></script>
 <script type="text/javascript">
 function openWin(rnum){  
-    window.open("foodselected.recipe?rnum="+rnum, "재료 선택","width=800, height=700");
+    window.open("foodselected.recipe?rnum="+rnum, "재료 선택","width=680, height=800");
 }
 $(function(){
     //전역변수
@@ -39,74 +39,114 @@ $(function(){
     });
 });
 </script>
-<body>
-	<div>
-		<br><br>
-		<div>
-			<form action="recipeupdate.recipe" enctype="multipart/form-data"  method="post" id="UpdateRecipe">
-				<input type="hidden" value="${Recipe.rnum }" name="rnum">
-				<div align="left">
-					<img src="<%=request.getContextPath()%>/resources/${Recipe.rimage}" width="300" height="300">
-					<input type="hidden" value="${Recipe.rimage}" name="upload2">
-					<input type="file"name="upload" value="">
-				</div>
-				<div align="center">
-					<input tpye="text" value="${Recipe.rname }" name="rname">
-				</div>
-				<div align="center">
-					<label>카테고리</label>
-					<select name="mcategory">
-						<option value="">선택하세요</option>
-						<c:forEach items="${category }" var="categories">
-						<option value="${categories.mcategory }"
-						<c:if test="${categories.mcategory eq Recipe.mcategory}">
-						selected
-						</c:if>
-						>${categories.mcategory}</option>
-					</c:forEach>
-				</select>
-				</div>
-				<div align="center">
-					<button type="button" onclick="javascript:openWin('${Recipe.rnum}');">재료선택</button>
-				</div>
-				<div id="result" align="center">
-					<c:forEach items="${fn:split(Recipe.ringredients,',') }" var="i" varStatus="a">
-						<c:forTokens items="${i}" delims="-" var="ingred" varStatus="status">
-							<c:if test="${status.count==1 }">
-							<c:set value="${ingred}" var="fname"/>
-							</c:if>
-							<c:if test="${status.count==2 }">
-								<c:set value="${ingred}" var="fqty"/>
-							</c:if>
-							<c:if test="${status.count==3 }">
-								<c:set value="${ingred}" var="fprice"/>
-							</c:if>
-						</c:forTokens>			
-					<input type='checkbox' id="${fname}" name="ringredients" value="
-					${fname}-${fqty}-${fprice}"checked disabled='disabled'>
-					<font id="${fname}" color="blue">${fname}</font><font id="${fname}" color='red'>${fqty}</font>
-					<input type='hidden' id="${fname}" name='ringredients' value="${fname}-${fqty}-${fprice}"
-					checked readonly="readonly">
-						<c:if test="${a.count%5==0 }">
-						<br>
-						</c:if>
-					</c:forEach>
-				</div>
-				<div>
-				<label>조리방법</label>
-					<textarea name="rcontent" id="rcontent" cols="100" rows="15">${Recipe.rcontent }</textarea>
-				</div>
-				<div align="left">
-					<label>가격</label>
-					<input type="text" id="rprice"name="rprice" readonly="readonly" value="${Recipe.rprice}">
-					<input type="hidden" id="rprice2" value="${Recipe.rprice }">
-				</div>
-				<div align="center">
-					<button type="submit" id="btnUpdate">레시피 등록하기</button>
-					<a href="<%=request.getContextPath() %>">메인화면</a>
-				</div>
-			</form>
-		</div>
+<body>	
+	<br><br>
+	<div align="center" class="container">
+		<h1><b>레시피 등록 폼</b></h1>
+		<br>
+		<form action="recipeupdate.recipe" enctype="multipart/form-data"  method="post" id="UpdateRecipe">
+		
+			<input type="hidden" value="${Recipe.rnum }" name="rnum">
+			
+			<table class="table" width="430" border="0" cellspacing="0" cellpadding="0" align="center">
+				<tr>
+					<td width="100" align="center">레시피 이름</td>
+					<td width="330" align="left" colspan="2">
+						<input tpye="text" value="${Recipe.rname }" name="rname" size="100">
+					</td>
+				</tr>
+				
+				<tr>
+					<td width="100" align="center">카테고리</td>
+					<td width="330" align="left" colspan="2">
+						<select name="mcategory">
+							<option value="">선택하세요</option>
+							
+							<c:forEach items="${category }" var="categories">
+							
+							<option value="${categories.mcategory }"
+							<c:if test="${categories.mcategory eq Recipe.mcategory}">selected</c:if>>
+							
+							${categories.mcategory}</option>
+								
+							</c:forEach>
+						</select>
+					</td>
+				</tr>
+				
+				
+		
+				<tr>
+					<td width="100" align="center">재료선택</td>
+					<td width="20%" align="left" colspan="2">					
+						<button type="button" onclick="javascript:openWin('${Recipe.rnum}');">재료선택</button>
+						<div id="result" align="left">
+							<c:forEach items="${fn:split(Recipe.ringredients,',') }" var="i" varStatus="a">
+								<c:forTokens items="${i}" delims="-" var="ingred" varStatus="status">
+									<c:if test="${status.count==1 }">
+									<c:set value="${ingred}" var="fname"/>
+									</c:if>
+									<c:if test="${status.count==2 }">
+										<c:set value="${ingred}" var="fqty"/>
+									</c:if>
+									<c:if test="${status.count==3 }">
+										<c:set value="${ingred}" var="fprice"/>
+									</c:if>
+								</c:forTokens>			
+							<input type='checkbox' id="${fname}" name="ringredients" value="
+							${fname}-${fqty}-${fprice}"checked disabled='disabled'>
+							<font id="${fname}" color="blue">${fname}</font><font id="${fname}" color='red'>${fqty}</font>
+							<input type='hidden' id="${fname}" name='ringredients' value="${fname}-${fqty}-${fprice}"
+							checked readonly="readonly">
+								<c:if test="${a.count%5==0 }">
+								<br>
+								</c:if>
+							</c:forEach>
+						</div>
+					</td>
+				</tr>
+				
+				
+				<tr>
+					<td width="100" align="center">메인 이미지</td>
+					<td align="left">
+						<input type="hidden" value="${Recipe.rimage}" name="upload2">
+						<input type="file"name="upload" value="">
+					</td>
+					<td width="20%" align="left">
+						<img src="<%=request.getContextPath()%>/resources/${Recipe.rimage}" width="100" height="100">
+					</td>
+				</tr>
+				
+				<tr>
+					<td width="100" align="center">조리방법</td>
+					<td width="330" align="left" colspan="2">
+						<textarea name="rcontent" id="rcontent" cols="100" rows="15">${Recipe.rcontent }</textarea>
+					</td>
+				</tr>
+			
+				<tr>
+					<td width="100" align="center">가격</td>
+					<td width="330" align="left" colspan="2">
+						<input type="text" id="rprice"name="rprice" readonly="readonly" value="${Recipe.rprice}">
+						<input type="hidden" id="rprice2" value="${Recipe.rprice }">
+					</td>
+				</tr>
+
+				
+				<tr>
+					<td colspan=3 align="right" height="30">
+						<input type="submit" id=btnUpdate class="btn btn-default" value="레시피 수정하기" >  
+						<input type="reset"	class="btn btn-default" value="다시쓰기"> 
+						<input type="button" class="btn btn-default" value="목록보기"	
+								OnClick="window.location='recipeList.recipe'">
+					</td>
+				</tr>
+			</table>	
+		</form>
 	</div>
+	<br>
 </body>
 </html>
+
+<%@ include file="../template/bottom.jsp" %>
