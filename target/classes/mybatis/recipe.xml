@@ -74,4 +74,11 @@
 		insert into recipegoodbad values(recipegoodbadseq.nextval,#{rnum},#{memid},0,1)
 	</insert>
 	
+	<select id="getnew1234" resultType="MyRecipe">
+		select * from (select rnum, rname, rimage, rprice, rinputdate, ROW_NUMBER() over (order by RINPUTDATE desc) rank from recipe) where rank between 1 and 4
+	</select>
+	
+	<select id="getnew5678" resultType="MyRecipe">
+		select * from (select rnum, rname, rimage, rprice, rinputdate, ROW_NUMBER() over (order by RINPUTDATE desc) rank from recipe) where rank between 5 and 8
+	</select>
 </mapper>
