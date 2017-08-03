@@ -3,12 +3,23 @@
 <!DOCTYPE>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style type="text/css">
+.foodlist{
+	display: inline-block;
+	margin: 20px;
+}
+</style>
 <script type="text/javascript">
 $(document).ready(function(){
 	var stx = "";
@@ -81,8 +92,8 @@ $(document).ready(function(){
 		</div>
 			<c:set var="fname" value=""/>
 			<c:forEach items="${food}" var="lists" varStatus="status">
-			<div>
-				<img src="#" alt="${lists.fname }" width="100" height="100">
+			<div class="foodlist">
+				<img src="./resources/images/${lists.fimage}" alt="${lists.fname}" width="100" height="100">
 				<br>
 				<c:choose>
 					<c:when test="${recipe != null }">
@@ -133,8 +144,11 @@ $(document).ready(function(){
 				단가 : <font color="red">${lists.fprice}</font>원
 			</div>
 			</c:forEach>
-			<div align="center">
-			${pageInfo.pagingHtml}
+			
+		<div class="container">
+			<ul class="pagination">
+				${pageInfo.pagingHtml}
+			</ul>
 		</div>
 				<button onclick="javascript:self.close();">닫기</button>
 	</div>

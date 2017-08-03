@@ -36,62 +36,111 @@
 
 </head>
 <body>
+
 <c:set value="${sessionScope.loginfo.admin }" var="admin"/>
 <c:set value="${sessionScope.loginfo.nickname }" var="nickname"/>
-	
+
 	<c:if test="${admin eq 0 or nickname eq Recipe.rwriter }">
 			<div align="right">
-			<button onclick="Update('${Recipe.rnum}')">수정</button><button>삭제</button>
+			<button class="btn btn-default" onclick="Update('${Recipe.rnum}')">수정</button>
+			<button class="btn btn-danger">삭제</button>
 			<hr>
 			</div>
 	</c:if>
-	<div align="left">
-		<img src="<%=request.getContextPath()%>/resources/${Recipe.rimage}" width="300" height="300">
-	</div>
-	<div align="center">
-		<label>레시피명 : </label>${Recipe.rname}<br>
-		<label>카테고리 : </label>${Recipe.mcategory }<br>
-		<label>글쓴이 : </label>${Recipe.rwriter }<br>
-		<label>재료 : </label>
-		<c:forEach items="${fn:split(Recipe.ringredients,',') }" var="i" varStatus="a">
-			<c:forTokens items="${i}" delims="-" var="ingred" varStatus="status">
-				<c:if test="${status.count==1 }">
-					<c:set value="${ingred}" var="fname"/>
-				</c:if>
-				<c:if test="${status.count==2 }">
-					<c:set value="${ingred}" var="fqty"/>
-				</c:if>
-				<c:if test="${status.count==3 }">
-					<c:set value="${ingred}" var="fprice"/>
-				</c:if>
-			</c:forTokens>			
-			<input type="checkbox" value="${fname}-${fqty}-${fprice}" name="fname" checked="checked">${fname}
-			<c:if test="${a.count%5==0 }">
-			<br>
-			</c:if>
-		</c:forEach>
-		<br>
-		<label>가격 : </label>
-		<input type="text" value="${Recipe.rprice }" readonly="readonly" size="3" name="rprice" id="fprice">
-		<br>
-		<button class="btn btn-danger" type="button">바로 주문하기</button>
-		<button class="btn btn-success" type="button">장바구니 담기</button>
-		<br>
-		
-		<hr>
-		<label>조리 방법</label><br>
-		${Recipe.rcontent }
-	</div>
-	<br><br> 
-	<div align="center">
-		<button class="good button5" onclick="good('${Recipe.rnum }','${sessionScope.loginfo.id}')">10<br>
-			<span class="glyphicon glyphicon-thumbs-up" style="font-size: x-large;"></span>
-		</button>
-		<button class="bad button5">20<br>
-			<span class="glyphicon glyphicon-thumbs-down" style="font-size: x-large;"></span>
-		</button>
-	</div>
 	
+	<br><br>
+	<div align="center" class="container">
+		<h1><b>레시피 정보</b></h1>
+		<br>
+			<table class="table" width="430" border="0" cellspacing="0" cellpadding="0" align="center">
+				<tr>
+					<td width="10%" align="center">작성자</td>
+					<td width="330" align="left" colspan="2">
+						${Recipe.rwriter }
+					</td>
+				</tr>
+				
+				
+				<tr>
+					<td width="10%" align="center">레시피 이름</td>
+					<td width="330" align="left" colspan="2">
+						${Recipe.rname}
+					</td>
+				</tr>
+				<tr>
+					<td width="10%" align="center">카테고리</td>
+					<td width="330" align="left" colspan="2">
+						${Recipe.mcategory }
+					</td>
+				</tr>
+				
+		
+				<tr>
+					<td width="10%" align="center">재료</td>
+					<td width="20%" align="left" colspan="2">					
+						<c:forEach items="${fn:split(Recipe.ringredients,',') }" var="i" varStatus="a">
+							<c:forTokens items="${i}" delims="-" var="ingred" varStatus="status">
+								<c:if test="${status.count==1 }">
+									<c:set value="${ingred}" var="fname"/>
+								</c:if>
+								<c:if test="${status.count==2 }">
+									<c:set value="${ingred}" var="fqty"/>
+								</c:if>
+								<c:if test="${status.count==3 }">
+									<c:set value="${ingred}" var="fprice"/>
+								</c:if>
+							</c:forTokens>			
+							<input type="checkbox" value="${fname}-${fqty}-${fprice}" name="fname" checked="checked">${fname}
+							<c:if test="${a.count%5==0 }">
+							<br>
+							</c:if>
+						</c:forEach>
+					</td>
+				</tr>
+				
+				
+				<tr>
+					<td width="10%" align="center">가격</td>
+					<td width="330" align="left" colspan="2">
+						<input type="text" value="${Recipe.rprice }" readonly="readonly" size="3" name="rprice" id="fprice">
+					</td>
+				</tr>
+				
+				
+				<tr>
+					<td width="10%" align="center" colspan="3">조리방법</td>
+				</tr>
+				<tr>
+					<td width="330" align="center" colspan="3">
+						${Recipe.rcontent }
+						
+						<button class="good button5" onclick="good('${Recipe.rnum }','${sessionScope.loginfo.id}')">10<br>
+							<span class="glyphicon glyphicon-thumbs-up" style="font-size: x-large;"></span>
+						</button>
+						<button class="bad button5" onclick="bad('${Recipe.rnum }','${sessionScope.loginfo.id}')">20<br>
+							<span class="glyphicon glyphicon-thumbs-down" style="font-size: x-large;"></span>
+						</button>
+					</td>
+				</tr>
+				
+				
+				<tr>
+					<td colspan=3 align="center" height="30">
+						<button class="btn btn-danger" type="button">바로 주문하기</button>
+						<button class="btn btn-success" type="button">장바구니 담기</button>
+					</td>
+				</tr>
+			
+			
+				<tr>
+					<td colspan=3 align="right" height="30">
+						<input type="button" class="btn btn-default" value="목록보기"	
+								OnClick="window.location='recipeList.recipe'">
+					</td>
+				</tr>
+			</table>	
+	</div>
+	<br>
 </body>
 <script type="text/javascript">
 var contextPath = "${pageContext.request.contextPath}";
@@ -148,7 +197,7 @@ var good = function(rnum,memid){
 				if(insertJson["check"]==0){
 					InsertGood(rnum,memid);
 				}else{
-					alert("이미 추천하였습니다:)");
+					alert("이미 추천또는 비추천하셨습니다");
 				}
 			}
 		}
@@ -174,7 +223,68 @@ var InsertGood = function(rnum,memid){
 			if(this.status == 200){
 			var insertJson = JSON.parse(this.responseText);
 			if(insertJson["insert"]>0){
-				alert("해당 레시피를 추천하셨습니다");
+				alert("이미 추천 또는 비추천 하셨습니다");
+				location.href=contextPath+"/detailRecipe.recipe?rnum=${param.rnum}";
+			}
+		}
+		}
+	}
+	http.open("POST", url, true);
+	http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+	http.send();
+}
+var bad = function(rnum,memid){
+	var http;
+	var url = "UpdateBad.recipe";
+	url+="?rnum="+rnum;
+	url+="&memid="+memid;
+	
+	if(window.XMLHttpRequest){
+		http = new XMLHttpRequest();
+	}else if(window.ActiveXObject){
+		http = new ActiveXObject();
+	}
+	
+	http.onreadystatechange = function(){
+		if(this.readyState==4){
+			if(this.status == 200){
+			var insertJson = JSON.parse(this.responseText);
+			if('${sessionScope.loginfo.id}' == ''){
+				var comfirm = window.confirm("로그인시 추천 가능합니다.")
+				if(confirm){
+					location.href=contextPath+"/detailRecipe.recipe?rnum=${param.rnum}";
+				}
+			}else{				
+				if(insertJson["check"]==0){
+					InsertBad(rnum,memid);
+				}else{
+					alert("이미 추천 또는 비추천 하셨습니다");
+				}
+			}
+		}
+	}
+}
+	http.open("GET", url, true);
+	http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+	http.send();
+}
+var InsertBad = function(rnum,memid){
+	var http;
+	var url = "UpdateGood.recipe";
+	url+="?rnum="+rnum;
+	url+="&memid="+memid;
+	
+	if(window.XMLHttpRequest){
+		http = new XMLHttpRequest();
+	}else if(window.ActiveXObject){
+		http = new ActiveXObject();
+	}
+	http.onreadystatechange = function(){
+		if(this.readyState==4){
+			if(this.status == 200){
+			var insertJson = JSON.parse(this.responseText);
+			if(insertJson["insert"]>0){
+				alert("해당 레시피를 비추천하셨습니다");
 				location.href=contextPath+"/detailRecipe.recipe?rnum=${param.rnum}";
 			}
 		}

@@ -230,7 +230,7 @@ public class Paging2 {
 	}
 	
 	public Paging2(String pageNumber2, String pageSize2, int totalCount2, String url2, String whatColumn2,
-			String keyword2, int i) {
+			String keyword2, String i) {
 		// TODO Auto-generated constructor stub
 		if(  pageNumber2 == null || pageNumber2.equals("null") || pageNumber2.equals("")  ){
 			System.out.println("_pageNumber:"+pageNumber2); // null
@@ -241,6 +241,9 @@ public class Paging2 {
 		if( pageSize2 == null || pageSize2.equals("null") || pageSize2.equals("") ){
 			pageSize2 = "9" ;
 		}		
+		if( i == null || i.equals("null") || i.equals("")||Integer.parseInt(i)==0 ){
+			i = "null" ;
+		}
 		this.pageSize = Integer.parseInt( pageSize2 ) ;
 
 		this.offset = ( pageNumber - 1 ) * pageSize ; 
@@ -267,7 +270,7 @@ public class Paging2 {
 		this.url = url2 ; //  /ex/list.ab
 		this.whatColumn = whatColumn2 ;
 		this.keyword = keyword2 ;
-		this.rnum = i;
+		this.rnum = Integer.parseInt(i);
 		this.pagingHtml = getPagingHtml(url) ;
 	}
 

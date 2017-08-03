@@ -38,15 +38,15 @@ function insert(){
 			<div class="form-group col-sm-5" style="padding-left: 0px; padding-right: 0px;">
 				<input type="text" class="form-control col-sm-5" name="keyword">
 			</div>
-			<div class="form-group col-sm-1">
-				<input type="submit" class="btn btn-default" value="검색">
+			<div class="form-group col-sm-1" style="padding: 0px;">
+					<input type="submit" class="btn btn-info" value="검색" style="width: 120px;">
 			</div>
 		</form>
 		
 		<table class="table">
 			<tr>
 				<td colspan="9" align="right">
-					<input type="button" value="글쓰기" class="btn btn-default" onclick="insert()">
+					<input type="button" value="글쓰기" class="btn btn" onclick="insert()">
 				</td>
 			</tr>
 			<tr align="center">

@@ -13,7 +13,7 @@
 
 
 function openWin(){  
-    window.open("foodlist.recipe", "재료 선택","width=800, height=700");
+    window.open("foodlist.recipe", "재료 선택","width=680, height=800");
 }
 $(function(){
     //전역변수
@@ -42,55 +42,82 @@ $(function(){
 });
 </script>
 <body>
-	RecieInsertForm.jsp<br>
-	<div align="center">
-		<h1>레시피 등록 폼</h1>
+	<br><br>
+	<div align="center" class="container">
+		<h1><b>레시피 등록 폼</b></h1>
+		<br>
 		<form action="insertrecipe.recipe" id="insertRecipe" enctype="multipart/form-data"  method="post" >
+			<table class="table" width="430" border="0" cellspacing="0" cellpadding="0" align="center">
 			
-			<div align="left">
-			<label>레시피 이름</label>
-			<input type="text" name="rname" id="rname">
-			<input type="hidden" name="rwriter" value="${sessionScope.loginfo.nickname}">
-			</div>
+				<tr>
+					<td width="100" align="center">레시피 이름</td>
+					<td width="330" align="left">
+						<input type="text" name="rname" id="rname" size="100">
+						<input type="hidden" name="rwriter" value="${sessionScope.loginfo.nickname}">
+					</td>
+				</tr>
+				
+				
+				<tr>
+					<td width="100" align="center">카테고리</td>
+					<td width="330" align="left">
+						<select name="mcategory">
+							<option value="">선택하세요</option>
+							<c:forEach items="${category }" var="categories">
+							<option value="${categories.mcategory }">${categories.mcategory}</option>
+							</c:forEach>
+						</select>
+					</td>
+				</tr>
+				
+				
+		
+				<tr>
+					<td width="100" align="center">재료선택</td>
+					<td width="330" align="left">					
+						<button type="button" onclick="javascript:openWin();">재료선택</button>
+						<div id="result"></div>
+					</td>
+				</tr>
+				
+				
+				<tr>
+					<td width="100" align="center">메인 이미지</td>
+					<td width="330" align="left">
+						<input type="file" name="upload">
+					</td>
+				</tr>
+				
+				
+				<tr>
+					<td width="100" align="center">조리방법</td>
+					<td width="330" align="left">
+						<textarea name="rcontent" id="rcontent" cols="100" rows="15"></textarea>
+					</td>
+				</tr>
 			
-			<div align="left">
-			<label>카테고리</label>
-			<select name="mcategory">
-				<option value="">선택하세요</option>
-				<c:forEach items="${category }" var="categories">
-				<option value="${categories.mcategory }">${categories.mcategory}</option>
-				</c:forEach>
-			</select>
-			</div>
 			
-			<div align="left">
-			<button type="button" onclick="javascript:openWin();">재료선택</button>
-			</div>
-			<div id="result">
-			
-			</div>
-			<div align="left">
-			<label >메인 이미지</label>
-			<input type="file" name="upload">
-			</div>
-			
-			<div align="left">
-			<label>조리방법</label>
-			<textarea name="rcontent" id="rcontent" cols="100" rows="15"></textarea>
-			</div>
-			<div align="left">
-			<label>가격</label>
-			<input type="text" id="rprice"name="rprice" readonly="readonly">
-			<input type="hidden" id="rprice2" value="0">
-			</div>
-						
-			<div align="center">
-			<button type="submit" id="btnInsert">레시피 등록하기</button>
-			<button type="reset">다시쓰기</button>
-			<a href="<%=request.getContextPath() %>">메인화면</a>
-			</div>
+				<tr>
+					<td width="100" align="center">가격</td>
+					<td width="330" align="left">
+						<input type="text" id="rprice"name="rprice" readonly="readonly">
+						<input type="hidden" id="rprice2" value="0">
+					</td>
+				</tr>
+				
+				
+				<tr>
+					<td colspan=2 align="right" height="30">
+						<input type="submit" id=btnInsert class="btn btn-default" value="레시피 등록하기" >  
+						<input type="reset"	class="btn btn-default" value="다시쓰기"> 
+						<input type="button" class="btn btn-default" value="목록보기"	
+								OnClick="window.location='recipeList.recipe'">
+					</td>
+				</tr>
+			</table>	
 		</form>
 	</div>
+	<br>
 </body>
 </html>
 
