@@ -208,7 +208,6 @@
 												<th>가격</th>
 												<td><p>${lists.rprice}</p></td>
 											</tr>
-											</
 											<tr align=center>
 												<td colspan=2><a href="#">
 														<p class="btn btn-sm btn-primary">주문</p>
@@ -228,6 +227,9 @@
 			</c:choose>
 		</div>
 		</div>
+		</div>
+		<br>
+		<%@ include file="./../template/bottom.jsp" %>
 </body>
-</div>
+
 </html>
