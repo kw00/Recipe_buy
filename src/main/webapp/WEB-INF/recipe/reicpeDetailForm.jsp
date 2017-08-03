@@ -191,6 +191,7 @@ $(document).ready(function(){
 		var isChecked = $(this).is(":checked");
 		var value= $(this).val();
 		var valueArray = value.split('-');
+		alert(valueArray);
 		var result = $("#fprice").val();
 		alert(result);
 		if(isChecked){
