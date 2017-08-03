@@ -93,6 +93,7 @@
 								<img src="<%=request.getContextPath()%>/resources/images/level.gif">
 							</c:forEach>
 							${reply.content }
+							${reply.num }
 							${reply.ref }
 						${reply.restep }
 						${reply.relevel }
