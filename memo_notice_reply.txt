@@ -1,7 +1,7 @@
 drop table notice_reply;
 
 create table notice_reply( 
-	num number not null primary key,
+	num number not null,
 	id varchar2(20) not null,
 	regdate date default sysdate,
 	ref number not null,
