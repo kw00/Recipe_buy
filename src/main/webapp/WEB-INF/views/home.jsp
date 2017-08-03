@@ -638,42 +638,44 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										</div>
 									</div>
 								</c:forEach>
-								<c:forEach begin="0" end="${3-size1}">
-									<div class="col-sm-3">
-										<div class="col-item">
-											<div class="photo">
-												<img src="<%=request.getContextPath()%>/resources/images/service.png" class="img-responsive"
-													alt="a" />
-											</div>
-											<div class="info">
-												<div class="row">
-													<div class="price col-md-6">
-														<h5>상품 준비중.</h5>
-														<h5 class="price-text-color"></h5>
-													</div>
-													<div class="rating hidden-sm col-md-6">
-														<i class="price-text-color fa fa-star"></i><i
-															class="price-text-color fa fa-star"> </i><i
-															class="price-text-color fa fa-star"></i><i
-															class="price-text-color fa fa-star"> </i><i
-															class="fa fa-star"></i>
-													</div>
+								<c:if test="${size1 != '4' }">
+									<c:forEach begin="0" end="${3-size1}">
+										<div class="col-sm-3">
+											<div class="col-item">
+												<div class="photo">
+													<img src="<%=request.getContextPath()%>/resources/images/service.png" class="img-responsive"
+														alt="a" />
 												</div>
-												<div class="separator clear-left">
-													<p class="btn-add">
-														<i class="fa fa-shopping-cart"></i><a
-															href="#" class="hidden-sm">Add to cart</a>
-													</p>
-													<p class="btn-details">
-														<i class="fa fa-list"></i><a
-															href="#" class="hidden-sm">More details</a>
-													</p>
+												<div class="info">
+													<div class="row">
+														<div class="price col-md-6">
+															<h5>상품 준비중.</h5>
+															<h5 class="price-text-color"></h5>
+														</div>
+														<div class="rating hidden-sm col-md-6">
+															<i class="price-text-color fa fa-star"></i><i
+																class="price-text-color fa fa-star"> </i><i
+																class="price-text-color fa fa-star"></i><i
+																class="price-text-color fa fa-star"> </i><i
+																class="fa fa-star"></i>
+														</div>
+													</div>
+													<div class="separator clear-left">
+														<p class="btn-add">
+															<i class="fa fa-shopping-cart"></i><a
+																href="#" class="hidden-sm">Add to cart</a>
+														</p>
+														<p class="btn-details">
+															<i class="fa fa-list"></i><a
+																href="#" class="hidden-sm">More details</a>
+														</p>
+													</div>
+													<div class="clearfix"></div>
 												</div>
-												<div class="clearfix"></div>
 											</div>
 										</div>
-									</div>
-								</c:forEach>									
+									</c:forEach>
+								</c:if>									
 							</div>
 						</div>
 						
@@ -717,6 +719,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										</div>
 									</div>
 								</c:forEach>
+								<c:if test="${size2 != '4' }">
 								<c:forEach begin="0" end="${3-size2}">
 									<div class="col-sm-3">
 										<div class="col-item">
@@ -753,6 +756,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										</div>
 									</div>
 								</c:forEach>
+								</c:if>
 						</div>
 					</div>
 
