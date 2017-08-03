@@ -106,4 +106,20 @@ public class recipeDao {
 		update = sqlSessionTemplate.insert(namespace+".InsertBad",map);
 		return update;
 	}
+
+	public List<recipe> getnew1234() {
+		List<recipe> recipe = null;
+		
+		recipe = sqlSessionTemplate.selectList(namespace+".getnew1234");
+		
+		return recipe;
+	}
+
+	public List<recipe> getnew5678() {
+		List<recipe> recipe = null;
+		
+		recipe = sqlSessionTemplate.selectList(namespace+".getnew5678");
+				
+		return recipe;
+	}
 }

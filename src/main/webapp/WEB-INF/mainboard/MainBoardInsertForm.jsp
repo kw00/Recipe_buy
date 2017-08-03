@@ -64,7 +64,7 @@ $(function(){
 				<tr>
 					<td width="100" align="center">제 목</td>
 					<td width="330" align="left">					
-						<input type="text" size="50" maxlength="50" name="title">
+						<input type="text" size="123" maxlength="50" name="title"> 
 					</td>
 				</tr>
 				

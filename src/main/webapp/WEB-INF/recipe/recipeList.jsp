@@ -21,6 +21,7 @@ margin: 50px;
 }
 
 #div2{
+	height: 40px;
     color:white;
     background-color: gray;
 }
@@ -46,7 +47,7 @@ margin: 50px;
 				</div>
 			</div>
 			</form>
-		<div align="right">
+		<div align="right" style="padding-right: 21%;">
 			<button class="btn btn" onclick="insert()">레시피 작성</button>
 		</div>
 		<hr>
@@ -60,9 +61,8 @@ margin: 50px;
 
 			</a>
 			<div id="div2">
-			${lists.rwriter}
-			${lists.rname}
-			${lists.rprice}
+				${lists.rwriter}<br>
+				${lists.rname}
 			</div>
 			</div>
 			<c:if test="${status.count%3=='0' }">

@@ -93,7 +93,7 @@ $(document).ready(function(){
 			<c:set var="fname" value=""/>
 			<c:forEach items="${food}" var="lists" varStatus="status">
 			<div class="foodlist">
-				<img src="#" alt="${lists.fname }" width="100" height="100">
+				<img src="./resources/images/${lists.fimage}" alt="${lists.fname}" width="100" height="100">
 				<br>
 				<c:choose>
 					<c:when test="${recipe != null }">
@@ -144,6 +144,7 @@ $(document).ready(function(){
 				단가 : <font color="red">${lists.fprice}</font>원
 			</div>
 			</c:forEach>
+			
 		<div class="container">
 			<ul class="pagination">
 				${pageInfo.pagingHtml}
