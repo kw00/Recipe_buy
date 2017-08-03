@@ -71,4 +71,9 @@ public class MainBoardListController {
 			
 			return mav;
 	}
+	
+	@RequestMapping(value="popuplist.mainboard")
+	public String doActionPopUp(){
+		return "Comments_PopUp";
+	}
 }

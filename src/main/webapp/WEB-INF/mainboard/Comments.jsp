@@ -28,11 +28,19 @@
 		</table>
 			<div id="pagingDiv"></div>
 		<form action="<c:url value='/comments/insert.do'/>">
-			<textarea rows="4" cols="100" name="content"></textarea>
-			<button type="button" onclick="comm_insert(this.form)">작성</button>
-			<input type="hidden" name="boardnum" value="${param.num}">
-			<input type="hidden" name="memnum" value="${loginfo.num}"> 
-			
+			<table>
+				<tr>
+					<td>
+						<input type="hidden" name="boardnum" value="${param.num}">
+						<input type="hidden" name="memnum" value="${loginfo.num}"> 
+						<textarea rows="4" cols="100" name="content"></textarea>
+					</td>
+					<td>
+						<button style="padding-top: 20px;" type="button" onclick="comm_insert(this.form)">작성</button>
+					</td>
+				</tr>
+				
+			</table>
 		</form>
 	</div>
 <script>

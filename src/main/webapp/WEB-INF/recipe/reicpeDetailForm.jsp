@@ -40,14 +40,6 @@
 <c:set value="${sessionScope.loginfo.admin }" var="admin"/>
 <c:set value="${sessionScope.loginfo.nickname }" var="nickname"/>
 
-	<c:if test="${admin eq 0 or nickname eq Recipe.rwriter }">
-			<div align="right">
-			<button class="btn btn-default" onclick="Update('${Recipe.rnum}')">수정</button>
-			<button class="btn btn-danger">삭제</button>
-			<hr>
-			</div>
-	</c:if>
-	
 	<br><br>
 	<div align="center" class="container">
 		<h1><b>레시피 정보</b></h1>
@@ -113,7 +105,7 @@
 				<tr>
 					<td width="330" align="center" colspan="3">
 						${Recipe.rcontent }
-						
+						<br><br><br>
 						<button class="good button5" onclick="good('${Recipe.rnum }','${sessionScope.loginfo.id}')">10<br>
 							<span class="glyphicon glyphicon-thumbs-up" style="font-size: x-large;"></span>
 						</button>
@@ -134,6 +126,10 @@
 			
 				<tr>
 					<td colspan=3 align="right" height="30">
+						<c:if test="${admin eq 0 or nickname eq Recipe.rwriter }">
+								<button class="btn btn-default" onclick="Update('${Recipe.rnum}')">수정</button>
+								<button class="btn btn-danger">삭제</button>
+						</c:if>
 						<input type="button" class="btn btn-default" value="목록보기"	
 								OnClick="window.location='recipeList.recipe'">
 					</td>

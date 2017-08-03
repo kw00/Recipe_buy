@@ -8,8 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<br><br>
 		<div class="container" align="center">
-			<h2>게시글 상세보기</h2>
+			<p>게시글 상세보기</p>
 			<br>
 			<table class="table" width="430" cellspacing="0" cellpadding="0">
 				<tr>

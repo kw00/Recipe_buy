@@ -20,7 +20,7 @@
 	
 	<!-- 게시판 글 전채 불러오기 -->
 	<select id="getBoardList" resultType="MyMainBoard" parameterType="hashmap">
-		select * from board
+		select b.*, (SELECT COUNT(*) FROM comments c WHERE c.boardnum=b.num) COUNT FROM board b
 		
 		<if test="whatColumn == 'title' ">
 			where title like #{keyword}
@@ -29,7 +29,7 @@
 			where writer like #{keyword}
 		</if>
 			
-		order by num desc
+		order by b.num desc
 	</select>
 	
 	

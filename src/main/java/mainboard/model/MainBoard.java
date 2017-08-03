@@ -10,6 +10,9 @@ public class MainBoard {
 	private String content; //varchar2(1000) not null,
 	private String inputdate; //date default sysdate,
 	private int views; //int default 0
+	
+	private int count;
+	
 	private MultipartFile Filedata;
 
 	
@@ -18,6 +21,12 @@ public class MainBoard {
 	}
 	public void setFiledata(MultipartFile filedata) {
 		Filedata = filedata;
+	}
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
 	}
 	public int getNum() {
 		return num;

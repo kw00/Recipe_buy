@@ -12,6 +12,10 @@
 function insert(){
 		location.href="insert.mainboard";
 	}
+	
+function openwin(num){
+	window.open("popuplist.mainboard?num="+num+"&page=${pageInfo.pageNumber}", "댓글창", "width=840, height=570");
+}
 </script>
 <style>
 .notice_header{
@@ -61,7 +65,12 @@ function insert(){
 			<c:forEach items="${b_Lists}" var="board">
 				<tr align="center">
 					<td>${board.num}</td>
-					<td><a href="detail.mainboard?num=${board.num}">${board.title}</a></td>
+					<td>
+						<a href="detail.mainboard?num=${board.num}">${board.title}</a>
+							<c:if test="${board.count!=0}">
+								<a href="#" onclick="openwin('${board.num}');" style="color: red; font-size: 9px;">[${board.count}]</a>
+							</c:if>
+					</td>
 					<td>${board.writer}</td>
 					<td>${board.email}</td>
 					<td>
