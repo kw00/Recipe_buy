@@ -185,7 +185,7 @@
 					</label>
 				</div>
 			</div>
-			
+			<br>
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10" align="center">
 				<a href="#" onclick="history.go(-1)"><button
@@ -194,7 +194,7 @@
 				</div>
 			</div>
 		</form:form>
-		<br>
+		<br><br><br>
 	</div>
 	</div>
 </body>

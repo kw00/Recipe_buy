@@ -21,7 +21,7 @@
 		<typeAlias alias="MyNoticeReply" type="notice.model.Notice_reply"/>
 		<typeAlias alias="MyOrder" type="Orderdetail.model.Order"/>
 		<typeAlias alias="MyOrderDetail" type="Orderdetail.model.OrderDetail"/>
-		
+		<typeAlias alias="MyOsusume" type="recipe.model.GoodBad"/>
 	</typeAliases>
 	
 	<mappers>

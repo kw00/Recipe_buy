@@ -25,7 +25,7 @@ function openwin(num){
 </head>
 <body>
 <br><br>
-	<div align="center" class="container">
+	<div class="container" align="center">
 		<div class="notice_header">
 		<p>자유 게시판</p>
 		</div>

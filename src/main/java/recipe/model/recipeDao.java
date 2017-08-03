@@ -122,4 +122,11 @@ public class recipeDao {
 				
 		return recipe;
 	}
+
+	public GoodBad GetOsusume(String rnum) {
+		// TODO Auto-generated method stub
+		GoodBad goodBad = null;
+		goodBad = sqlSessionTemplate.selectOne(namespace+".GetGoodBad",rnum);
+		return goodBad;
+	}
 }
