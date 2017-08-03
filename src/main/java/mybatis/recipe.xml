@@ -81,4 +81,8 @@
 	<select id="getnew5678" resultType="MyRecipe">
 		select * from (select rnum, rname, rimage, rprice, rinputdate, ROW_NUMBER() over (order by RINPUTDATE desc) rank from recipe) where rank between 5 and 8
 	</select>
+	
+	<select id="GetGoodBad" resultType="MyOsusume">
+		select sum(good) as good, sum(bad) as bad from recipegoodbad where rnum= #{rnum}
+	</select>
 </mapper>

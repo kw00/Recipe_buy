@@ -5,12 +5,16 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import recipe.model.GoodBad;
 import recipe.model.recipeDao;
 
 @Controller
@@ -85,5 +89,24 @@ public class GoodBadUpdateController {
 		int insert = recipedao.InsertBad(map);
 		System.out.println(insert);
 		return "{\"insert\":"+insert+"}";
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="/GetOsusume.recipe", method=RequestMethod.GET)
+	public ResponseEntity GetOsusume(@RequestParam("rnum") String rnum){
+		ResponseEntity<Map<String,Object>> entity = null;
+		System.out.println("==================Osusume======================");
+		System.out.println(rnum);
+		GoodBad goodBad = recipedao.GetOsusume(rnum);
+		System.out.println(goodBad);
+		System.out.println("===============================================");
+		try {
+			Map<String,Object> map = new HashMap<String,Object>();
+			map.put("goodBad", goodBad);
+			entity = new ResponseEntity<Map<String,Object>>(map, HttpStatus.OK);
+		} catch (Exception e) {
+			entity = new ResponseEntity<Map<String,Object>>(HttpStatus.BAD_REQUEST);
+		}
+		return entity;
 	}
 }

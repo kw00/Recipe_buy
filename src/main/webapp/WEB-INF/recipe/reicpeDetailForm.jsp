@@ -113,11 +113,16 @@
 				<tr>
 					<td width="330" align="center" colspan="3">
 						${Recipe.rcontent }
+					<br><br><br>
+						<button class="good button5" id="good" onclick="good('${Recipe.rnum }','${sessionScope.loginfo.id}')">
 						
-						<button class="good button5" onclick="good('${Recipe.rnum }','${sessionScope.loginfo.id}')">10<br>
+						
 							<span class="glyphicon glyphicon-thumbs-up" style="font-size: x-large;"></span>
 						</button>
-						<button class="bad button5" onclick="bad('${Recipe.rnum }','${sessionScope.loginfo.id}')">20<br>
+						
+						<button class="bad button5" id="bad" onclick="bad('${Recipe.rnum }','${sessionScope.loginfo.id}')">
+						
+						
 							<span class="glyphicon glyphicon-thumbs-down" style="font-size: x-large;"></span>
 						</button>
 					</td>
@@ -149,7 +154,37 @@ window.onload = function(){
 	loadOsusume();
 }
 var loadOsusume = function(){
-	alert("님아");
+	var http;
+	var url = "GetOsusume.recipe";
+	url+="?rnum=${Recipe.rnum}";
+	if(window.XMLHttpRequest){
+		http = new XMLHttpRequest();
+	}else if(window.ActiveXObject){
+		http = new ActiveXObject();
+	}
+	http.onreadystatechange = function(){ //여기를 작성하면 비동기 통신 시 dom을 조작 할 수 있다.
+		//보통 this는 window지만 객체의 함수 내부에서는 객체
+		if(this.readyState==4){
+			if(this.status == 200){
+				var osusume = JSON.parse(this.responseText);
+				if(osusume["goodBad"]==null){
+					$("#good").append($("<p>0</p>"));
+					$("#bad").append($("<p>0</p>"));
+				}else{
+					var good = osusume["goodBad"]["good"];
+					var bad = osusume["goodBad"]["bad"];
+					$("#good").append($("<p>"+good+"</p>"));					
+					$("#bad").append($("<p>"+bad+"</p>"));
+				}
+				console.log(good);
+				console.log(bad);
+			}else if(this.status==400){
+				alert("추천/비추천을 소환실패");
+			}
+		}
+	}
+	http.open("GET", url, true);
+	http.send();
 }
 $(document).ready(function(){
 	$("input[name=fname]").change(function(){
@@ -230,7 +265,7 @@ var InsertGood = function(rnum,memid){
 			if(this.status == 200){
 			var insertJson = JSON.parse(this.responseText);
 			if(insertJson["insert"]>0){
-				alert("이미 추천 또는 비추천 하셨습니다");
+				alert("추천 하셨습니다");
 				location.href=contextPath+"/detailRecipe.recipe?rnum=${param.rnum}";
 			}
 		}
