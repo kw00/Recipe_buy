@@ -144,6 +144,13 @@
 </body>
 <script type="text/javascript">
 var contextPath = "${pageContext.request.contextPath}";
+
+window.onload = function(){
+	loadOsusume();
+}
+var loadOsusume = function(){
+	alert("님아");
+}
 $(document).ready(function(){
 	$("input[name=fname]").change(function(){
 		var isChecked = $(this).is(":checked");
