@@ -17,7 +17,7 @@ function openwin(num){
 	window.open("popuplist.mainboard?num="+num+"&page=${pageInfo.pageNumber}", "댓글창", "width=840, height=570");
 }
 </script>
-<style>
+<style type="text/css">
 .notice_header{
 	font-size: 20px;
 }
@@ -66,7 +66,7 @@ function openwin(num){
 				<tr align="center">
 					<td>${board.num}</td>
 					<td>
-						<a href="detail.mainboard?num=${board.num}">${board.title}</a>
+						<a href="detail.mainboard?num=${board.num}&pageNumber=${pageInfo.pageNumber}">${board.title}</a>
 							<c:if test="${board.count!=0}">
 								<a href="#" onclick="openwin('${board.num}');" style="color: red; font-size: 9px;">[${board.count}]</a>
 							</c:if>
