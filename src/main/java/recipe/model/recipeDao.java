@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import food.model.food;
 import utility.Paging2;
+import utility.Paging4;
 
 @Component("myRecipe")
 public class recipeDao {
@@ -31,10 +32,10 @@ public class recipeDao {
 		return cnt;
 	}
 
-	public List<recipe> GetRecipeList(Paging2 pageInfo, Map<String, String> map) {
+	public List<recipe> GetRecipeList(Paging2 r_pageInfo, Map<String, String> map) {
 		// TODO Auto-generated method stub
 		List<recipe> list = null;
-		RowBounds rowBounds = new RowBounds(pageInfo.getOffset(),pageInfo.getLimit());
+		RowBounds rowBounds = new RowBounds(r_pageInfo.getOffset(),r_pageInfo.getLimit());
 		list = sqlSessionTemplate.selectList(namespace+".GetRecipeList", map, rowBounds);
 		
 		return list;
@@ -128,5 +129,14 @@ public class recipeDao {
 		GoodBad goodBad = null;
 		goodBad = sqlSessionTemplate.selectOne(namespace+".GetGoodBad",rnum);
 		return goodBad;
+	}
+
+	public List<recipe> GetRecipeList2(Paging4 pageInfo, Map<String, String> map) {
+		// TODO Auto-generated method stub
+		List<recipe> list = null;
+		RowBounds rowBounds = new RowBounds(pageInfo.getOffset(),pageInfo.getLimit());
+		list = sqlSessionTemplate.selectList(namespace+".GetRecipeList", map, rowBounds);
+		
+		return list;
 	}
 }

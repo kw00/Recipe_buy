@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import recipe.model.recipe;
 import recipe.model.recipeDao;
-import utility.Paging2;
+import utility.Paging4;
 
 @Controller
 public class recipeListController {
@@ -59,8 +59,8 @@ public class recipeListController {
 		System.out.println("=====================");
 		
 		ModelAndView mav = new ModelAndView();
-		Paging2 pageInfo = new Paging2(pageNumber, pageSize, totalCount, url, whatColumn, keyword);
-		List<recipe> list = recipedao.GetRecipeList(pageInfo,map);
+		Paging4 pageInfo = new Paging4(pageNumber, pageSize, totalCount, url, whatColumn, keyword,mcategory);
+		List<recipe> list = recipedao.GetRecipeList2(pageInfo,map);
 		System.out.println(list);
 		mav.addObject("list", list);
 		mav.addObject("pageInfo", pageInfo);

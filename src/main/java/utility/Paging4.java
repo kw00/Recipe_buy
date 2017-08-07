@@ -1,6 +1,6 @@
 package utility;
 
-public class Paging2 {   
+public class Paging4 {   
 	//페이징 관련 변수	
 	private int totalCount = 0 ; //총 레코드 건수
 	private int totalPage = 0 ; //전체 페이지 수
@@ -18,15 +18,18 @@ public class Paging2 {
 	//검색을 위한 변수 추가
 	private String whatColumn = "" ; //검색 모드(작성자, 글제목, 전체 검색은 all) 등등
 	private String keyword = "" ; //검색할 단어
-	private int rnum;
+	private String category;
 	
-	public int getRnum() {
-		return rnum;
+	
+
+
+	public String getCategory() {
+		return category;
 	}
 
 
-	public void setRnum(int rnum) {
-		this.rnum = rnum;
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 
@@ -182,7 +185,7 @@ public class Paging2 {
 	}
 
 
-	public Paging2(
+	public Paging4(
 			String _pageNumber, 
 			String _pageSize,  
 			int totalCount,
@@ -229,8 +232,8 @@ public class Paging2 {
 	
 	}
 	
-	public Paging2(String pageNumber2, String pageSize2, int totalCount2, String url2, String whatColumn2,
-			String keyword2, String rnum) {
+	public Paging4(String pageNumber2, String pageSize2, int totalCount2, String url2, String whatColumn2,
+			String keyword2, String category) {
 		// TODO Auto-generated constructor stub
 		if(  pageNumber2 == null || pageNumber2.equals("null") || pageNumber2.equals("")  ){
 			System.out.println("_pageNumber:"+pageNumber2); // null
@@ -241,8 +244,8 @@ public class Paging2 {
 		if( pageSize2 == null || pageSize2.equals("null") || pageSize2.equals("") ){
 			pageSize2 = "9" ;
 		}		
-		if( rnum == null || rnum.equals("null") || rnum.equals("")||Integer.parseInt(rnum)==0 ){
-			rnum = "null" ;
+		if( category == null || category.equals("null") || category.equals("")){
+			category = "null" ;
 		}
 		this.pageSize = Integer.parseInt( pageSize2 ) ;
 
@@ -270,7 +273,7 @@ public class Paging2 {
 		this.url = url2 ; //  /ex/list.ab
 		this.whatColumn = whatColumn2 ;
 		this.keyword = keyword2 ;
-		this.rnum = Integer.parseInt(rnum);
+		this.category = category;
 		this.pagingHtml = getPagingHtml(url) ;
 	}
 
@@ -282,11 +285,13 @@ public class Paging2 {
 		String added_param = "&whatColumn=" + whatColumn + "&keyword=" + keyword ; 
 		
 		if (this.beginPage != 1) { //����, pageSize:�� ȭ�鿡 ���̴� ���ڵ� ��
-			result += "&nbsp;<li><a href='" + url  
-					+ "?pageNumber=" + ( 1 ) + "&pageSize=" + this.pageSize + "'>맨 처음</a></li>&nbsp;" ;
+			result += "&nbsp;<li><a href='" + url
+					+ "?pageNumber=" + ( 1 ) + "&pageSize=" + this.pageSize
+					+"&mcategory="+this.category
+					+ "'>맨 처음</a></li>&nbsp;" ;
 			result += "&nbsp;<li><a href='" + url 
 					+ "?pageNumber=" + (this.beginPage - 1 ) + "&pageSize=" + this.pageSize
-					+"&rnum="+this.rnum
+					+"&mcategory="+this.category
 					+ added_param + "'>이전</a></li>&nbsp;" ;
 		}
 		
@@ -298,7 +303,7 @@ public class Paging2 {
 			} else {
 				result += "&nbsp;<li><a href='" + url 
 						+ "?pageNumber=" + i + "&pageSize=" + this.pageSize
-						+"&rnum="+this.rnum
+						+"&mcategory="+this.category
 						+ added_param + "'>" + i + "</a></li>&nbsp;" ;
 				
 			}
@@ -311,12 +316,12 @@ public class Paging2 {
 			
 			result += "&nbsp;<li><a href='" + url  
 					+ "?pageNumber=" + (this.endPage + 1 ) + "&pageSize=" + this.pageSize
-					+"&rnum="+this.rnum
+					+"&mcategory="+this.category
 					+ added_param + "'>다음</a></li>&nbsp;" ;
 			
 			result += "&nbsp;<li><a href='" + url  
 					+ "?pageNumber=" + (this.totalPage ) + "&pageSize=" + this.pageSize
-					+"&rnum="+this.rnum
+					+"&mcategory="+this.category
 					+ added_param + "'>맨 끝</a></li>&nbsp;" ;
 		}		
 		
