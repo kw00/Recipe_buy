@@ -25,6 +25,12 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model) {
 		
+		List<recipe> bestrecipe1 = recipeDao.getbest1234();
+		List<recipe> bestrecipe2 = recipeDao.getbest5678();
+		
+		model.addAttribute("bestrecipe1", bestrecipe1);
+		model.addAttribute("bestrecipe2", bestrecipe2);
+		
 		List<recipe> newrecipe1 = recipeDao.getnew1234();
 		List<recipe> newrecipe2 = recipeDao.getnew5678();
 		

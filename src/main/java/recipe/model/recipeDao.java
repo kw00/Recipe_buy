@@ -107,6 +107,22 @@ public class recipeDao {
 		update = sqlSessionTemplate.insert(namespace+".InsertBad",map);
 		return update;
 	}
+	
+	public List<recipe> getbest1234() {
+		List<recipe> recipe = null;
+		
+		recipe = sqlSessionTemplate.selectList(namespace+".getbest1234");
+		
+		return recipe;
+	}
+	
+	public List<recipe> getbest5678() {
+		List<recipe> recipe = null;
+		
+		recipe = sqlSessionTemplate.selectList(namespace+".getbest5678");
+		
+		return recipe;
+	}
 
 	public List<recipe> getnew1234() {
 		List<recipe> recipe = null;
@@ -131,6 +147,7 @@ public class recipeDao {
 		return goodBad;
 	}
 
+<<<<<<< HEAD
 	public List<recipe> GetRecipeList2(Paging4 pageInfo, Map<String, String> map) {
 		// TODO Auto-generated method stub
 		List<recipe> list = null;
@@ -139,4 +156,7 @@ public class recipeDao {
 		
 		return list;
 	}
+=======
+
+>>>>>>> 005d1927510692d6f4b7f003ad4ccc2e2adfa243
 }

@@ -49,7 +49,7 @@
 						</c:if>
 					</c:if>
 						<input type="button" class="btn btn-default" value="목록보기"	
-								OnClick="window.location='board.mainboard'">
+								OnClick="window.location='board.mainboard?pageNumber=${param.pageNumber}'">
 					</td>
 				</tr>
 			</table>

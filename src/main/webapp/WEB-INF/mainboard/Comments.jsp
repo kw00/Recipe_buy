@@ -29,14 +29,14 @@
 			<div id="pagingDiv"></div>
 		<form action="<c:url value='/comments/insert.do'/>">
 			<table>
-				<tr>
+				<tr valign="middle">
 					<td>
 						<input type="hidden" name="boardnum" value="${param.num}">
 						<input type="hidden" name="memnum" value="${loginfo.num}"> 
-						<textarea rows="4" cols="100" name="content"></textarea>
+						<textarea rows=3px" cols="100px" name="content"></textarea>
 					</td>
 					<td>
-						<button style="padding-top: 20px;" type="button" onclick="comm_insert(this.form)">작성</button>
+						<button class="btn btn" style="width: 100px; height: 80px" type="button" onclick="comm_insert(this.form)">작성</button>
 					</td>
 				</tr>
 				
@@ -182,7 +182,7 @@ var commentListready = function(commentsList){
 		htmlList+="<td style='background-color:lightgray;'><b>"+commentsList[i]["id"]+"</b><br>("+commentsList[i]["name"]+")"+"</td>";
 		htmlList+="<td>"+commentsList[i]["content"]+"</td>";
 		htmlList+="<td>"+commentsList[i]["indate"]+"</td>";
-		htmlList+="<td><button type='button' onclick='comm_delete("+commentsList[i]["num"]+","+commentsList[i]["memnum"]+")'>삭제</button></td>"
+		htmlList+="<td><button class='btn btn-danger' type='button' onclick='comm_delete("+commentsList[i]["num"]+","+commentsList[i]["memnum"]+")'>삭제</button></td>"
 		htmlList+="</tr>";
 	}
 	tableList.innerHTML = htmlList;
