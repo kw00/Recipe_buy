@@ -43,7 +43,6 @@
 					<td width="330" align="center" colspan="2">내 용</td>
 				</tr>
 				
-					<hr>
 				<tr>
 					<td width="330" align="center" colspan="2">${board.content}</td>
 				</tr>
