@@ -34,15 +34,17 @@ $(document).ready(function(){
 		if(isChecked){
 			var price = $("input[name="+check+"]").val();
 			var qty = $("input[name='"+check+"Qty']").val();
+			var fnum = $("input[name='"+check+"fnum']").val();
+			alert(fnum);
 			/* alert(qty);
 			alert(check);*/	
 			/* alert(price); */
 			sum = parseInt(sum)+(parseInt(price)*parseInt(qty));
 			stx = "<input type='checkbox' id='"+check+"' name='ringredients' value='"
-					+check+"-"+qty+"-"+price+"'checked disabled='disabled'><font id='"+check+"' color='blue'>"
+					+check+"-"+qty+"-"+price+"-"+fnum+"'checked disabled='disabled'><font id='"+check+"' color='blue'>"
 					+check+"</font><font id='"+check+"' color='red'>"+qty+"</font>"+
 					"<input type='hidden' id='"+check+"' name='ringredients' value='"
-						+check+"-"+qty+"-"+price+"'checked readonly='readonly'>";
+						+check+"-"+qty+"-"+price+"-"+fnum+"'checked readonly='readonly'>";
 			$('#result', opener.document).append(stx);
 			$('#rprice', opener.document).val(sum);
 			$('#rprice2', opener.document).val(sum);
@@ -92,6 +94,7 @@ $(document).ready(function(){
 		</div>
 			<c:set var="fname" value=""/>
 			<c:forEach items="${food}" var="lists" varStatus="status">
+			<input type="hidden" name="${lists.fname }fnum" value="${lists.fnum}">
 			<div class="foodlist">
 				<img src="./resources/images/${lists.fimage}" alt="${lists.fname}" width="100" height="100">
 				<br>

@@ -147,7 +147,6 @@ public class recipeDao {
 		return goodBad;
 	}
 
-<<<<<<< HEAD
 	public List<recipe> GetRecipeList2(Paging4 pageInfo, Map<String, String> map) {
 		// TODO Auto-generated method stub
 		List<recipe> list = null;
@@ -156,7 +155,11 @@ public class recipeDao {
 		
 		return list;
 	}
-=======
 
->>>>>>> 005d1927510692d6f4b7f003ad4ccc2e2adfa243
+	public int deleteRecipe(int rnum) {
+		// TODO Auto-generated method stub
+		int cnt = 0;
+		cnt = sqlSessionTemplate.delete(namespace+".DeleteRecipe",rnum);
+		return cnt;
+	}
 }
