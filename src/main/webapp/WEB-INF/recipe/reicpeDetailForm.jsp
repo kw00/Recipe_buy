@@ -81,8 +81,11 @@
 								<c:if test="${status.count==3 }">
 									<c:set value="${ingred}" var="fprice"/>
 								</c:if>
+								<c:if test="${status.count==4 }">
+									<c:set value="${ingred}" var="fnum"/>
+								</c:if>
 							</c:forTokens>			
-							<input type="checkbox" value="${fname}-${fqty}-${fprice}" name="fname" checked="checked">${fname}
+							<input type="checkbox" value="${fname}-${fqty}-${fprice}-${fnum}" name="fname" checked="checked">${fname}
 							<c:if test="${a.count%5==0 }">
 							<br>
 							</c:if>
@@ -121,7 +124,7 @@
 				<tr>
 					<td colspan=3 align="center" height="30">
 						<button class="btn btn-danger" type="button">바로 주문하기</button>
-						<button class="btn btn-success" type="button">장바구니 담기</button>
+						<button class="btn btn-success" type="button" onclick="cart()">장바구니 담기</button>
 					</td>
 				</tr>
 			
@@ -130,7 +133,7 @@
 					<td colspan=3 align="right" height="30">
 						<c:if test="${admin eq 0 or nickname eq Recipe.rwriter }">
 								<button class="btn btn-default" onclick="Update('${Recipe.rnum}')">수정</button>
-								<button class="btn btn-danger">삭제</button>
+								<button class="btn btn-danger" onclick="Delete('${Recipe.rnum}')">삭제</button>
 						</c:if>
 						<input type="button" class="btn btn-default" value="목록보기"	
 								OnClick="window.location='recipeList.recipe'">
@@ -202,8 +205,32 @@ function Update(rnum){
 	/* alert(rnum); */
 	location.href="recipeupdate.recipe?rnum="+rnum;
 }
-
-
+var Delete = function(rnum){
+	if (confirm("정말 삭제하시겠습니까??") == true){    //확인
+		location.href="recipedelete.recipe?rnum="+rnum;
+	}else{   //취소
+	    return;
+	}
+}
+var cart=function(){
+	/* alert($("input[name='fname']").val()); */
+	var fnum = "";
+	var fqty = "";
+	var cnt = 1;
+	$('input:checkbox[name=fname]:checked').each(function() {
+		var value= this.value;
+		var valueArray = value.split('-');
+		if($('input:checkbox[name=fname]:checked').length==cnt){
+			fnum += valueArray[3];
+			fqty += valueArray[1];
+		}else{
+			fnum += valueArray[3]+"-";
+			fqty += valueArray[1]+"-";
+		}
+		cnt = cnt+1;
+		location.href="add1.mall?fnum="+fnum+"&fqty="+fqty;
+	});
+}
 
 var good = function(rnum,memid){
 	var http;

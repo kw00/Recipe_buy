@@ -96,4 +96,8 @@
 	<select id="GetGoodBad" resultType="MyOsusume">
 		select sum(good) as good, sum(bad) as bad from recipegoodbad where rnum= #{rnum}
 	</select>
+	
+	<delete id="DeleteRecipe">
+		delete from recipe where rnum = #{rnum}
+	</delete>
 </mapper>

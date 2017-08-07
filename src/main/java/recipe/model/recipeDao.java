@@ -155,4 +155,14 @@ public class recipeDao {
 		
 		return list;
 	}
+<<<<<<< HEAD
+
+	public int deleteRecipe(int rnum) {
+		// TODO Auto-generated method stub
+		int cnt = 0;
+		cnt = sqlSessionTemplate.delete(namespace+".DeleteRecipe",rnum);
+		return cnt;
+	}
+=======
+>>>>>>> c88237f5e0ad2fcf48b4ea833d4a636596af58f3
 }

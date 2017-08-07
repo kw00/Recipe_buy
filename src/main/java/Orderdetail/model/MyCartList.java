@@ -2,12 +2,12 @@ package Orderdetail.model ;
 import java.util.HashMap;
 import java.util.Map;
 
-//Ä«Æ® Å¬·¡½º : ÁÖ¹®ÀÚ°¡ »óÇ°À» Àå¹Ù±¸´Ï¿¡ ´ãÀ¸¸é ÀÌ¸¦ ÄÃ·º¼ÇÀ¸·Î ÀúÀåÇÏ±â À§ÇÑ Å¬·¡½º
+//Ä«Æ® Å¬ï¿½ï¿½ï¿½ï¿½ : ï¿½Ö¹ï¿½ï¿½Ú°ï¿½ ï¿½ï¿½Ç°ï¿½ï¿½ ï¿½ï¿½Ù±ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½
 public class MyCartList {
 	
 	private Map<Integer, Integer> orderlists = null ;
-	//key´Â »óÇ° ¹øÈ£, value´Â ÁÖ¹® ¼ö·®
-	//orderlists´Â ¸î¹ø»óÇ°, ¸î°³ ÆÇ¸Å ÀÇ Á¤º¸¸¦ °¡Áö°í ÀÖ´Ù.
+	//keyï¿½ï¿½ ï¿½ï¿½Ç° ï¿½ï¿½È£, valueï¿½ï¿½ ï¿½Ö¹ï¿½ ï¿½ï¿½ï¿½ï¿½
+	//orderlistsï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç°, ï¿½î°³ ï¿½Ç¸ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½.
 	 
 	
 	public MyCartList() {
@@ -19,16 +19,24 @@ public class MyCartList {
 	}
 	
 	
-	public void AddOrder(int pmkey, int oqty){ // »óÇ°¹øÈ£, ÁÖ¹®¼ö·®
-		// ÇØ´ç »óÇ° ¹øÈ£¿¡ ´ëÇÑ ¼ö·®À» Ãß°¡ÇÑ´Ù.
-		if ( orderlists.containsKey( pmkey ) == false ) { //¾øÀ¸¸é Ãß°¡
+	public void AddOrder(int pmkey, int oqty){ // ï¿½ï¿½Ç°ï¿½ï¿½È£, ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½
+		// ï¿½Ø´ï¿½ ï¿½ï¿½Ç° ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½Ñ´ï¿½.
+		if ( orderlists.containsKey( pmkey ) == false ) { //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
 			orderlists.put(pmkey, oqty ) ; 
-			// orderlists°¡ °ü¸®ÇÏ´Â HashMap°´Ã¼¿¡ °è¼Ó putÇÑ´Ù. 
+			// orderlistsï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ HashMapï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ putï¿½Ñ´ï¿½. 
 		
-		}else{ // ÀÖÀ¸¸é ´©ÀûÇÏ±â
+		}else{ // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½
 			orderlists.put(pmkey, orderlists.get(pmkey) +  oqty ) ;
-			// pmkey¹øÈ£ »óÇ°ÀÇ ÆÇ¸Å¼ö·®À» °¡Á®¿Í¼­ +oqtyÀ» ÇÑÈÄ ´Ù½Ã map¿¡ ³Ö´Â´Ù. 
+			// pmkeyï¿½ï¿½È£ ï¿½ï¿½Ç°ï¿½ï¿½ ï¿½Ç¸Å¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ +oqtyï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ù½ï¿½ mapï¿½ï¿½ ï¿½Ö´Â´ï¿½. 
 		}		
+	}
+
+	public void deleteOrder(int fnum) {
+		System.out.println("=================ìž¥ë°”êµ¬ë‹ˆ ì‚­ì œ=============");
+		System.out.println(orderlists);
+		System.out.println(orderlists.remove(fnum));
+		System.out.println(orderlists);
+		System.out.println("=======================================");
 	}
 }
 
