@@ -172,7 +172,6 @@ var loadOsusume=function(){
 					$("#bad").append("<p>"+bad+"</p>");
 				}
 			}else if(this.status==400){
-				alert("comments를 읽어오지 못했습니다.");
 			}
 		}
 	}
@@ -186,7 +185,7 @@ $(document).ready(function(){
 		var value= $(this).val();
 		var valueArray = value.split('-');
 		var result = $("#fprice").val();
-		alert(result);
+		/* alert(result); */
 		if(isChecked){
 			/* alert("체크했음"); */
 			result = parseInt(result)+(parseInt(valueArray[1])*parseInt(valueArray[2]));

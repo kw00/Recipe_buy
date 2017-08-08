@@ -53,7 +53,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css" type="text/css"
 	media="screen" title="no title" />
-
+<script type="text/javascript">
+	var addCart=function(ringredients){
+		/* alert(ringredients); */
+		var fnum = "";
+		var fqty = "";
+		var cnt = 1;
+		var valueArray = ringredients.split(',');
+		for(var i = 0; i<valueArray.length; i++){
+			var val = valueArray[i].split("-");
+			if(valueArray.length==cnt){
+				fnum += val[3];
+				fqty += val[1];
+			}else{
+				fqty += val[1]+"-";
+				fnum += val[3]+"-";
+			}
+			cnt = cnt+1;
+		}
+		location.href="add1.mall?fnum="+fnum+"&fqty="+fqty;
+	}
+	var nai = function(){
+		alert("해당 상품은 준비중입니다");
+	}
+</script>
 
 <style>
 .col-item {
@@ -317,7 +340,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												<div class="separator clear-left">
 													<p class="btn-add">
 														<i class="fa fa-shopping-cart"></i><a
-															href="http://www.jquery2dotnet.com" class="hidden-sm">Add
+															href="#" class="hidden-sm" onclick="addCart('${b_recipe1.ringredients}')">Add
 															to cart</a>
 													</p>
 													<p class="btn-details">
@@ -356,11 +379,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													<div class="separator clear-left">
 														<p class="btn-add">
 															<i class="fa fa-shopping-cart"></i><a
-																href="#" class="hidden-sm">Add to cart</a>
+																href="#" class="hidden-sm" onclick="nai()">Add to cart</a>
 														</p>
 														<p class="btn-details">
 															<i class="fa fa-list"></i><a
-																href="#" class="hidden-sm">More details</a>
+																href="#" class="hidden-sm" onclick="nai()">More details</a>
 														</p>
 													</div>
 													<div class="clearfix"></div>
@@ -397,7 +420,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												<div class="separator clear-left">
 													<p class="btn-add">
 														<i class="fa fa-shopping-cart"></i><a
-															href="http://www.jquery2dotnet.com" class="hidden-sm">Add
+															href="#" class="hidden-sm" onclick="addCart('${b_recipe2.ringredients}')">Add
 															to cart</a>
 													</p>
 													<p class="btn-details">
@@ -436,11 +459,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												<div class="separator clear-left">
 													<p class="btn-add">
 														<i class="fa fa-shopping-cart"></i><a
-															href="#" class="hidden-sm">Add to cart</a>
+															href="#" class="hidden-sm" onclick="nai()">Add to cart</a>
 													</p>
 													<p class="btn-details">
 														<i class="fa fa-list"></i><a
-															href="#" class="hidden-sm">More details</a>
+															href="#" class="hidden-sm" onclick="nai()">More details</a>
 													</p>
 												</div>
 												<div class="clearfix"></div>
@@ -504,7 +527,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												<div class="separator clear-left">
 													<p class="btn-add">
 														<i class="fa fa-shopping-cart"></i><a
-															href="http://www.jquery2dotnet.com" class="hidden-sm">Add
+															href="#" class="hidden-sm" onclick="addCart('${recipe1.ringredients}')">Add
 															to cart</a>
 													</p>
 													<p class="btn-details">
@@ -543,11 +566,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													<div class="separator clear-left">
 														<p class="btn-add">
 															<i class="fa fa-shopping-cart"></i><a
-																href="#" class="hidden-sm">Add to cart</a>
+																href="#" class="hidden-sm" onclick="nai()">Add to cart</a>
 														</p>
 														<p class="btn-details">
 															<i class="fa fa-list"></i><a
-																href="#" class="hidden-sm">More details</a>
+																href="#" class="hidden-sm" onclick="nai()">More details</a>
 														</p>
 													</div>
 													<div class="clearfix"></div>
@@ -585,7 +608,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												<div class="separator clear-left">
 													<p class="btn-add">
 														<i class="fa fa-shopping-cart"></i><a
-															href="http://www.jquery2dotnet.com" class="hidden-sm">Add
+															href="#" class="hidden-sm" onclick="addCart('${recipe2.ringredients}')">Add
 															to cart</a>
 													</p>
 													<p class="btn-details">
@@ -624,11 +647,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												<div class="separator clear-left">
 													<p class="btn-add">
 														<i class="fa fa-shopping-cart"></i><a
-															href="#" class="hidden-sm">Add to cart</a>
+															href="#" class="hidden-sm" onclick="nai()">Add to cart</a>
 													</p>
 													<p class="btn-details">
 														<i class="fa fa-list"></i><a
-															href="#" class="hidden-sm">More details</a>
+															href="#" class="hidden-sm" onclick="nai()">More details</a>
 													</p>
 												</div>
 												<div class="clearfix"></div>

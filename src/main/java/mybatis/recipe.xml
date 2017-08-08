@@ -76,21 +76,21 @@
 	
 	<!-- 메인화면 많은 추천 레시피-->
 	<select id="getbest1234" resultType="MyRecipe">
-		select * from (select a.rnum, a.rname, a.rimage, a.rprice, b.good ,row_number() over (order by b.good desc) rank from (select rnum, rname, rimage, rprice from recipe) a inner join (select distinct rnum, sum(good) OVER (partition by rnum) as good from recipegoodbad) b on a.rnum=b.rnum) where rank between 1 and 4
+		select * from (select a.rnum, a.rname, a.rimage, a.rprice, a.ringredients, b.good ,row_number() over (order by b.good desc) rank from (select rnum, rname, rimage, rprice,ringredients from recipe) a inner join (select distinct rnum, sum(good) OVER (partition by rnum) as good from recipegoodbad) b on a.rnum=b.rnum) where rank between 1 and 4
 	</select>
 	
 	<select id="getbest5678" resultType="MyRecipe">
-		select * from (select a.rnum, a.rname, a.rimage, a.rprice, b.good ,row_number() over (order by b.good desc) rank from (select rnum, rname, rimage, rprice from recipe) a inner join (select distinct rnum, sum(good) OVER (partition by rnum) as good from recipegoodbad) b on a.rnum=b.rnum) where rank between 5 and 8
+		select * from (select a.rnum, a.rname, a.rimage, a.rprice, a.ringredients, b.good ,row_number() over (order by b.good desc) rank from (select rnum, rname, rimage, rprice,ringredients from recipe) a inner join (select distinct rnum, sum(good) OVER (partition by rnum) as good from recipegoodbad) b on a.rnum=b.rnum) where rank between 5 and 8
 	</select>
 	
 	
 	<!-- 메인화면 새로등록된 레시피 -->
 	<select id="getnew1234" resultType="MyRecipe">
-		select * from (select rnum, rname, rimage, rprice, rinputdate, ROW_NUMBER() over (order by RINPUTDATE desc) rank from recipe) where rank between 1 and 4
+		select * from (select rnum, rname, rimage, rprice,ringredients , rinputdate, ROW_NUMBER() over (order by RINPUTDATE desc) rank from recipe) where rank between 1 and 4
 	</select>
 	
 	<select id="getnew5678" resultType="MyRecipe">
-		select * from (select rnum, rname, rimage, rprice, rinputdate, ROW_NUMBER() over (order by RINPUTDATE desc) rank from recipe) where rank between 5 and 8
+		select * from (select rnum, rname, rimage, rprice,ringredients, rinputdate, ROW_NUMBER() over (order by RINPUTDATE desc) rank from recipe) where rank between 5 and 8
 	</select>
 	
 	<select id="GetGoodBad" resultType="MyOsusume">
