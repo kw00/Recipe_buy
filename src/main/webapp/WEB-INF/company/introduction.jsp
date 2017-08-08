@@ -20,7 +20,7 @@
 <link href='https://fonts.googleapis.com/css?family=Dosis:400,500,700,800,600,300,200' rel='stylesheet' type='text/css'>
 
 <script type="text/javascript" src="resources/bootstrap/js_company/jquery.1.8.3.min.js"></script>
-<script type="text/javascript" src="resources/bootstrap/js_company/bootstrap.js"></script>
+<!-- <script type="text/javascript" src="resources/bootstrap/js_company/bootstrap.js"></script> -->
 <script type="text/javascript" src="resources/bootstrap/js_company/jquery-scrolltofixed.js"></script>
 <script type="text/javascript" src="resources/bootstrap/js_company/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="resources/bootstrap/js_company/jquery.isotope.js"></script>
@@ -86,266 +86,10 @@ function resizeText() {
 </section>
 <!--Top_content--> 
 
-<!--Service-->
-<section  id="service">
-  <div class="container">
-    <h2>Services</h2>
-    <div class="service_area">
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="service_block">
-            <div class="service_icon delay-03s animated wow  zoomIn"> <span><i class="fa-flash"></i></span> </div>
-            <h3 class="animated fadeInUp wow">Quick TurnAround</h3>
-            <p class="animated fadeInDown wow">Proin iaculis purus consequat sem cure digni. Donec porttitora entum suscipit  aenean rhoncus posuere odio in tincidunt.</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="service_block">
-            <div class="service_icon icon2  delay-03s animated wow zoomIn"> <span><i class="fa-comments"></i></span> </div>
-            <h3 class="animated fadeInUp wow">Friendly Support</h3>
-            <p class="animated fadeInDown wow">Proin iaculis purus consequat sem cure digni. Donec porttitora entum suscipit  aenean rhoncus posuere odio in tincidunt.</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="service_block">
-            <div class="service_icon icon3  delay-03s animated wow zoomIn"> <span><i class="fa-shield"></i></span> </div>
-            <h3 class="animated fadeInUp wow">top Security</h3>
-            <p class="animated fadeInDown wow">Proin iaculis purus consequat sem cure digni. Donec porttitora entum suscipit  aenean rhoncus posuere odio in tincidunt.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!--Service-->
-
-<section id="work_outer"><!--main-section-start-->
-<div class="top_cont_latest">
-  <div class="container">
-    <h2>Latest Work</h2>
-    <div class="work_section">
-      <div class="row">
-        <div class="col-lg-6 col-sm-6 wow fadeInLeft delay-05s">
-          <div class="service-list">
-            <div class="service-list-col1"> <i class="icon-doc"></i> </div>
-            <div class="service-list-col2">
-              <h3>Process Walkthrough</h3>
-              <p>Proin iaculis purus digni consequat sem digni ssim. Donec entum digni ssim.</p>
-            </div>
-          </div>
-          <div class="service-list">
-            <div class="service-list-col1"> <i class="icon-comment"></i> </div>
-            <div class="service-list-col2">
-              <h3>24/7 support</h3>
-              <p>Proin iaculis purus consequat sem digni ssim. Digni ssim porttitora .</p>
-            </div>
-          </div>
-          <div class="service-list">
-            <div class="service-list-col1"> <i class="icon-database"></i> </div>
-            <div class="service-list-col2">
-              <h3>Hosting & Storage</h3>
-              <p>Proin iaculis purus consequat digni sem digni ssim. Purus donec porttitora entum.</p>
-            </div>
-          </div>
-          <div class="service-list">
-            <div class="service-list-col1"> <i class="icon-cog"></i> </div>
-            <div class="service-list-col2">
-              <h3>Customization options</h3>
-              <p>Proin iaculis purus consequat sem digni ssim. Sem porttitora entum.</p>
-            </div>
-          </div>
-          <div class="work_bottom"> <span>Ready to take the plunge?</span> <a href="#contact" class="contact_btn">Contact Us</a> </div>
-        </div>
-        <figure class="col-lg-6 col-sm-6  text-right wow fadeInUp delay-02s"> </figure>
-      </div>
-    </div>
-  </div>
-  <!--<div class="work_pic"><img src="img/dashboard_pic.png" alt=""></div>-->
-  </div>
-</section>
 <!--main-section-end--> 
 
 <!--new_portfolio--> 
 
-<!-- Portfolio -->
-<section id="Portfolio" class="content"> 
-  
-  <!-- Container -->
-  <div class="container portfolio-title"> 
-    
-    <!-- Section Title -->
-    <div class="section-title">
-      <h2>Portfolio</h2>
-    </div>
-    <!--/Section Title --> 
-    
-  </div>
-  <!-- Container -->
-  
-  <div class="portfolio-top"></div>
-  
-  <!-- Portfolio Plus Filters -->
-  <div class="portfolio"> 
-    
-    <!-- Portfolio Filters -->
-    <div id="filters" class="sixteen columns">
-      <ul class="clearfix">
-        <li><a id="all" href="#" data-filter="*" class="active">
-          <h5>All</h5>
-          </a></li>
-        <li><a class="" href="#" data-filter=".branding">
-          <h5>Branding</h5>
-          </a></li>
-        <li><a class="" href="#" data-filter=".design">
-          <h5>Design</h5>
-          </a></li>
-        <li><a class="" href="#" data-filter=".photography">
-          <h5>Photography</h5>
-          </a></li>
-        <li><a class="" href="#" data-filter=".videography">
-          <h5>Videography</h5>
-          </a></li>
-        <li><a class="" href="#" data-filter=".web">
-          <h5>Web</h5>
-          </a></li>
-      </ul>
-    </div>
-    <!--/Portfolio Filters --> 
-    
-    <!-- Portfolio Wrap -->
-    <div class="isotope" style="position: relative; overflow: hidden; height: 480px;" id="portfolio-wrap"> 
-      
-      <!-- Portfolio Item With PrettyPhoto  -->
-      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four   videography isotope-item">
-        <div class="portfolio-image"> <img src="resources/bootstrap/images_company/portfolio_pic1.jpg"  alt="Portfolio 1"> </div>
-        <a title="Starbucks Coffee" rel="prettyPhoto[galname]" href="http://clapat.ro/themes/newave/images/portfolio/portfolio2.jpg">
-        <div class="project-overlay">
-          <div class="project-info">
-            <div class="zoom-icon"></div>
-            <h4 class="project-name">Leica Camera</h4>
-            <p class="project-categories">Videography</p>
-          </div>
-        </div>
-        </a> </div>
-      <!--/Portfolio Item With PrettyPhoto  --> 
-      
-      <!-- Portfolio Item Video Expander  -->
-      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(337px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  design isotope-item">
-        <div class="portfolio-image"> <img src="resources/bootstrap/images_company/portfolio_pic2.jpg" alt="Portfolio 1"> </div>
-        <div class="project-overlay">
-          <div class="open-project-link"> <a class="open-project" href="http://clapat.ro/themes/newave/project-video-expander.html" title="Open Project"></a> </div>
-          <div class="project-info">
-            <div class="zoom-icon"></div>
-            <h4 class="project-name">Foto Template</h4>
-            <p class="project-categories">Design</p>
-          </div>
-        </div>
-      </div>
-      <!--/Portfolio Item Video Expander  --> 
-      
-      <!-- Portfolio Item Normal Expander -->
-      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(674px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  design  isotope-item">
-        <div class="portfolio-image"> <img src="resources/bootstrap/images_company/portfolio_pic3.jpg" alt="Portfolio 1"> </div>
-        <div class="project-overlay">
-          <div class="open-project-link"> <a class="open-project" href="http://clapat.ro/themes/newave/project-normal-expander-1.html" title="Open Project"></a> </div>
-          <div class="project-info">
-            <div class="zoom-icon"></div>
-            <h4 class="project-name">Sony Phone</h4>
-            <p class="project-categories">Design</p>
-          </div>
-        </div>
-      </div>
-      <!--/Portfolio Item Normal Expander --> 
-      
-      <!-- Portfolio Item FullScreen Expander -->
-      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(1011px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  photography  branding web isotope-item">
-        <div class="portfolio-image"> <img src="resources/bootstrap/images_company/portfolio_pic4.jpg" alt="Portfolio 1"> </div>
-        <div class="project-overlay">
-          <div class="open-project-link"> <a class="open-project" href="http://clapat.ro/themes/newave/project-fullscreen-expander-1.html" title="Open Project"></a> </div>
-          <div class="project-info">
-            <div class="zoom-icon"></div>
-            <h4 class="project-name">Nike Shoes</h4>
-            <p class="project-categories">Photography, Web, Branding</p>
-          </div>
-        </div>
-      </div>
-      <!-- Portfolio Item FullScreen Expander --> 
-      
-      <!-- Portfolio Item FullScreen Expander -->
-      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 240px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  design isotope-item">
-        <div class="portfolio-image"> <img src="resources/bootstrap/images_company/portfolio_pic5.jpg" alt="Portfolio 1"> </div>
-        <div class="project-overlay">
-          <div class="open-project-link"> <a class="open-project" href="http://clapat.ro/themes/newave/project-fullscreen-expander-2.html" title="Open Project"></a> </div>
-          <div class="project-info">
-            <div class="zoom-icon"></div>
-            <h4 class="project-name">Vinyl Record</h4>
-            <p class="project-categories">Design</p>
-          </div>
-        </div>
-      </div>
-      <!--/Portfolio Item FullScreen Expander --> 
-      
-      <!-- Portfolio Item Normal Expander -->
-      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(337px, 240px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  web isotope-item">
-        <div class="portfolio-image"> <img src="resources/bootstrap/images_company/portfolio_pic6.jpg" alt="Portfolio 1"> </div>
-        <div class="project-overlay">
-          <div class="open-project-link"> <a class="open-project" href="http://clapat.ro/themes/newave/project-normal-expander-2.html" title="Open Project"></a> </div>
-          <div class="project-info">
-            <div class="zoom-icon"></div>
-            <h4 class="project-name">iPhone</h4>
-            <p class="project-categories">Web</p>
-          </div>
-        </div>
-      </div>
-      <!--/Portfolio Item Normal Expander --> 
-      
-      <!-- Portfolio Item External Project  -->
-      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(674px, 240px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  design web isotope-item">
-        <div class="portfolio-image"> <img src="resources/bootstrap/images_company/portfolio_pic7.jpg" alt="Portfolio 1"> </div>
-        <a href="http://clapat.ro/themes/newave/project-external-1.html" class="external">
-        <div class="project-overlay">
-          <div class="project-info">
-            <div class="zoom-icon"></div>
-            <h4 class="project-name">Nexus Phone</h4>
-            <p class="project-categories">Design, Web</p>
-          </div>
-        </div>
-        </a> </div>
-      <!--/Portfolio Item External Project  --> 
-      
-      <!-- Portfolio Item With PrettyPhoto  -->
-      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(1011px, 240px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four   photography isotope-item">
-        <div class="portfolio-image"> <img src="resources/bootstrap/images_company/portfolio_pic8.jpg" alt="Portfolio 1"> </div>
-        <a title="Stereo Headphones" rel="prettyPhoto[galname]" href="http://clapat.ro/themes/newave/images/portfolio/portfolio8.jpg">
-        <div class="project-overlay">
-          <div class="project-info">
-            <div class="zoom-icon"></div>
-            <h4 class="project-name">Art Frame</h4>
-            <p class="project-categories">Photography</p>
-          </div>
-        </div>
-        </a> </div>
-      <!--/Portfolio Item With PrettyPhoto  --> 
-      
-    </div>
-    <!--/Portfolio Wrap --> 
-    
-  </div>
-  <!--/Portfolio Plus Filters -->
-  
-  <div class="portfolio-bottom"></div>
-  
-  <!-- Project Page Holder-->
-  <div id="project-page-holder">
-    <div class="clear"></div>
-    <div id="project-page-data"></div>
-  </div>
-  <!--/Project Page Holder--> 
-  
-</section>
-<!--/Portfolio --> 
-
-<!--new_portfolio--> 
 
 <!--
 <section class="main-section paddind" id="Portfolio">
@@ -385,9 +129,9 @@ function resizeText() {
       <div class="clear"></div>
     </div>
   </div>
-</section> -->
-<!--main-section client-part-end-->
+</section>
 
+<!--main-section client-part-end-->
 <div class="c-logo-part"><!--c-logo-part-start-->
   <div class="container">
     <ul class="delay-06s animated bounce wow">
@@ -398,6 +142,60 @@ function resizeText() {
     </ul>
   </div>
 </div>
+
+<br><br><br><br>
+<div class="container">
+ <div class="top_left_cont flipInY wow animated">
+              <h3>Colourful &amp; sexy!</h3>
+              <h2>creating websites that
+                make you stop &amp; stare</h2>
+              <p> Accusantium quam, aliquam ultricies eget tempor id, aliquam eget nibh et. Maecen aliquam, risus at semper. Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum. </p>
+              <a href="#service" class="learn_more2">Learn more</a> </div>
+<table class="table">
+<tr>
+<td>
+<script>
+	var i = 0; // Start point
+	var images = [];
+	var time = 1000;
+
+	// Image List
+	images[0] = 'resources/bootstrap/images_company/image1.jpg';
+	images[1] = 'resources/bootstrap/images_company/image2.jpg';
+	images[2] = 'resources/bootstrap/images_company/image3.jpg';
+	images[3] = 'resources/bootstrap/images_company/image4.jpg';
+
+	// Change Image
+	function changeImg(){
+		document.slide.src = images[i];
+
+		if(i < images.length - 1){
+			i++;
+		} else {
+			i = 0;
+		}
+
+		setTimeout("changeImg()", time);
+	}
+
+	window.onload = changeImg;
+
+</script>
+<img name="slide" width="1200" height="600">
+</td>
+<td>
+<img src="resources/bootstrap/images_company/1.webp">
+<img src="resources/bootstrap/images_company/2.webp">
+<img src="resources/bootstrap/images_company/3.webp">
+<img src="resources/bootstrap/images_company/4.webp">
+<img src="resources/bootstrap/images_company/5.webp">
+<img src="resources/bootstrap/images_company/6.webp">
+</td>
+</tr>
+</table>
+</div>
+
+
 <!--c-logo-part-end-->
 <section class="main-section team" id="team"><!--main-section team-start-->
   <div class="container">
@@ -415,7 +213,7 @@ function resizeText() {
             <li><a href="javascript:void(0)" class="fa-google-plus"></a></li>
           </ul>
         </div>
-        <h3 class="wow fadeInDown delay-03s">Walter White</h3>
+        <h3 class="wow fadeInDown delay-03s">이 정 호</h3>
         <span class="wow fadeInDown delay-03s">Chief Executive Officer</span>
         <p class="wow fadeInDown delay-03s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat sollicitudin cursus. Dolor sit amet, consectetur adipiscing elit proin consequat.</p>
       </div>
@@ -430,7 +228,53 @@ function resizeText() {
             <li><a href="javascript:void(0)" class="fa-google-plus"></a></li>
           </ul>
         </div>
-        <h3 class="wow fadeInDown delay-06s">Jesse Pinkman</h3>
+        <h3 class="wow fadeInDown delay-06s">전 민 석</h3>
+        <span class="wow fadeInDown delay-06s">Product Manager</span>
+        <p class="wow fadeInDown delay-06s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat sollicitudin cursus. Dolor sit amet, consectetur adipiscing elit proin consequat.</p>
+      </div>
+      <div class="team-leader-box">
+        <div class="team-leader wow fadeInDown delay-09s">
+          <div class="team-leader-shadow"><a href="javascript:void(0)"></a></div>
+          <img src="resources/bootstrap/images_company/case.jpg" alt="">
+          <ul>
+            <li><a href="javascript:void(0)" class="fa-twitter"></a></li>
+            <li><a href="javascript:void(0)" class="fa-facebook"></a></li>
+            <li><a href="javascript:void(0)" class="fa-pinterest"></a></li>
+            <li><a href="javascript:void(0)" class="fa-google-plus"></a></li>
+          </ul>
+        </div>
+        <h3 class="wow fadeInDown delay-09s">박 경 우</h3>
+        <span class="wow fadeInDown delay-09s">Creator</span>
+        <p class="wow fadeInDown delay-09s">아이디어 및 전반적인 디자인과 UI 구성, 마이페이지 외 로그인 관련과 회원정보 찾기 및 수정과 회사 영역 디자인 및 개발</p>
+      </div>
+      <div class="team-leader-block clearfix">
+      <div class="team-leader-box">
+        <div class="team-leader wow fadeInDown delay-03s">
+          <div class="team-leader-shadow"><a href="javascript:void(0)"></a></div>
+          <img src="resources/bootstrap/images_company/team-leader-pic1.jpg" alt="">
+          <ul>
+            <li><a href="javascript:void(0)" class="fa-twitter"></a></li>
+            <li><a href="javascript:void(0)" class="fa-facebook"></a></li>
+            <li><a href="javascript:void(0)" class="fa-pinterest"></a></li>
+            <li><a href="javascript:void(0)" class="fa-google-plus"></a></li>
+          </ul>
+        </div>
+        <h3 class="wow fadeInDown delay-03s">김 남 혁</h3>
+        <span class="wow fadeInDown delay-03s">Chief Executive Officer</span>
+        <p class="wow fadeInDown delay-03s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat sollicitudin cursus. Dolor sit amet, consectetur adipiscing elit proin consequat.</p>
+      </div>
+      <div class="team-leader-box">
+        <div class="team-leader  wow fadeInDown delay-06s">
+          <div class="team-leader-shadow"><a href="javascript:void(0)"></a></div>
+          <img src="resources/bootstrap/images_company/team-leader-pic2.jpg" alt="">
+          <ul>
+            <li><a href="javascript:void(0)" class="fa-twitter"></a></li>
+            <li><a href="javascript:void(0)" class="fa-facebook"></a></li>
+            <li><a href="javascript:void(0)" class="fa-pinterest"></a></li>
+            <li><a href="javascript:void(0)" class="fa-google-plus"></a></li>
+          </ul>
+        </div>
+        <h3 class="wow fadeInDown delay-06s">현 승 훈</h3>
         <span class="wow fadeInDown delay-06s">Product Manager</span>
         <p class="wow fadeInDown delay-06s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat sollicitudin cursus. Dolor sit amet, consectetur adipiscing elit proin consequat.</p>
       </div>
@@ -445,15 +289,18 @@ function resizeText() {
             <li><a href="javascript:void(0)" class="fa-google-plus"></a></li>
           </ul>
         </div>
-        <h3 class="wow fadeInDown delay-09s">Skyler white</h3>
+        <h3 class="wow fadeInDown delay-09s">이 다 솔</h3>
         <span class="wow fadeInDown delay-09s">Accountant</span>
         <p class="wow fadeInDown delay-09s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat sollicitudin cursus. Dolor sit amet, consectetur adipiscing elit proin consequat.</p>
       </div>
-    </div>
+    </div> 
+    </div> 
   </div>
 </section>
-<!--main-section team-end-->
 
+
+
+<!--main-section team-end-->
 <section class="twitter-feed"><!--twitter-feed-->
   <div class="container  animated fadeInDown delay-07s wow">
     <div class="twitter_bird"><span><i class="fa-twitter"></i></span></div>
@@ -461,90 +308,7 @@ function resizeText() {
       and how often should you be drinking coffee?</p>
     <span>About 28 mins ago</span> </div>
 </section>
-<!--twitter-feed-end-->
-<footer class="footer_section" id="contact">
-  <div class="container">
-    <section class="main-section contact" id="contact">
-      <div class="contact_section">
-        <h2>Contact Us</h2>
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="contact_block">
-              <div class="contact_block_icon rollIn animated wow"><span><i class="fa-home"></i></span></div>
-              <span> 308 Negra Arroyo Lane, <br>
-              Albuquerque, NM, 87104 </span> </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="contact_block">
-              <div class="contact_block_icon icon2 rollIn animated wow"><span><i class="fa-phone"></i></span></div>
-              <span> 1-800-BOO-YAHH </span> </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="contact_block">
-              <div class="contact_block_icon icon3 rollIn animated wow"><span><i class="fa-pencil"></i></span></div>
-              <span> <a href="mailto:hello@butterfly.com"> hello@butterfly.com</a> </span> </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-6 wow fadeInLeft">
-          <div class="contact-info-box address clearfix">
-            <h3>Don’t be shy. Say hello!</h3>
-            <p>Accusantium quam, aliquam ultricies eget tempor id, aliquam eget nibh et. Maecen aliquam, risus at semper. Accusantium quam, aliquam ultricies eget tempor id, aliquam eget nibh et. Maecen aliquam, risus at semper.</p>
-            <p>Accusantium quam, aliquam ultricies eget tempor id, aliquam eget nibh et. Maecen aliquampor id.</p>
-          </div>
-          <ul class="social-link">
-            <li class="twitter animated bounceIn wow delay-02s"><a href="javascript:void(0)"><i class="fa-twitter"></i></a></li>
-            <li class="facebook animated bounceIn wow delay-03s"><a href="javascript:void(0)"><i class="fa-facebook"></i></a></li>
-            <li class="pinterest animated bounceIn wow delay-04s"><a href="javascript:void(0)"><i class="fa-pinterest"></i></a></li>
-            <li class="gplus animated bounceIn wow delay-05s"><a href="javascript:void(0)"><i class="fa-google-plus"></i></a></li>
-            <li class="dribbble animated bounceIn wow delay-06s"><a href="javascript:void(0)"><i class="fa-dribbble"></i></a></li>
-          </ul>
-        </div>
-        <div class="col-lg-6 wow fadeInUp delay-06s">
-          <div class="form">
-                <div id="sendmessage">Your message has been sent. Thank you!</div>
-                <div id="errormessage"></div>
-                <form action="" method="post" role="form" class="contactForm">
-                    <div class="form-group">
-                        <input type="text" name="name" class="form-control input-text" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                        <div class="validation"></div>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control input-text" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                        <div class="validation"></div>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control input-text" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                        <div class="validation"></div>
-                    </div>
-                    <div class="form-group">
-                        <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                        <div class="validation"></div>
-                    </div>
-                  
-                  <button type="submit" class="btn input-btn">SEND MESSAGE</button>
-                </form>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-  <div class="container">
-    <div class="footer_bottom"> 
-        <span>© Butterfly Theme</span> 
-        <div class="credits">
-            <!-- 
-                All the links in the footer should remain intact. 
-                You can delete the links only if you purchased the pro version.
-                Licensing information: https://bootstrapmade.com/license/
-                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Butterfly
-            -->
-            <a href="https://bootstrapmade.com/free-business-bootstrap-themes-website-templates/">Business Bootstrap Themes</a> by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        </div>
-    </div>
-  </div>
-</footer>
+
 <script type="text/javascript">
     $(document).ready(function(e) {
         $('#header_outer').scrollToFixed();
@@ -671,9 +435,6 @@ $( window ).load(function() {
 });
 </script>
 <script src="contactform/contactform.js"></script>
-
-
-
-
 </body>
 </html>
+<%@include file="../template/bottom.jsp"%>
