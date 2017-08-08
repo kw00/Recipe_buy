@@ -12,83 +12,104 @@
 	font-size: 30px;
 }
 
-#mypage-main1{
+#mypage-main1 {
 	font-size: 30px;
 }
 
-#mypage-main2{
+#mypage-main2 {
 	font-size: 30px;
 }
 
+.panel-title {
+	font-size: 15px;
+}
+
+.panel-body {
+	font-size: 13px;
+}
+
+/* .nav nav-pills{
+	background: orange;
+} */
 </style>
 </head>
 
 <body>
 	<br>
+	<br>
 	<div class="container">
-		<div class="mypage-header">
-			<p>My page</p>
-		</div>
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="mypage.me">My page</a></li>
+			<li><a href="security.me">Security</a></li>
+		</ul>
 		<br>
-		<br>
-		<div class="col-sm-6">
-			<div class="thumbnail">
-				<table class="table table-hover">
-				<br>
-					<tr>
-						<th colspan=2 name="mypage-main1"><p>RecipeBuy 프로필</p></th>
-					</tr>
-					<tr>
-					<td rowspan=3><img src="http://lorempixel.com/200/200/people/9/"
-						class="avatar img-circle img-thumbnail" alt="avatar" align="center" width="125"></td>
-						<%-- <td>${sessionScope.loginfo.image}</td> --%>
-						<%-- <td><img src="${sessionScope.loginfo.image}"></td> --%>
-						<td>아이디: ${sessionScope.loginfo.id}</td>
-						</tr>
-						<tr>
-						<td>이름: ${sessionScope.loginfo.name}</td>
-						</tr>
-						<tr>
-						<td>별명: ${sessionScope.loginfo.nickname}</td>
-						</tr>
-					<tr align=center>
-						<td colspan=2><a href="myimage.me">
-								<p class="btn btn-sm btn-warning">수정</p>
-						</a></td>
-					</tr>
-				</table>
+		<div class="container">
+			<div class="mypage-header">
+				<p>My page</p>
+			</div>
+			<br> <br>
 
+			<div class="col-sm-6">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<p class="panel-title">RecipeBuy 프로필</p>
+					</div>
+					<div class="panel-body">
+						<div class="col-sm-6">
+							<br>
+							<div class="panel-img">
+								<img src="resources/bootstrap/images/co.png" alt="avatar"
+									align="center" width="120" class="img-responsive" alt="" />
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<br> <br> 아이디: ${sessionScope.loginfo.id} <br><br> 이름:
+							${sessionScope.loginfo.name} <br><br> 별명:
+							${sessionScope.loginfo.nickname}
+						</div>
+					
+					</div><br>
+					<!-- <div class="panel-button" align="center">
+							<a href="update_profile.me">
+								<p class="btn btn-sm btn-primary">수정</p>
+							</a>
+						</div> -->
+						<br>
+						<br>
+				</div>
+
+				<!-- <div class="panel-footer">Panel Footer</div> -->
+			</div>
+
+			<div class="col-sm-6">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<p class="panel-title">연락처</p>
+					</div>
+					<div class="panel-body">
+						<div class="col-sm-12">
+							<br> <br>
+							<div class="panel-desc1">이메일: ${sessionScope.loginfo.email}
+							</div>
+							<br>
+							<div class="panel-desc1">휴대번호:
+								${sessionScope.loginfo.phone}</div>
+							<br>
+							<div class="panel-desc1">주소:
+								${sessionScope.loginfo.address}</div>
+							<br> <br>
+							<div class="panel-button" align="center"><br>
+								<a href="update_info.me?num=${sessionScope.loginfo.num}">
+									<p class="btn btn-sm btn-primary">수정</p>
+								</a><br>
+							</div>
+						</div>
+					</div>
+					<!-- <div class="panel-footer">Panel Footer</div> -->
+				</div>
+				<br><br>
 			</div>
 		</div>
-		<div class="col-sm-6">
-			<div class="thumbnail">
-				<table class="table table-hover">
-				<br>
-					<tr>
-						<th name="mypage-main2"><p>연락처</p></th>
-					</tr>
-					<tr>
-						<td>이메일</td>
-						<td>${sessionScope.loginfo.email}</td>
-					</tr>
-					<tr>
-						<td>휴대번호</td>
-						<td>${sessionScope.loginfo.phone}</td>
-					</tr>
-					<tr>
-						<td>주소</td>
-						<td>${sessionScope.loginfo.address}</td>
-					</tr>
-
-					<tr align=center>
-						<td colspan=2><a href="meminfo.me?num=${sessionScope.loginfo.num}">
-								<p class="btn btn-sm btn-warning">수정</p>
-						</a></td>
-					</tr>
-				</table>
-			</div>
-		</div>
-
 	</div>
 </body>
 </html>

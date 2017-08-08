@@ -56,8 +56,130 @@ a {
 	border-radius: 0px;
 }
 
-.cl-effect-13{
+.cl-effect-13 {
 	font-size: 13px;
+}
+
+.modal_security {
+	font-size: 13px;
+}
+
+#html_test {
+	color: red;
+	font-weight: bold;
+}
+
+.selected {
+	color: blue;
+}
+/* go */
+body {
+	background: #F1F3FA;
+}
+
+/* Profile container */
+.profile {
+	margin: 20px 0;
+}
+
+/* Profile sidebar */
+.profile-sidebar {
+	padding: 20px 0 10px 0;
+	background: #fff;
+	padding-right: 25px;
+}
+
+.profile-userpic img {
+	float: none;
+	margin: 0 auto;
+	width: 50%;
+	height: 50%;
+	-webkit-border-radius: 50% !important;
+	-moz-border-radius: 50% !important;
+	border-radius: 50% !important;
+}
+
+.profile-usertitle {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.profile-usertitle-name {
+	color: #5a7391;
+	font-size: 16px;
+	font-weight: 600;
+	margin-bottom: 7px;
+}
+
+.profile-usertitle-job {
+	text-transform: uppercase;
+	color: #5b9bd1;
+	font-size: 12px;
+	font-weight: 600;
+	margin-bottom: 15px;
+}
+
+.profile-userbuttons {
+	text-align: center;
+	margin-top: 10px;
+}
+
+.profile-userbuttons .btn {
+	text-transform: uppercase;
+	font-size: 11px;
+	font-weight: 600;
+	padding: 6px 15px;
+	margin-right: 5px;
+}
+
+.profile-userbuttons .btn:last-child {
+	margin-right: 0px;
+}
+
+.profile-usermenu {
+	margin-top: 30px;
+}
+
+.profile-usermenu ul li {
+	border-bottom: 1px solid #f0f4f7;
+}
+
+.profile-usermenu ul li:last-child {
+	border-bottom: none;
+}
+
+.profile-usermenu ul li a {
+	color: #93a3b5;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.profile-usermenu ul li a i {
+	margin-right: 8px;
+	font-size: 14px;
+}
+
+.profile-usermenu ul li a:hover {
+	background-color: #fafcfd;
+	color: #5b9bd1;
+}
+
+.profile-usermenu ul li.active {
+	border-bottom: none;
+}
+
+.profile-usermenu ul li.active a {
+	color: #5b9bd1;
+	background-color: #f6f9fb;
+	border-left: 2px solid #5b9bd1;
+	margin-left: -2px;
+}
+
+/* Profile Content */
+.profile-content {
+	padding: 20px;
+	background: #fff;
+	min-height: 460px;
 }
 </style>
 <%
@@ -72,7 +194,17 @@ a {
 	
 	
 	
+	
+	
+	
+	
+	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+
+
+
+
+
 
 
 
@@ -101,6 +233,49 @@ a {
 	rel='stylesheet' type='text/css'>
 
 <link href="resources/bootstrap/css/responsive.css" rel="stylesheet">
+<script>
+	$(document).ready(function() {
+		$("#html_test").click(function() {
+			if ($(this).html() == "OFF") {
+				$("#html_test").css("color", "blue");
+				$("#html_test").html("ON");
+				setTimeout("ip_On()", 500);
+			} else {
+				$("#html_test").css("color", "red");
+				$("#html_test").html("OFF");
+				setTimeout("ip_Off()", 500);
+			}
+		});
+	});
+
+	function ip_On() {
+		alert("IP 보안이 설정되었습니다.");
+	}
+
+	function ip_Off() {
+		alert("IP 보안설정이 해제되었습니다.");
+	}
+
+	/* $(document).ready(function () {
+
+	 var modalWidth = $('#logon-modal').width();
+	 $('#logon-modal').css("left", "50%");
+	 $('#logon-modal').css("width", modalWidth);
+	 $('#logon-modal').css("margin", (modalWidth/2)*-1);
+
+	 }); */
+
+	$("#logon-modal").modal('show').css({
+		'margin-top' : function() { //vertical centering
+			$('#logon-modal').css("width", modalWidth);
+			return -($(this).height() / 2);
+		},
+		'margin-left' : function() { //Horizontal centering
+			return -($(this).width() / 2);
+		}
+	});
+</script>
+
 </head>
 
 <body>
@@ -157,8 +332,8 @@ a {
 											food</a></li>
 									<li><a href="list.fd?whatColumn=fcategory&keyword=양념">Seasoning</a></li>
 								</ul></li>
-								
-								<!-- dropdown -->
+
+							<!-- dropdown -->
 							<li role="presentation" class="dropdown"><a
 								class="dropdown-toggle" data-toggle="dropdown" href="#"
 								role="button" aria-haspopup="true" aria-expanded="false">
@@ -171,8 +346,8 @@ a {
 									<li><a href="#">Demand</a></li>
 									<li><a href="#">Gallery</a></li>
 								</ul></li>
-								
-								<!-- dropdown -->
+
+							<!-- dropdown -->
 							<li role="presentation" class="dropdown"><a
 								class="dropdown-toggle" data-toggle="dropdown" href="#"
 								role="button" aria-haspopup="true" aria-expanded="false">
@@ -181,30 +356,33 @@ a {
 								<ul class="dropdown-menu">
 									<li><a href="intro.cp">Introduction</a></li>
 									<li><a href="service.cp">Service</a></li>
+									<li><a href="gallery.cp">Gallery</a></li>
 									<li><a href="contact.cp">Contact</a></li>
 								</ul></li>
-								
-								<!-- <li><a href="contact.cp">Contact</a></li> -->
+
+							<!-- <li><a href="contact.cp">Contact</a></li> -->
 							<c:choose>
 								<c:when test="${sessionScope.loginfo==null}">
 									<li><a data-toggle="modal" href="#login-modal">Login</a></li>
 								</c:when>
 								<c:otherwise>
-								<!-- dropdown -->
-								<li><a href="fridge.fr">My fridge</a></li>
-							<li role="presentation" class="dropdown"><a
-								class="dropdown-toggle" data-toggle="dropdown" href="#"
-								role="button" aria-haspopup="true" aria-expanded="false">
-									${sessionScope.loginfo.id} 님 <span class="caret"></span>
-							</a>
-								<ul class="dropdown-menu">
-									<c:if test="${sessionScope.loginfo.admin == 0 }">
-										<li><a href="list.me">Administration</a></li>
-									</c:if>
-									<li><a href="mypage.me">My page</a></li>
-									<%-- <li><a href="meminfo.me?num=${sessionScope.loginfo.num}">My page</a></li> --%>
-								</ul>
-								<li><a href="logout.me">Logout</a></li>
+									<!-- dropdown -->
+									<li><a data-toggle="modal" href="#logon-modal">${sessionScope.loginfo.id}
+											님</a></li>
+									<!-- <li><a href="fridge.fr">My fridge</a></li> -->
+									<%-- <li role="presentation" class="dropdown"><a
+										class="dropdown-toggle" data-toggle="dropdown" href="#"
+										role="button" aria-haspopup="true" aria-expanded="false">
+											${sessionScope.loginfo.id} 님 <span class="caret"></span>
+									</a>
+										<ul class="dropdown-menu">
+											<c:if test="${sessionScope.loginfo.admin == 0 }">
+												<li><a href="list.me">Administration</a></li>
+											</c:if>
+											<li><a href="mypage.me">My page</a></li>
+											<li><a href="meminfo.me?num=${sessionScope.loginfo.num}">My page</a></li>
+										</ul></li> --%>
+									<li><a href="logout.me">Logout</a></li>
 								</c:otherwise>
 							</c:choose>
 						</ul>
@@ -217,7 +395,7 @@ a {
 								href="https://www.pinterest.co.kr"></a></li>
 							<li><a class="icon-link round facebook"
 								href="https://twitter.com/?lang=ko"></a></li>
-							<li><a class="icon-link round dribble" 
+							<li><a class="icon-link round dribble"
 								href="https://dribbble.com/"></a></li>
 						</ul>
 					</div>
@@ -245,6 +423,11 @@ a {
 						<p>Please Sign In</p>
 					</div>
 					<br>
+					<div class="modal_security" align=right>
+						<p>
+							IP보안 <span id="html_test">OFF</span>
+						</p>
+					</div>
 				</div>
 				<div class="modal-body">
 					<form class="form-signin" action="login.me" method="post">
@@ -287,5 +470,80 @@ a {
 			</div>
 		</div>
 	</div>
+
+
+
+
+
+
+	<div class="modal fade" id="logon-modal" role="dialog">
+		<div class="modal-dialog modal-sm" align="center">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header" align="center">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+					</button>
+					<div class="container">
+						<div class="row profile">
+							<div class="col-md-3">
+								<div class="profile-sidebar">
+									<!-- SIDEBAR USERPIC -->
+									<div class="profile-userpic">
+										<img src="resources/bootstrap/images/co.png" alt="avatar"
+											align="center" width="50" class="img-responsive" alt=""/>
+									</div>
+									<!-- END SIDEBAR USERPIC -->
+									<!-- SIDEBAR USER TITLE -->
+									<div class="profile-usertitle">
+										<div class="profile-usertitle-name">
+											<a href="mypage.me"><strong>${sessionScope.loginfo.id}
+													님</a>
+										</div>
+										<div class="profile-usertitle-job">${sessionScope.loginfo.nickname}</div>
+									</div>
+									<!-- END SIDEBAR USER TITLE -->
+									<!-- SIDEBAR BUTTONS -->
+
+									<!-- END SIDEBAR BUTTONS -->
+									<!-- SIDEBAR MENU -->
+									<div class="profile-usermenu">
+										<ul class="nav">
+											<c:if test="${sessionScope.loginfo.admin == 0 }">
+												<li><a href="list.me"><i class="glyphicon glyphicon-home"></i>Administration</a></li>
+											</c:if>
+											<li><a href="mypage.me"> <i class="glyphicon glyphicon-user"></i>
+													My page
+											</a></li>
+											<li><a href="#" target="_blank"> <i
+													class="glyphicon glyphicon-ok"></i> Tasks
+											</a></li>
+											<li><a href="#"> <i class="glyphicon glyphicon-flag"></i>
+													Help
+											</a></li>
+										</ul>
+									</div>
+									
+									<!-- END MENU -->
+									<div class="profile-userbuttons">
+										<a href="update_info.me?num=${sessionScope.loginfo.num}"><button type="button" class="btn btn-warning btn-sm">수정</button></a>
+										<button type="button" class="btn btn-danger" data-dismiss="modal">닫기</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<%-- <center>
+						<strong>Design by <a href="http://j.mp/metronictheme"
+							target="_blank">Recipe Buy</a></strong>
+					</center> --%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
 </body>
 </html>

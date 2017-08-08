@@ -8,36 +8,54 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-.myimage-header{
-	font-size: 40px;
+.myimage-header {
+	font-size: 30px;
 }
-.myimage-main{
+
+.myimage-main {
 	align: center;
 }
 </style>
 </head>
 
+</td>
+</tr>
+
+
+
+<br>
+<br>
 <body>
-	<div class="col-sm-2"></div>
-	<div class="col-sm-7">
-		<br> <br>
-		<div class="myimage-header">
+	<div class="container" align="center">
+		<!-- <div class="myimage-header">
 			<p align="center">My image</p>
 		</div>
-		<br>
-		<div class="row">
-			<div class="col-sm-4">
-				<div class="myimage-main">
-					<img src="http://lorempixel.com/200/200/people/9/"
-						class="avatar img-circle img-thumbnail" alt="avatar" align="center"> <br>
-					<br>
-					<p align="center">${sessionScope.loginfo.id}
-					</h6>
-					<br> <br> <input type="file"
-						class="text-center center-block well well-sm" align="center">
-				</div>
-			</div>
-		</div>
+		<div class="myimage-main"> -->
+
+		<form action="insertimage.me"
+			enctype="multipart/form-data" method="post">
+			<table class="table table-hover" align="center">
+				<tr>
+					<td rowspan=2>프로필 사진</td>
+					<td><img src="resources/bootstrap/images/co.png" alt="avatar"
+											align="center" width="120" class="img-responsive" alt=""/></td>
+				</tr>
+				<tr>
+					<td align="left"><input type="file"
+						class="text-center center-block well well-sm"></td>
+				</tr>
+				<tr>
+					<td>별명</td>
+					<td>
+						<p>${sessionScope.loginfo.nickname}</p>
+					</td>
+				</tr>
+			</table>
+
+			<button type="submit" class="btn btn-warning">등록</button>
+		</form>
+	</div>
+
 	</div>
 </body>
 </html>
