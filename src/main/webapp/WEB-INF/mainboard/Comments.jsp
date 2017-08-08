@@ -18,9 +18,8 @@
 						<td>이름</td>
 					-->
 					<td style="width:20%;">아이디</td>
-					<td style="width:50%;">내용</td>
+					<td style="width:60%;">내용</td>
 					<td style="width:20%;">글쓴날</td>
-					<td style="width:10%;">삭제</td>
 				</tr>
 			</tbody>
 			<tbody class="list">
@@ -105,35 +104,29 @@ var loadComments = function(paraPage){
 
 
 var comm_delete = function(num, memNum){
-	var http;
-	var url = "codelete.mainboard?boardnum="+num+"&memnum="+memNum;
-	if(window.XMLHttpRequest){
-		http = new XMLHttpRequest();
-	}else if(window.ActiveXObject){
-		http = new ActiveXObject();
-	}
-	http.onreadystatechange = function(){
-		if(this.readyState==4){
-			if(this.status == 200){
-				var deleteJson = JSON.parse(this.responseText);
-				if('${loginfo.num}' == ''){
-					var comfirm = window.confirm("로그인시 이용 가능합니다.")
-					if(confirm){
-						location.href=contextPath+"/detail.mainboard?num=${param.rnum}";
-					}
-				}else if('${loginfo.num}' != memNum){
-					alert("글쓴이만 수정/삭제 권한이 있습니다.")
-				}else{
+	var confirm = window.confirm("삭제 하시겠습니까?");
+	if(confirm){
+		var http;
+		var url = "codelete.mainboard?boardnum="+num+"&memnum="+memNum;
+		if(window.XMLHttpRequest){
+			http = new XMLHttpRequest();
+		}else if(window.ActiveXObject){
+			http = new ActiveXObject();
+		}
+		
+		http.onreadystatechange = function(){
+			if(this.readyState==4){
+				if(this.status == 200){
+					var deleteJson = JSON.parse(this.responseText);
 					if(deleteJson["del"]>0){
-						alert("삭제 성공");
 						loadComments();
 					}
 				}
 			}
 		}
+		http.open("DELETE", url, true);
+		http.send();
 	}
-	http.open("DELETE", url, true);
-	http.send();
 }
 
 	var comm_insert = function(formVal){
@@ -156,10 +149,7 @@ var comm_delete = function(num, memNum){
 					loadComments();
 				}
 			}else if(this.status == 500){
-				var comfirm = window.confirm("로그인시 이용 가능합니다.")
-				if(confirm){
-					location.href=contextPath+"/detail.mainboard?num=${param.num}";
-				}
+				alert("로그인시 이용 가능합니다.");
 			}
 		}
 	}
@@ -169,6 +159,7 @@ var comm_delete = function(num, memNum){
 		//@RequestBody가 받는다.
 		formVal.content.value = "";
 }//ajax 구현
+
 
 var commentListready = function(commentsList){
 	var tableList = document.querySelector("#commentslist .list");
@@ -181,8 +172,7 @@ var commentListready = function(commentsList){
 		//htmlList+="<td>"+commentsList[i]["memnum"]+"</td>";
 		htmlList+="<td style='background-color:lightgray;'><b>"+commentsList[i]["id"]+"</b><br>("+commentsList[i]["name"]+")"+"</td>";
 		htmlList+="<td>"+commentsList[i]["content"]+"</td>";
-		htmlList+="<td>"+commentsList[i]["indate"]+"</td>";
-		htmlList+="<td><button class='btn btn-danger' type='button' onclick='comm_delete("+commentsList[i]["num"]+","+commentsList[i]["memnum"]+")'>삭제</button></td>"
+		htmlList+="<td>"+commentsList[i]["indate"]+"<c:if test='${loginfo.num eq 1}'><a style='cursor:pointer' herf='#' onclick='comm_delete("+commentsList[i]["num"]+","+commentsList[i]["memnum"]+")'><img src='resources/images/xxx.jpg' width='20px' height='20px'></a></c:if></td>";
 		htmlList+="</tr>";
 	}
 	tableList.innerHTML = htmlList;

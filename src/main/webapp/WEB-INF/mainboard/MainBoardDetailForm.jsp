@@ -6,6 +6,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+	function deletecheck(){
+		var confirm = window.confirm("삭제 하시겠습니까?");
+		if(confirm){
+			window.location='delete.mainboard?num=${board.num}';
+		}
+	}
+</script>
 </head>
 <body>
 	<br><br>
@@ -14,26 +22,29 @@
 			<br>
 			<table class="table" width="430" cellspacing="0" cellpadding="0">
 				<tr>
-					<td width="100" align="center">글쓴이</td>
+					<td width="80" align="center">글쓴이</td>
 					<td width="330" align="left">${board.writer}</td>
 				</tr>
 				
 				
 				<tr>
-					<td width="100" align="center">Email</td>
+					<td width="80" align="center">Email</td>
 					<td width="330" align="left">${board.email}</td>
 				</tr>
 				
 				
 				<tr>
-					<td width="100" align="center">제 목</td>
+					<td width="80" align="center">제 목</td>
 					<td width="330" align="left">${board.title}</td>
 				</tr>
 				
 				
 				<tr>
-					<td width="100" align="center">내 용</td>
-					<td width="330" align="left">${board.content}</td>
+					<td width="330" align="center" colspan="2">내 용</td>
+				</tr>
+				
+				<tr>
+					<td width="330" align="center" colspan="2">${board.content}</td>
 				</tr>
 				
 				<c:set value="${board.writer}" var="writer"/>
@@ -45,7 +56,7 @@
 							<input type="button" class="btn btn-default" value="수정하기"	
 									OnClick="window.location='update.mainboard?num=${board.num}'">
 							<input type="button" class="btn btn-default" value="삭제하기"	
-									OnClick="window.location='delete.mainboard?num=${board.num}'">
+									OnClick="deletecheck();">
 						</c:if>
 					</c:if>
 						<input type="button" class="btn btn-default" value="목록보기"	
