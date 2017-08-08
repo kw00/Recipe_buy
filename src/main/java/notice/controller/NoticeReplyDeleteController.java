@@ -23,7 +23,7 @@ public class NoticeReplyDeleteController {
 	public String doActionGET(@RequestParam("restep") int restep, Model model,
 		@RequestParam(value="num", required=false) int num){
 		
-		int cnt = 0;
+		int cnt = 0; 
 
 		cnt = noticeReplyDao.DeleteReNotice(restep);
 		
