@@ -65,4 +65,13 @@
 		delete from members where id = #{id} 
 	</delete>
 	
+	<update id="UpdateMyPageInfo">
+		update members set nickname=#{nickname}, email=#{email}, phone=#{phone}, address=#{address}, 
+		zipcode=#{zipcode}, ssn=#{ssn}, gender=#{gender}, admin=#{admin} where id = #{id}
+	</update>
+	
+	<update id="UpdateMyPagePwd">
+		update members set password=#{password} where id = #{id}
+	</update>
+	
 </mapper>	

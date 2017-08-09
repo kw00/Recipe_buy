@@ -666,30 +666,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<!-- //products -->
 
 					<!-- procedure -->
-					<br> <br> <br>
-					<div class="procedure">
-						<table>
-							<h2 class="procedure-title" align="center">Dinner, the
-								Recipe buy</h2>
-							<br>
-							<br>
-							<tr>
-								<td><img src="resources/bootstrap/images/service1.png">
-								</td>
-
-								<td rowspan="2"><img
-									src="resources/bootstrap/images/service_logic.png"></td>
-
-								<td rowspan="2"><img
-									src="resources/bootstrap/images/service2.png"></td>
-							</tr>
-
-							<tr>
-								<td><img src="resources/bootstrap/images/service3.png">
-								</td>
-							</tr>
-						</table>
-					</div>
 					<!-- //procedure -->
 					<br> <br> <br>
 					<!-- banner-bottom -->
@@ -774,11 +750,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<br> <br> <br> <br>
 				</div>
 			</div>
-		</div>
-
+			</div>
+			</div>
+			</div>
 
 		<!-- footer -->
-		<div class="footer">
+		<!-- <div class="footer">
 			<div class="container">
 				<div class="footer-grids">
 					<div class="col-md-3 footer-grid wow fadeInUp"
@@ -852,6 +829,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="clearfix"></div>
 				</div>
 			</div>
+			</div> -->
+	
+
 
 
 
