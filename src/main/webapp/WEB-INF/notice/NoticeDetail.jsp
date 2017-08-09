@@ -8,7 +8,19 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 	function reply_re(num) {
-		$("#reply_re"+num).toggle().html("<textarea rows='3' cols='80' name='content'></textarea><input  class='btn btn-default' type='submit' value='입력'>");
+		$("#reply_re"+num).toggle().html("<textarea rows='3' cols='100' name='content'></textarea><input  class='btn btn-default' type='submit' value='입력' onclick='return reContentCheck("+num+")'>");
+	}
+	function contentCheck() {
+		if($("textarea[name='content']").val() == ""){
+			alert("내용을 입력하세요.");
+			return false;
+		}
+	}
+	function reContentCheck(num) {
+		if($("#reply_re"+num+">textarea[name='content']").val() == ""){
+			alert("내용을 입력하세요.");
+			return false;
+		}
 	}
 </script>
 </head>
@@ -20,18 +32,13 @@
 				<tr>
 					<td width="100" align="center">글쓴이</td>
 					<td width="330" align="left">${notice.writer}
-						${notice.ref }
-						${notice.restep }
-						${notice.relevel }
 					</td>
 				</tr>
-				
 				
 				<tr>
 					<td width="100" align="center">제 목</td>
 					<td width="330" align="left">${notice.subject}</td>
 				</tr>
-				
 				
 				<tr>
 					<td width="100" align="center">내 용</td>
@@ -71,13 +78,13 @@
 							<textarea rows="3" cols="80" name="content"></textarea>
 						</td>
 						<td>
-							<input class="btn btn-default" type="submit" value="댓글달기">
+							<input class="btn btn-default" type="submit" value="댓글달기" onclick="return contentCheck()">
 						</td>
 					</tr>
 				</table>
 			</form>
 			</c:if>
-			<table width="80%" cellspacing="0" cellpadding="0" border="1">
+			<table width="80%" cellspacing="0" cellpadding="0" border="0">
 				<c:forEach items="${replyLists}" var="reply">
 					<tr>
 						<th colspan="2">
@@ -93,17 +100,19 @@
 								<img src="<%=request.getContextPath()%>/resources/images/level.gif">
 							</c:forEach>
 							${reply.content }
-							${reply.num }
-							${reply.ref }
-						${reply.restep }
-						${reply.relevel }
+							<c:if test="${reply.relevel eq 0 }">
+								<img width="20" height="20" src="<%=request.getContextPath()%>/resources/images/enter.jpg" onclick="reply_re(${reply.num})">
+							</c:if>
 						</td>
-						<td width="80" align="right">
-							<input type="button" class="btn btn-default" value="답글달기" onclick="reply_re(${reply.num})">
+						<td width="13%" align="left">
+							<c:if test="${reply.id eq loginfo.id }">
+								<a><input type="button" class="btn btn-default" value="수정"></a>
+								<a href="redelete.nt?restep=${reply.restep }&num=${notice.num}"><input type="button" class="btn btn-default" value="삭제"></a>
+							</c:if>
 						</td>
 					</tr>
 					<tr>
-						<td colspan="2">
+						<td>
 							<form action="reply.nt" method="get">
 								<input type="hidden" name="id" value="${loginfo.id }">
 								<input type="hidden" name="ref" value="${reply.ref }">
