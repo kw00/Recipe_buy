@@ -40,8 +40,11 @@ $(function(){
 </script>
 </head>
 <body>
+	<br><br>
 	<div class="container" align="center">
-	  <h2><b>글쓰기</b></h2>
+	<div class="notice_header">
+		<p>글 수정</p>
+	</div>
 	  	<form method="post" id="updateBoardFrm" action="update.mainboard"> 
 			<input type="hidden" name="num" value="${board.num}">
 			<table class="table" width="430" border="0" cellspacing="0" cellpadding="0" align="center">

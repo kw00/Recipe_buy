@@ -70,4 +70,8 @@
 		zipcode=#{zipcode}, ssn=#{ssn}, gender=#{gender}, admin=#{admin} where id = #{id}
 	</update>
 	
+	<update id="UpdateMyPagePwd">
+		update members set password=#{password} where id = #{id}
+	</update>
+	
 </mapper>	
