@@ -36,4 +36,11 @@ public class Notice_replyDao {
 		return cnt;
 	} 
 	
+	public int DeleteReNotice(int restep) {
+		int cnt = 0;
+		
+		cnt = sqlSessionTemplate.delete(namespace+".DeleteReNotice", restep);
+		
+		return cnt;
+	}
 }

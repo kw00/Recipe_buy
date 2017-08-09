@@ -14,22 +14,22 @@ import utility.Paging;
 @Component("myMemberDao")
 public class MemberDao {
 	private String namespace = "member.model.Member";
-	
+
 	@Autowired
 	private SqlSessionTemplate sqlSessionTemplate;
-	
+
 	public MemberDao(){}
 
 	//회원가입
 	public int InsertMember(Member member) {
 		int cnt = 0;
-		
+
 		System.out.println("======== Dao start========");
 		System.out.println(member);
 		System.out.println("======== Dao end========");
-		
+
 		cnt = sqlSessionTemplate.insert(namespace+".InsertMember", member);
-		
+
 		return cnt;
 	}
 
@@ -44,22 +44,22 @@ public class MemberDao {
 		if(sqlSessionTemplate.selectOne(namespace+".selectId", id)!=null){
 			idFlag = true;
 		}
-		
+
 		System.out.println("=======================");
 		System.out.println("id : " +id);
 		System.out.println("idFlag : " +idFlag);
 		System.out.println("=======================");
-		
+
 		return idFlag;
 	}
-	
+
 	//로그인 확인
 	public Member GetMember(String id) {
 		Member member = null;
 		member = sqlSessionTemplate.selectOne(namespace+".GetMember", id);
 		return member;
 	}
-	
+
 	public Member GetId(String name) {
 		// TODO Auto-generated method stub
 		Member bean = null;
@@ -73,39 +73,39 @@ public class MemberDao {
 		bean = sqlSessionTemplate.selectOne(namespace + ".GetPw",	id);
 		return bean;
 	}
-	
+
 	public int GetTotalCount(Map<String, String> map) {
 		int cnt = 0;
-		
+
 		cnt = sqlSessionTemplate.selectOne(namespace+".GetTotalCount", map);
-		
+
 		return cnt;
 	}
 
 	public List<Member> getMemberList(Paging pageInfo, Map<String, String> map) {
-		
+
 		List<Member> lists = new ArrayList<Member>();
-		
+
 		RowBounds rowBounds = new RowBounds(pageInfo.getOffset(), pageInfo.getLimit());
-		
+
 		lists = sqlSessionTemplate.selectList(namespace+".getMemberList", map, rowBounds);
-		
+
 		return lists;
 	}
 
 	public int UpdateMember(Member member) {
 		int cnt = 0;
-		
+
 		cnt = sqlSessionTemplate.update(namespace+".UpdateMember", member);
-		
+
 		return cnt;
 	}
 
 	public int DeleteMember(String id) {
 		int cnt = 0;
-		
+
 		cnt = sqlSessionTemplate.delete(namespace+".DeleteMember", id);
-		
+
 		return cnt;
 	}
 
@@ -114,6 +114,12 @@ public class MemberDao {
 		Member member = null;
 		member = sqlSessionTemplate.selectOne(namespace+".GetMemberInfo", num);
 		return member;
+	}
+
+	public int UpdateMyPageInfo(Member member) {
+		int cnt = 0;
+		cnt = sqlSessionTemplate.update(namespace+".UpdateMyPageInfo", member);
+		return cnt;
 	}
 
 }
