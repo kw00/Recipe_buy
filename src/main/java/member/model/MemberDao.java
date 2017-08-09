@@ -122,4 +122,10 @@ public class MemberDao {
 		return cnt;
 	}
 
+	public int UpdateMyPagePwd(Member member) {
+		int cnt = 0;
+		cnt = sqlSessionTemplate.update(namespace+".UpdateMyPagePwd", member);
+		return cnt;
+	}
+
 }

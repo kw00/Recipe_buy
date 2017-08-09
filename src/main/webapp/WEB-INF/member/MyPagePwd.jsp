@@ -37,7 +37,7 @@
 				<br>
 			</div>
 			<br> <br>
-			<form:form commandName="update" action="memupdate.me" method="POST"
+			<form:form commandName="update" action="update_pwd.me" method="POST"
 				class="form-horizontal" id="myForm">
 
 				<div class="MyPagePwd_header" align="center">
@@ -49,21 +49,31 @@
 							<br><br>
 					</p>
 				</div>
+				
 				<div class="form-group">
-					<label class="control-label col-sm-2" for="password">비밀번호:</label>
+				<label class="control-label col-sm-2" for="id">아이디:</label>
+				<div class="col-sm-10">
+					<input type="hidden" class="form-control" name="id" id="id" value="${member.id}">
+					<input type="text" class="form-control" name="id" id="id" value="${member.id}" disabled>
+					<form:errors cssClass="err" path="id" />
+				</div>
+			</div>
+			
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="password">새 비밀번호:</label>
 					<div class="col-sm-10">
 						<input type="password" class="form-control" name="password"
-							id="pwd" placeholder="새 비밀번호">
+							id="pwd" placeholder="변경할 비밀번호">
 						<form:errors cssClass="err" path="password" />
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label class="control-label col-sm-2" for="passwordcheck">비밀번호
+					<label class="control-label col-sm-2" for="passwordcheck">새 비밀번호
 						확인:</label>
 					<div class="col-sm-10">
 						<input type="password" class="form-control" name="passwordcheck"
-							placeholder="새 비밀번호 확인">
+							placeholder="변경할 비밀번호 확인">
 						<form:errors cssClass="err" path="passwordcheck" />
 						<input type="hidden" name="bool" value="true">
 						<form:errors cssClass="err" path="bool" />
@@ -239,7 +249,7 @@
 
 	});
 
-	function check() {
+	/* function check() {
 		if (!($("input:radio[name='emailReceiveYn']").is(":checked"))) {
 			alert('이메일 수신여부을 확인하세요.');
 			$("input:radio[name=emailReceiveYn]").eq(0).focus();
@@ -250,7 +260,7 @@
 			$("input:radio[name=smsReceiveYn]").eq(0).focus();
 			return false;
 		}
-	}
+	} */
 </script>
 </html>
 <%@include file="./../template/bottom.jsp"%>

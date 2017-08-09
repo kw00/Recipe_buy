@@ -34,7 +34,7 @@ public class UpdatePwdController {
 	@RequestMapping(value = command, method = RequestMethod.GET)
 	public String doGetAction(@RequestParam("num") int num, Model model, HttpSession session, HttpServletRequest request){
 		System.out.println(num);
-		System.out.println("현재위치는 UpdatePwdController");
+		System.out.println("현재위치는 UpdatePwdController 37");
 		Member mem = (Member) session.getAttribute("loginfo");
 
 		Member member = new Member();
@@ -50,6 +50,7 @@ public class UpdatePwdController {
 		member.setPhone3(phone.substring(7,11));*/
 
 		model.addAttribute("member", member);
+		System.out.println("현재위치는 UpdatePwdController 53"+member);
 		return getPage;
 	}
 	
@@ -81,8 +82,9 @@ public class UpdatePwdController {
 		member.setPhone(phone);*/
 
 		int cnt = 0;
-
-		cnt = memberDao.UpdateMyPageInfo(member);
+		System.out.println("현재위치 UpdatePwdController 84"+member);
+		
+		cnt = memberDao.UpdateMyPagePwd(member);
 
 		if (cnt > 0) {
 
