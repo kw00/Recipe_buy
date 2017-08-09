@@ -35,7 +35,8 @@
 </head>
 <body>
 		<div class="container" align="center">
-			<h2>공지</h2>
+			<br><br>
+			<h1>Notice</h1>
 			<br>
 			<table class="table" width="430" cellspacing="0" cellpadding="0">
 				<tr>
@@ -134,6 +135,8 @@
 				</c:forEach>
 			</table>
 	</div>
+	<br>
+	<br>
 	<br>
 </body>
 </html>
