@@ -17,4 +17,7 @@
 	<delete id="DeleteReNotice">
 		delete from notice_reply where restep = #{restep}
 	</delete>
+	<update id="UpdateReNotice" parameterType="MyNoticeReply">
+		update notice_reply set content=${content} where num=${num} 
+	</update>
 </mapper> 

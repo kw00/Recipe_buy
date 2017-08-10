@@ -23,7 +23,7 @@ function insert(){
 <br><br>
 	<div align="center" class="container">
 	<div class="notice_header">
-		<p>공지 게시판</p>
+		<h1>Notice</h1>
 		</div>
 		<br><br>
 		<form action="list.nt" method="get">
