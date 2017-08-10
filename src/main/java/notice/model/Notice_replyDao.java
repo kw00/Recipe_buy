@@ -37,10 +37,14 @@ public class Notice_replyDao {
 	} 
 	
 	public int DeleteReNotice(int restep) {
-		int cnt = 0;
-		
+		int cnt = -1;
 		cnt = sqlSessionTemplate.delete(namespace+".DeleteReNotice", restep);
-		
+		return cnt;
+	}
+
+	public int reupdate(Notice_reply reply) {
+		int cnt = -1;
+		cnt = sqlSessionTemplate.update(namespace+".UpdateReNotice", reply);
 		return cnt;
 	}
 }

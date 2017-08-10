@@ -22,11 +22,21 @@
 			return false;
 		}
 	}
+	function reupdate(num, nnum) {
+		$("#reply_re"+num).toggle().html("<textarea rows='3' cols='100' name='content'></textarea><a onclick='gotoReUpdate("+num+","+nnum+")'><input  class='btn btn-default' type='button' value='수정' onclick='return reContentCheck("+num+")'></a>");
+	}
+	function gotoReUpdate(num, nnum) {
+		var content = $("#reply_re"+num+">textarea[name='content']").val();
+		if(content != ""){
+			location.href="reupdate.nt?num="+num+"&content="+content+"&nnum="+nnum;
+		}
+	}
 </script>
 </head>
 <body>
 		<div class="container" align="center">
-			<h2>공지</h2>
+			<br><br>
+			<h1>Notice</h1>
 			<br>
 			<table class="table" width="430" cellspacing="0" cellpadding="0">
 				<tr>
@@ -106,7 +116,7 @@
 						</td>
 						<td width="13%" align="left">
 							<c:if test="${reply.id eq loginfo.id }">
-								<a><input type="button" class="btn btn-default" value="수정"></a>
+								<input type="button" class="btn btn-default" value="수정" onclick="reupdate(${reply.num}, ${notice.num })">
 								<a href="redelete.nt?restep=${reply.restep }&num=${notice.num}"><input type="button" class="btn btn-default" value="삭제"></a>
 							</c:if>
 						</td>
@@ -125,6 +135,8 @@
 				</c:forEach>
 			</table>
 	</div>
+	<br>
+	<br>
 	<br>
 </body>
 </html>
