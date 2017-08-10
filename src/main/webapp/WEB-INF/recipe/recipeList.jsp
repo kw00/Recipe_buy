@@ -28,7 +28,7 @@ margin: 50px;
 </style>
 <body>
 	<br><br> 
-	<h1 align="center">레시피</h1>
+	<p align="center">레시피</p>
 	<br><br>
 	<div align="center">
 		<form action="recipeList.recipe" method="get">

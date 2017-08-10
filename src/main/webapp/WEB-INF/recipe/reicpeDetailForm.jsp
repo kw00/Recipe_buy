@@ -32,11 +32,7 @@
     cursor: pointer;
 }
 .button5 {border-radius: 10%;}
-.recipedetail{
-    font-style: italic;
-    font-family: monospace;
-    
-}
+
 </style>
 
 </head>
@@ -47,7 +43,7 @@
 
 	<br><br>
 	<div align="center" class="container">
-		<h3 class="recipedetail">레시피 정보</h3>
+		<p>레시피 정보</p>
 		<br>
 			<table class="table" width="430" border="0" cellspacing="0" cellpadding="0" align="center">
 				<tr>
