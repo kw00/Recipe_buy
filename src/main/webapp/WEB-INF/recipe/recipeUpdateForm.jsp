@@ -42,7 +42,7 @@ $(function(){
 <body>	
 	<br><br>
 	<div align="center" class="container">
-		<h1><b>레시피 등록 폼</b></h1>
+		<p>레시피 수정폼</p>
 		<br>
 		<form action="recipeupdate.recipe" enctype="multipart/form-data"  method="post" id="UpdateRecipe">
 		
