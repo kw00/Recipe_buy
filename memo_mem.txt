@@ -7,9 +7,9 @@ DROP TABLE members CASCADE CONSTRAINTS;
 -- 회원 테이블
 drop table members purge ;
 create table members(
-	num number primary key,
+	num number,
 	name varchar2(50) not null,
-	id varchar2(50) not null,
+	id varchar2(50) not null primary key,
 	password varchar2(50),
 	nickname varchar2(50),
 	email varchar2(50),
