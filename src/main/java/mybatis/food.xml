@@ -62,5 +62,9 @@
 	<select id="Detailfood" resultType="MyFood">
 		select * from food where fnum=#{fnum}
 	</select>
-
+	
+	<update id="UpdateQty">
+		update food set fqty=fqty-${fqty} where fnum = #{fnum}
+	</update>
+	
 </mapper>

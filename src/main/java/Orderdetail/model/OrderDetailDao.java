@@ -14,7 +14,7 @@ import utility.Paging;
 @Component("myOrderDetailDao")
 public class OrderDetailDao {
 
-	private final String namespace = "orderdetail.model.OrderDetail";
+	private final String namespace = "Orderdetail.model.OrderDetail";
 	// orderdetail.xml
 
 	@Autowired
@@ -33,7 +33,7 @@ public class OrderDetailDao {
 	
 	public List<OrderDetail> GetDataList() {
 		List<OrderDetail> lists = new ArrayList<OrderDetail>();
-		lists = sqlSessionTemplate.selectList(namespace + ".GetDataList"); // ¸ÊÆÛ ÆÄÀÏÀ» ºÎ¸£´Â°Í
+		lists = sqlSessionTemplate.selectList(namespace + ".GetDataList"); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î¸ï¿½ï¿½Â°ï¿½
 		return lists;
 	}
 	

@@ -6,10 +6,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-</head>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="resources/editor/js/HuskyEZCreator.js" charset="utf-8"></script>
-<script type="text/javascript">
+<script>
 
 
 function openWin(){  
@@ -40,13 +39,31 @@ $(function(){
         $("#insertRecipe").submit();
     });
 });
+
+function checkRecipe(){
+	var rname = $("input[id=rname]").val();
+	if(rname == ""){
+		alert("레시피 이름을 써주세요");
+		$("input[id=rname]").focus();
+		return false;
+	}
+	if($("select[name=mcategory]").val()==""){
+		alert("카테고리를 선택해주세요");
+		return false;
+	}
+	if($("input[name=upload]").val()==""){
+		alert("메인 사진을 올려주세요");
+		return false;
+	}
+}
 </script>
+</head>
 <body>
 	<br><br>
 	<div align="center" class="container">
 		<p>레시피 등록 폼</p>
 		<br>
-		<form action="insertrecipe.recipe" id="insertRecipe" enctype="multipart/form-data"  method="post" >
+		<form action="insertrecipe.recipe" id="insertRecipe" enctype="multipart/form-data"  method="post" onsubmit="return checkRecipe()">
 			<table class="table" width="430" border="0" cellspacing="0" cellpadding="0" align="center">
 			
 				<tr>
