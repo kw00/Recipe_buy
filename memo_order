@@ -7,7 +7,7 @@ DROP TABLE orders CASCADE CONSTRAINTS;
 -- orders : �ֹ� ���̺� , -- mid : ȸ�� ��ȣ. orderdate �ֹ�����
 create table orders( 
   oid number primary key, -- oid
-  mid number references members(num) on delete set null,
+  mid varchar2(50) references members(id) on delete set null,
   orderdate date default sysdate
 );
 ----------------------------------------------

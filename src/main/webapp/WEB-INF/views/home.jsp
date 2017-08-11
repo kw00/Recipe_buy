@@ -50,9 +50,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link
 	href='//fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic'
 	rel='stylesheet' type='text/css'>
-
-<link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css" type="text/css"
-	media="screen" title="no title" />
 <script type="text/javascript">
 	var addCart=function(ringredients){
 		/* alert(ringredients); */

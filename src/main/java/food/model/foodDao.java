@@ -64,6 +64,15 @@ public class foodDao {
 		cnt   =  sqlSessionTemplate.selectOne(namespace+".GetTotalCount",map);
 		return cnt;
 	}
+
+	public void updateQty(Integer pnum, Integer qty) {
+		// TODO Auto-generated method stub
+		food bean = new food();
+		bean.setFnum(pnum);
+		bean.setFqty(qty);
+		sqlSessionTemplate.update(namespace+".UpdateQty",bean);
+		
+	}
 	
 	
 }

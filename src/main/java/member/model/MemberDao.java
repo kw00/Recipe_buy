@@ -128,4 +128,9 @@ public class MemberDao {
 		return cnt;
 	}
 
+	public void UpdatePoint(String id, int i) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
