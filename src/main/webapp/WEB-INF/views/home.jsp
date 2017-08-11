@@ -300,9 +300,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<!-- Controls -->
 						<div class="controls pull-right hidden-xs" align="right">
 							<a class="left fa fa-chevron-left btn btn-default"
-								href="#carousel-example" data-slide="prev"></a> <a
+								href="#carousel-example" data-slide="prev">◀</a><a
 								class="right fa fa-chevron-right btn btn-default"
-								href="#carousel-example" data-slide="next"></a>
+								href="#carousel-example" data-slide="next">▶</a>
 						</div>
 					</div>
 				</div>
@@ -477,7 +477,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 				</div>
 			</div>
-
+			<br><br>
 			<div class="row">
 				<div class="row">
 					<div class="col-md-9">
@@ -487,9 +487,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<!-- Controls -->
 						<div class="controls pull-right hidden-xs" align="right">
 							<a class="left fa fa-chevron-left btn btn-default"
-								href="#carousel-example-generic" data-slide="prev"></a> <a
+								href="#carousel-example-generic" data-slide="prev">◀</a> <a
 								class="right fa fa-chevron-right btn btn-default"
-								href="#carousel-example-generic" data-slide="next"></a>
+								href="#carousel-example-generic" data-slide="next">▶</a>
 						</div>
 					</div>
 				</div>
