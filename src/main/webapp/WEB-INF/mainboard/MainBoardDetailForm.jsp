@@ -18,7 +18,9 @@
 <body>
 	<br><br>
 		<div class="container" align="center">
+		<div class="notice_header">
 			<p>게시글 상세보기</p>
+		</div>
 			<br>
 			<table class="table" width="430" cellspacing="0" cellpadding="0">
 				<tr>
@@ -53,9 +55,9 @@
 					<td colspan=2 align="right" height="30">
 					<c:if test="${id!=null}">
 						<c:if test="${fn:contains(writer, id)}">
-							<input type="button" class="btn btn-default" value="수정하기"	
+							<input type="button" class="btn btn-info" value="수정하기"	
 									OnClick="window.location='update.mainboard?num=${board.num}'">
-							<input type="button" class="btn btn-default" value="삭제하기"	
+							<input type="button" class="btn btn-danger" value="삭제하기"	
 									OnClick="deletecheck();">
 						</c:if>
 					</c:if>

@@ -14,4 +14,10 @@
 	<insert id="replyReNotice" parameterType="MyNoticeReply">
 		insert into notice_reply values(notice_replyseq.nextval,#{id}, sysdate, #{ref}, #{restep}, #{relevel}, #{content}, #{ip})
 	</insert>
+	<delete id="DeleteReNotice">
+		delete from notice_reply where restep = #{restep}
+	</delete>
+	<update id="UpdateReNotice" parameterType="MyNoticeReply">
+		update notice_reply set content=${content} where num=${num} 
+	</update>
 </mapper> 

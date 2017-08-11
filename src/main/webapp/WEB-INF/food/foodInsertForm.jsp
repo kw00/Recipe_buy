@@ -29,10 +29,15 @@
 </script>
 </head>
 <body>
+	<br><br>
+	<div class="container" align="center" style="width:40%;">
+	<div class="notice_header">
+		<p>식재료 입력</p>
+	</div>
 	<br>
 	<form:form commandName="food" method="post" action="insert.fd"
 		enctype="multipart/form-data">
-		<table align="center" border="1">
+		<table class="table" align="center">
 <!-- 			<tr>
 				<th colspan="2">
 					<h1>
@@ -42,60 +47,78 @@
 			</tr> -->
 			<tr>
 				<td><label for="fname">식재료 이름</label></td>
-				<td><input type="text" name="fname" value="들어갈거지"> <form:errors
-						cssClass="err" path="fname"></form:errors></td>
+				<td>
+					<input type="text" name="fname" size="80"> 
+					<form:errors cssClass="err" path="fname"></form:errors>
+				</td>
 			</tr>
 			<tr>
 				<td><label for="fcategory">식재료 종류</label></td>
-				<td><input type="text" name="fcategory" value="채소"> <form:errors
-						cssClass="err" path="fcategory"></form:errors></td>
+				<td>
+					<input type="text" name="fcategory" size="80"> 
+					<form:errors cssClass="err" path="fcategory"></form:errors>
+				</td>
 			<tr>
 				<td><label for="upload">사진</label></td>
-				<td><input type="file" name="upload"> <form:errors
-						cssClass="err" path="upload"></form:errors></td>
+				<td>
+					<input type="file" name="upload" size="80"> 
+					<form:errors cssClass="err" path="upload"></form:errors>
+				</td>
 			</tr>
 			<tr>
 				<td><label for="fqty">수량</label></td>
-				<td><input type="text" name="fqty" value="1"> <form:errors
-						cssClass="err" path="fqty"></form:errors></td>
+				<td>
+					<input type="text" name="fqty" size="80"> 
+					<form:errors cssClass="err" path="fqty"></form:errors>
+				</td>
 			</tr>
 			<tr>
 				<td><label for="price">가격</label></td>
-				<td><input type="text" name="fprice" value="1000"> <form:errors
-						cssClass="err" path="fprice"></form:errors></td>
+				<td>
+					<input type="text" name="fprice" size="80"> 
+					<form:errors cssClass="err" path="fprice"></form:errors>
+				</td>
 			</tr>
 			<tr>
 				<td><label for="fcompany">생산지</label></td>
-				<td><input type="text" name="fcompany" value="농협"> <form:errors
-						cssClass="err" path="fcompany"></form:errors></td>
+				<td>
+					<input type="text" name="fcompany" size="80"> 
+					<form:errors cssClass="err" path="fcompany"></form:errors>
+				</td>
 			</tr>
 			<tr>
 				<td><label for="fpoint">포인트</label></td>
-				<td><input type="text" name="fpoint" value="10"> <form:errors
-						cssClass="err" path="fpoint"></form:errors></td>
+				<td>
+					<input type="text" name="fpoint" size="80"> 
+					<form:errors cssClass="err" path="fpoint"></form:errors>
+				</td>
 			</tr>
 			<tr>
 				<td><label for="finputdate">날짜</label></td>
-				<td><input type="hidden" name="finputdate"> <input
-					type="text" name="year" value="2016" size="4" maxlength="4"
-					onkeyup="inputdate()">년 <input type="text" name="month"
-					value="6" size="2" maxlength="2" onkeyup="inputdate()">월 <input
-					type="text" name="day" value="2" size="2" maxlength="2"
-					onkeyup="inputdate()">일 <form:errors cssClass="err"
-						path="finputdate"></form:errors></td>
+				<td>
+					<input type="hidden" name="finputdate"> 
+					<input type="text" name="year" size="25" maxlength="4" onkeyup="inputdate()">년 
+					<input type="text" name="month" size="20" maxlength="2" onkeyup="inputdate()">월 
+					<input type="text" name="day" size="20" maxlength="2" onkeyup="inputdate()">일 
+					<form:errors cssClass="err" path="finputdate"></form:errors>
+				</td>
 			</tr>
 			<tr>
 				<td><label for="fcontents">상세내용</label></td>
 				<td>
-					<textarea rows="10" cols="50" name="fcontents">맛있는 사과</textarea>
-					<form:errors cssClass="err" path="fcontents"></form:errors></td>
+					<textarea rows="8" cols="80" name="fcontents"></textarea>
+					<form:errors cssClass="err" path="fcontents"></form:errors>
+				</td>
 			</tr>
 			<tr>
-				<td align="left"><input type="submit" value="추가하기"></td>
-				<td align="right"><a href="list.fd"><input type="button" value="돌아가기"></a></td>
+				<td colspan="2" align="right">
+					<input type="submit" class="btn btn" value="추가하기">
+					<a href="list.fd"><input type="button" class="btn btn" value="돌아가기"></a>
+				</td>
 			</tr>
 		</table>
 	</form:form>
+	</div>
 <%@ include file="./../template/bottom.jsp" %>
 </body>
 </html>

@@ -23,7 +23,7 @@ function insert(){
 <br><br>
 	<div align="center" class="container">
 	<div class="notice_header">
-		<p>공지 게시판</p>
+		<h1>Notice</h1>
 		</div>
 		<br><br>
 		<form action="list.nt" method="get">
@@ -54,7 +54,7 @@ function insert(){
 		</c:if>
 			<tr align="center">
 				<td><b>숫자</b></td>
-				<td><b>제목</b></td>
+				<td width="50%"><b>제목</b></td>
 				<td><b>글쓴이</b></td>
 				<td><b>글쓴날</b></td>
 				<td><b>조회수</b></td>

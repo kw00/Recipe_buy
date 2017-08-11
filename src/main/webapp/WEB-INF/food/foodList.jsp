@@ -50,12 +50,15 @@
 		<input type="submit" value="검색">
 	</form>
 </center> -->
-<c:if test="<%=check%>">
-	<input type="button" value="추가하기" onclick="insert();">
-</c:if>
-	<table border="0" align="center" width="90%">
+	<table class="table" border="0" align="center" width="100%">
+		<c:if test="<%=check%>">
+			<tr>
+				<td colspan="12" align="right">
+					<input type="button" class="btn btn" value="추가하기" onclick="insert();">
+				</td>
+			</tr>
+		</c:if>
 		<tr>
-			<td align="center" style="font-weight: bold;">식재료 번호</td>
 			<td align="center" style="font-weight: bold;">식재료 이름</td>
 			<td align="center" style="font-weight: bold;">카테고리</td>
 			<td align="center" style="font-weight: bold;">식재료 이미지</td>
@@ -66,13 +69,12 @@
 			<td align="center" style="font-weight: bold;">포인트</td>
 			<td align="center" style="font-weight: bold;">입고일</td>
 			<c:if test="<%=check %>">
-			<td align="center" style="font-weight: bold;">삭제</td>
 			<td align="center" style="font-weight: bold;">수정</td>
+			<td align="center" style="font-weight: bold;">삭제</td>
 			</c:if>
 		</tr>
 		<c:forEach items="${flists }" var="food">
 			<tr>
-				<td align="center">${food.fnum }</td>
 				<td align="center"><a href="detail.fd?fnum=${food.fnum }">${food.fname }</a></td>
 				<td align="center">${food.fcategory }</td>
 				<td align="center"><a href="detail.fd?fnum=${food.fnum }"><img height="100" width="100" src="./resources/images/${food.fimage }" /></a></td>
@@ -84,11 +86,11 @@
 <%-- 				<td><fmt:formatDate value="${food.finputdate }" pattern="yyyy-MM-dd"/></td> 날짜 수정중 시간 없애기 --%>
 				<td align="center">${food.finputdate }</td>
 			<c:if test="<%=check %>">
-				<td align="center"><a href="delete.fd?fnum=<c:out value="${food.fnum}"/>">
-						<input type="button" value="삭제">
-				</a></td>
-				<td align="center">	<input type="button" value="수정" 
+				<td align="center">	<input type="button" class="btn btn-info" value="수정" 
 						onclick="goUpdate( '${food.fnum}')"/></td>
+				<td align="center"><a href="delete.fd?fnum=<c:out value="${food.fnum}"/>">
+						<input type="button" class="btn btn-danger" value="삭제">
+				</a></td>
 			</c:if>
 			</tr>
 		</c:forEach>

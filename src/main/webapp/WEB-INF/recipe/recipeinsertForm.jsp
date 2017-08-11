@@ -44,7 +44,7 @@ $(function(){
 <body>
 	<br><br>
 	<div align="center" class="container">
-		<h1><b>레시피 등록 폼</b></h1>
+		<p>레시피 등록 폼</p>
 		<br>
 		<form action="insertrecipe.recipe" id="insertRecipe" enctype="multipart/form-data"  method="post" >
 			<table class="table" width="430" border="0" cellspacing="0" cellpadding="0" align="center">
