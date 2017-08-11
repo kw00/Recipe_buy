@@ -57,13 +57,13 @@
 				</div>
 			</div>
 			
-			<div class="form-group">
+			<%-- <div class="form-group">
 				<label class="control-label col-sm-2" for="name">대표 이미지:</label>
 				<div class="col-sm-10">
 					<input type="file" name="upload" value="${member.image}">
 					<form:errors cssClass="err" path="name" />
 				</div>
-			</div>
+			</div> --%>
 			
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="name">이름:</label>
