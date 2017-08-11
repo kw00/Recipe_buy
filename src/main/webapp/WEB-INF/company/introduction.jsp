@@ -72,9 +72,9 @@ function resizeText() {
         <div class="row">
           <div class="col-lg-5 col-sm-7">
             <div class="top_left_cont flipInY wow animated">
-              <h3>Colourful &amp; sexy!</h3>
-              <h2>creating websites that
-                make you stop &amp; stare</h2>
+              <h3>so fresh &amp; simple!</h3>
+              <h2>when you cook with recipe buy,<br>
+                you're building a better food system </h2>
               <p> Accusantium quam, aliquam ultricies eget tempor id, aliquam eget nibh et. Maecen aliquam, risus at semper. Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum. </p>
               <a href="#service" class="learn_more2">Learn more</a> </div>
           </div>
@@ -146,10 +146,9 @@ function resizeText() {
 <br><br><br><br>
 <div class="container">
  <div class="top_left_cont flipInY wow animated">
-              <h3>Colourful &amp; sexy!</h3>
-              <h2>creating websites that
-                make you stop &amp; stare</h2>
-              <p> Accusantium quam, aliquam ultricies eget tempor id, aliquam eget nibh et. Maecen aliquam, risus at semper. Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum. </p>
+              <h3>so fresh &amp; simple!</h3>
+              <h2>On the Menu this season</h2>
+              <p> chicken with greens, soft boiled eggs & dessert including bread with fruit</p>
               <a href="#service" class="learn_more2">Learn more</a> </div>
 <table class="table">
 <tr>

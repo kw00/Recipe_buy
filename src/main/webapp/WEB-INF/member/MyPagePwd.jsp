@@ -234,7 +234,9 @@
 			if (pwd1 == pwd2) {
 				check = true;
 			} else {
+				alert("변경할 비밀번호가 일치하지 않습니다.");
 				check = false;
+				return false;
 			}
 
 			var bool = $("input[name=bool]").val(check);

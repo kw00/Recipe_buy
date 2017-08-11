@@ -1,0 +1,10 @@
+diff a/src/main/java/mybatis/Notice_reply.xml b/src/main/java/mybatis/Notice_reply.xml	(rejected hunks)
+@@ -14,4 +14,7 @@
+ 	<insert id="replyReNotice" parameterType="MyNoticeReply">
+ 		insert into notice_reply values(notice_replyseq.nextval,#{id}, sysdate, #{ref}, #{restep}, #{relevel}, #{content}, #{ip})
+ 	</insert>
++	<delete id="DeleteReNotice">
++		delete from notice_reply where restep = #{restep}
++	</delete>
+ </mapper> 
+\ No newline at end of file

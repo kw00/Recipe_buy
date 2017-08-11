@@ -148,7 +148,7 @@
 					</div>
 					<div class="panel-body"><br>
 
-							외부에 노출되지 않은 네이버 로그인만을 위한 아이디를 설정하여 보다 안전하게 계정을 보호하세요. 
+							외부에 노출되지 않은 Recipe Buy 로그인만을 위한 아이디를 설정하여 보다 안전하게 계정을 보호하세요. 
 					</div><br>
 					
 					<!-- <div class="panel-footer">Panel Footer</div> -->
