@@ -199,7 +199,9 @@ body {
 	
 	
 	
+	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+
 
 
 
@@ -274,6 +276,24 @@ body {
 			return -($(this).width() / 2);
 		}
 	});
+
+	function login_check() {
+		if ($("#html_test").html() == "OFF") {
+			alert("IP 보안을 설정하세요.");
+			return false;
+		}
+		if (!$("input[name=id]").val()) {
+			alert('아이디를 입력해주세요');
+			$("input[name=id]").focus();
+			return false;
+		}
+		if (!$("input[name=password]").val()) {
+			alert('비밀번호를 입력해주세요');
+			$("input[name=password]").focus();
+			return false;
+		}
+
+	}
 </script>
 
 </head>
@@ -456,7 +476,7 @@ body {
 							<br>
 							<div>
 								<button type="submit" class="btn btn-danger btn-lg btn-block"
-									onClick="return check()">Login</button>
+									onClick="return login_check()">Login</button>
 							</div>
 							<br>
 							<div class="form-group" align="center">
@@ -492,7 +512,7 @@ body {
 									<!-- SIDEBAR USERPIC -->
 									<div class="profile-userpic">
 										<img src="resources/bootstrap/images/co.png" alt="avatar"
-											align="center" width="50" class="img-responsive" alt=""/>
+											align="center" width="50" class="img-responsive" alt="" />
 									</div>
 									<!-- END SIDEBAR USERPIC -->
 									<!-- SIDEBAR USER TITLE -->
@@ -511,10 +531,11 @@ body {
 									<div class="profile-usermenu">
 										<ul class="nav">
 											<c:if test="${sessionScope.loginfo.admin == 0 }">
-												<li><a href="list.me"><i class="glyphicon glyphicon-home"></i>Administration</a></li>
+												<li><a href="list.me"><i
+														class="glyphicon glyphicon-home"></i>Administration</a></li>
 											</c:if>
-											<li><a href="mypage.me"> <i class="glyphicon glyphicon-user"></i>
-													My page
+											<li><a href="mypage.me"> <i
+													class="glyphicon glyphicon-user"></i> My page
 											</a></li>
 											<li><a href="#" target="_blank"> <i
 													class="glyphicon glyphicon-ok"></i> Tasks
@@ -524,11 +545,13 @@ body {
 											</a></li>
 										</ul>
 									</div>
-									
+
 									<!-- END MENU -->
 									<div class="profile-userbuttons">
-										<a href="update_info.me?num=${sessionScope.loginfo.num}"><button type="button" class="btn btn-warning btn-sm">수정</button></a>
-										<button type="button" class="btn btn-danger" data-dismiss="modal">닫기</button>
+										<a href="update_info.me?num=${sessionScope.loginfo.num}"><button
+												type="button" class="btn btn-warning btn-sm">수정</button></a>
+										<button type="button" class="btn btn-danger"
+											data-dismiss="modal">닫기</button>
 									</div>
 								</div>
 							</div>
