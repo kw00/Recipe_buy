@@ -30,7 +30,7 @@
 </head>
 <body>
 	<br><br>
-	<div class="container" align="center" style="width:40%;">
+	<div class="container" align="center" style="width:70%;">
 	<div class="notice_header">
 		<p>식재료 입력</p>
 	</div>

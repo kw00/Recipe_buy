@@ -35,10 +35,6 @@ $(document).ready(function(){
 			var price = $("input[name="+check+"]").val();
 			var qty = $("input[name='"+check+"Qty']").val();
 			var fnum = $("input[name='"+check+"fnum']").val();
-			alert(fnum);
-			/* alert(qty);
-			alert(check);*/	
-			/* alert(price); */
 			sum = parseInt(sum)+(parseInt(price)*parseInt(qty));
 			stx = "<input type='checkbox' id='"+check+"' name='ringredients' value='"
 					+check+"-"+qty+"-"+price+"-"+fnum+"'checked disabled='disabled'><font id='"+check+"' color='blue'>"
@@ -72,7 +68,7 @@ $(document).ready(function(){
 	function Minus(p){
 		var qty = parseInt($("input[name='"+p+"']").val())-1;
 		if(qty<=0){
-			alert("0개 안되요 ㅠㅠ");
+			alert("0개 이하 불가.");
 		}else{			
 		$("input[name="+p+"]").attr("value",qty);
 		}
