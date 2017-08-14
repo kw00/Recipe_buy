@@ -214,7 +214,7 @@ function resizeText() {
         </div>
         <h3 class="wow fadeInDown delay-03s">이 정 호</h3>
         <span class="wow fadeInDown delay-03s">Chief Executive Officer</span>
-        <p class="wow fadeInDown delay-03s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat sollicitudin cursus. Dolor sit amet, consectetur adipiscing elit proin consequat.</p>
+        <p class="wow fadeInDown delay-03s">레시피 관련 및 전반적 개발진행 주관 및 점검, 주 기능 구현 및 테스트.</p>
       </div>
       <div class="team-leader-box">
         <div class="team-leader  wow fadeInDown delay-06s">
@@ -229,7 +229,7 @@ function resizeText() {
         </div>
         <h3 class="wow fadeInDown delay-06s">전 민 석</h3>
         <span class="wow fadeInDown delay-06s">Product Manager</span>
-        <p class="wow fadeInDown delay-06s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat sollicitudin cursus. Dolor sit amet, consectetur adipiscing elit proin consequat.</p>
+        <p class="wow fadeInDown delay-06s">서버 환경 구성 및 기능 명세화, Search, 회원가입 및 게시판, 적용가능 기술 검토.</p>
       </div>
       <div class="team-leader-box">
         <div class="team-leader wow fadeInDown delay-09s">
@@ -260,22 +260,7 @@ function resizeText() {
         </div>
         <h3 class="wow fadeInDown delay-03s">김 남 혁</h3>
         <span class="wow fadeInDown delay-03s">Chief Executive Officer</span>
-        <p class="wow fadeInDown delay-03s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat sollicitudin cursus. Dolor sit amet, consectetur adipiscing elit proin consequat.</p>
-      </div>
-      <div class="team-leader-box">
-        <div class="team-leader  wow fadeInDown delay-06s">
-          <div class="team-leader-shadow"><a href="javascript:void(0)"></a></div>
-          <img src="resources/bootstrap/images_company/team-leader-pic2.jpg" alt="">
-          <ul>
-            <li><a href="javascript:void(0)" class="fa-twitter"></a></li>
-            <li><a href="javascript:void(0)" class="fa-facebook"></a></li>
-            <li><a href="javascript:void(0)" class="fa-pinterest"></a></li>
-            <li><a href="javascript:void(0)" class="fa-google-plus"></a></li>
-          </ul>
-        </div>
-        <h3 class="wow fadeInDown delay-06s">현 승 훈</h3>
-        <span class="wow fadeInDown delay-06s">Product Manager</span>
-        <p class="wow fadeInDown delay-06s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat sollicitudin cursus. Dolor sit amet, consectetur adipiscing elit proin consequat.</p>
+        <p class="wow fadeInDown delay-03s">재료, 장바구니 및 게시판, 부가기능 구현, 시제품 테스트 및 릴리즈.</p>
       </div>
       <div class="team-leader-box">
         <div class="team-leader wow fadeInDown delay-09s">
@@ -290,7 +275,7 @@ function resizeText() {
         </div>
         <h3 class="wow fadeInDown delay-09s">이 다 솔</h3>
         <span class="wow fadeInDown delay-09s">Accountant</span>
-        <p class="wow fadeInDown delay-09s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat sollicitudin cursus. Dolor sit amet, consectetur adipiscing elit proin consequat.</p>
+        <p class="wow fadeInDown delay-09s">재료 및 결제, 부가 기능 구현, 관련 기술 조사 및 테스트.</p>
       </div>
     </div> 
     </div> 

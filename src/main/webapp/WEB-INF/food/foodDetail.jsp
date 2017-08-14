@@ -10,7 +10,6 @@
 <script type="text/javascript">
 
 function cart(){
-	alert($("input[name='fnum']").val());
 location.href="add.mall?fnum="+$("input[name='fnum']").val()+"&fqty="+$("input[name='fqty']").val();
 }
 
@@ -31,7 +30,7 @@ location.href="add.mall?fnum="+$("input[name='fnum']").val()+"&fqty="+$("input[n
 	</div>
 	<br><br>
 <form action="detail.fd?fnum=${food.fnum+1 }" method="post">
-<table align="center">
+<table class="table table-hover" align="center">
 	<tr>
 	<input type="hidden" name="fnum" value="${food.fnum }">
 		<td>

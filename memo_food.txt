@@ -33,25 +33,25 @@ col finputdate for a15;
 --양념 고추장 된장 고춧가루
 
 
-insert into food values(foodseq.nextval, '감자', '채소', 'potato.jpg', 10, 500, '농협','고랭지 감자', 5, '2017-7-5');
-insert into food values(foodseq.nextval, '당근', '채소', 'carrot.jpg', 10, 300, '농협','충남의 당근', 3, '2017-7-5');
-insert into food values(foodseq.nextval, '양파', '채소', 'onion.jpg', 10, 100, '농협','속초의 양파', 1, '2017-7-5');
+insert into food values(foodseq.nextval, '감자1개', '채소', 'potato.jpg', 10, 500, '농협','고랭지 감자', 5, '2017-7-5');
+insert into food values(foodseq.nextval, '당근1개', '채소', 'carrot.jpg', 10, 700, '농협','충남의 당근', 3, '2017-7-5');
+insert into food values(foodseq.nextval, '양파1개', '채소', 'onion.jpg', 10, 300, '농협','속초의 양파', 1, '2017-7-5');
 
-insert into food values(foodseq.nextval, '소고기', '육류', 'Beef.jpg', 10, 1500, '농협','유럽산 소고기', 15, '2017-7-5');
-insert into food values(foodseq.nextval, '돼지고기', '육류', 'pork.jpg', 10, 2500, '농협','제주도 흑돼지', 25, '2017-7-5');
-insert into food values(foodseq.nextval, '닭고기', '육류', 'chicken.jpg', 10, 500, '농협','국내산 닭고기', 5, '2017-7-5');
+insert into food values(foodseq.nextval, '소고기100g', '육류', 'Beef.jpg', 10, 1500, '농협','유럽산 소고기', 15, '2017-7-5');
+insert into food values(foodseq.nextval, '돼지고기200g', '육류', 'pork.jpg', 10, 2500, '농협','제주도 흑돼지', 25, '2017-7-5');
+insert into food values(foodseq.nextval, '닭고기700g', '육류', 'chicken.jpg', 10, 7000, '농협','국내산 닭고기', 5, '2017-7-5');
 
-insert into food values(foodseq.nextval, '광어', '어류', 'flatfish.jpg', 10, 2500, '농협','국내산 광어', 25, '2017-7-5');
-insert into food values(foodseq.nextval, '우럭', '어류', 'rockfish.jpg', 10, 3500, '농협','자연산 우럭', 35, '2017-7-5');
-insert into food values(foodseq.nextval, '연어', '어류', 'salmon.jpg', 10, 1500, '농협','노르웨이 연어', 15, '2017-7-5');
+insert into food values(foodseq.nextval, '광어1000g', '어류', 'flatfish.jpg', 10, 35000, '농협','국내산 광어', 25, '2017-7-5');
+insert into food values(foodseq.nextval, '우럭1000g', '어류', 'rockfish.jpg', 10, 25000, '농협','자연산 우럭', 35, '2017-7-5');
+insert into food values(foodseq.nextval, '연어1000g', '어류', 'salmon.jpg', 10, 35000, '농협','노르웨이 연어', 15, '2017-7-5');
 
-insert into food values(foodseq.nextval, '소시지', '가공', 'sausages.jpg', 10, 1200, '농협','수입산 소시지', 12, '2017-7-5');
-insert into food values(foodseq.nextval, '치즈', '가공', 'cheese.jpg', 10, 1300, '농협','파리 치즈', 13, '2017-7-5');
-insert into food values(foodseq.nextval, '어묵', '가공', 'fishcake.jpg', 10, 1000, '농협','국내산 어묵', 10, '2017-7-5'); 
+insert into food values(foodseq.nextval, '수제소시지5개입', '가공', 'sausages.jpg', 10, 10000, '농협','수입산 소시지', 12, '2017-7-5');
+insert into food values(foodseq.nextval, '치즈500g', '가공', 'cheese.jpg', 10, 6000, '농협','파리 치즈', 13, '2017-7-5');
+insert into food values(foodseq.nextval, '어묵100g', '가공', 'fishcake.jpg', 10, 1000, '농협','국내산 어묵', 10, '2017-7-5'); 
 
-insert into food values(foodseq.nextval, '고추장', '양념', 'gochujang.jpg', 10, 100, '농협','국내산 고추장', 1, '2017-7-5');
-insert into food values(foodseq.nextval, '된장', '양념', 'doenjang.jpg', 10, 200, '농협','국내산 된장', 2, '2017-7-5');
-insert into food values(foodseq.nextval, '고춧가루', '양념', 'chilipowder.jpg', 10, 300, '농협','태양초 고춧가루', 3, '2017-7-5'); 
+insert into food values(foodseq.nextval, '고추장1kg', '양념', 'gochujang.jpg', 10, 12000, '농협','국내산 고추장', 1, '2017-7-5');
+insert into food values(foodseq.nextval, '된장1kg', '양념', 'doenjang.jpg', 10, 10000, '농협','국내산 된장', 2, '2017-7-5');
+insert into food values(foodseq.nextval, '고춧가루1kg', '양념', 'chilipowder.jpg', 10, 13000, '농협','태양초 고춧가루', 3, '2017-7-5'); 
 
 
 
