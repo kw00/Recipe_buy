@@ -8,7 +8,7 @@
 </head>
 <body>
 <br><br>
-<div class="container" align="center" style="width:20%">
+<div class="container" align="center" style="width:50%">
 	<form action="update.fd" method="post">
 	<p>식재료 수정 화면</p>
 	<br>
