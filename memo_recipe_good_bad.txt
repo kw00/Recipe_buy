@@ -11,4 +11,3 @@ memid varchar2(50) not null, --추천 또는 비추천을 준 회원 아이디
 good int,
 bad int
 );
-

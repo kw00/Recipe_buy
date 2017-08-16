@@ -19,15 +19,14 @@ create table members(
 	ssn varchar2(50),
 	gender varchar2(10),
 	joindate varchar2(50),
-	admin varchar2(10),
-	image varchar2(100)
+	admin varchar2(10)
 );
 
-insert into members(num, name, id, password, nickname, email, phone, address, zipcode, ssn, gender, joindate, admin, image) 
-values(memseq.nextval, '어드민', 'admin', '1234', 'admin','admin@naver.com','01012345678', '서울 마포구 신촌로 176 중앙정보처리학원', '11532', '9010101234567', '남', '2017/06/09' , '0','null');
+insert into members(num, name, id, password, nickname, email, phone, address, zipcode, ssn, gender, joindate, admin) 
+values(memseq.nextval, '어드민', 'admin', '1234', 'admin','admin@naver.com','01012345678', '서울 마포구 신촌로 176 중앙정보처리학원', '11532', '9010101234567', '남', '2017/06/09' , '0');
 
-insert into members(num, name, id, password, nickname, email, phone, address, zipcode, ssn, gender, joindate, admin, image) 
-values(memseq.nextval, '사용자', 'user', '1234', 'user','user@naver.com','01012345678', '서울 마포구 신촌로 176 중앙정보처리학원', '11532', '9010101234567', '남', '2017/06/09' , '1','null');
+insert into members(num, name, id, password, nickname, email, phone, address, zipcode, ssn, gender, joindate, admin) 
+values(memseq.nextval, '사용자', 'user', '1234', 'user','user@naver.com','01012345678', '서울 마포구 신촌로 176 중앙정보처리학원', '11532', '9010101234567', '남', '2017/06/09' , '1');
 
 
 commit;

@@ -57,14 +57,6 @@
 				</div>
 			</div>
 			
-			<%-- <div class="form-group">
-				<label class="control-label col-sm-2" for="name">대표 이미지:</label>
-				<div class="col-sm-10">
-					<input type="file" name="upload" value="${member.image}">
-					<form:errors cssClass="err" path="name" />
-				</div>
-			</div> --%>
-			
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="name">이름:</label>
 				<div class="col-sm-10">
@@ -90,7 +82,7 @@
 			</div>
 			
 			<div class="form-group">
-				<label class="control-label col-sm-2" for="phone1">핸드폰번호:</label>
+				<label class="control-label col-sm-2" for="phone1">번호:</label>
 				<div class="col-sm-2">
 					<input type="text" class="form-control" name="phone1" placeholder="010" value="${member.phone1}" maxlength="3">
 					<form:errors cssClass="err" path="phone1" />
@@ -185,7 +177,7 @@
 					</label>
 				</div>
 			</div>
-			<br>
+			
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10" align="center">
 				<a href="#" onclick="history.go(-1)"><button
@@ -194,7 +186,7 @@
 				</div>
 			</div>
 		</form:form>
-		<br><br><br>
+		<br>
 	</div>
 	</div>
 </body>
