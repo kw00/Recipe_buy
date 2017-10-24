@@ -426,7 +426,7 @@
 	function check() {
 
 		if ($('input:radio[name="provisionYn"]:checked').val() != 'Y') {
-			alert('서비스 약관과 개인정보 수집 및 이용에 대해 모두 동의해주세요');
+			alert('서비스 약관에 대해 모두 동의해주세요');
 			$("input:radio[name=provisionYn]").eq(0).focus();
 			return false;
 		}

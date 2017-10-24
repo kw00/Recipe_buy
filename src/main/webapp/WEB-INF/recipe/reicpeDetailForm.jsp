@@ -43,9 +43,14 @@
 
 	<br><br>
 	<div align="center" class="container">
-		<p>레시피 정보</p>
 		<br>
 			<table class="table" width="430" border="0" cellspacing="0" cellpadding="0" align="center">
+			<tr>
+			<td width="10%" align="center">레시피 정보</td>
+			<td width="330" align="left">
+			<img width="250" height="250" src="./resources/${Recipe.rimage}">
+		</td>
+			</tr>
 				<tr>
 					<td width="10%" align="center">작성자</td>
 					<td width="330" align="left" colspan="2">
@@ -98,7 +103,7 @@
 				<tr>
 					<td width="10%" align="center">가격</td>
 					<td width="330" align="left" colspan="2">
-						<input type="text" value="${Recipe.rprice }" readonly="readonly" size="3" name="rprice" id="fprice">
+						<input type="text" value="${Recipe.rprice }" readonly="readonly" size="5" name="rprice" id="fprice"> 원
 					</td>
 				</tr>
 				

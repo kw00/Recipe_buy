@@ -40,15 +40,10 @@ rpoint int,
 rinputdate timestamp default sysdate
 );
 
-insert into recipe values(recipeseq.nextval, 1, '국류','된장국','된장국.jpg','소시지-1-1200-10,광어-1-2500-7,우럭-1-3500-8','없음',7200,10,sysdate);
-insert into recipe values(recipeseq.nextval, 1, '국류','김치찌개','null','소시지-1-1200-10,광어-1-2500-7,우럭-1-3500-8','없음',7200,10,'17/07/15');
-insert into recipe values(recipeseq.nextval, 1, '국류','김치전골','null','소시지-1-1200-10,광어-1-2500-7,우럭-1-3500-8','없음',7200,10,'17/07/16');
-insert into recipe values(recipeseq.nextval, 1, '밥류','규동','null','소시지-1-1200-10,광어-1-2500-7,우럭-1-3500-8','없음',7200,10,'17/07/17');
-insert into recipe values(recipeseq.nextval, 1, '국류','된장국','된장국.jpg','소시지-1-1200-10,광어-1-2500-7,우럭-1-3500-8','없음',7200,10,'17/07/18');
-insert into recipe values(recipeseq.nextval, 1, '국류','김치찌개','null','소시지-1-1200-10,광어-1-2500-7,우럭-1-3500-8','없음',7200,10,'17/07/19');
-insert into recipe values(recipeseq.nextval, 1, '국류','김치전골','null','소시지-1-1200-10,광어-1-2500-7,우럭-1-3500-8','없음',7200,10,'17/07/20');
-insert into recipe values(recipeseq.nextval, 1, '밥류','규동','null','소시지-1-1200-10,광어-1-2500-7,우럭-1-3500-8','없음',7200,10,'17/07/21');
-
+insert into recipe values(recipeseq.nextval, 1, '국류','된장찌개','beansoup.jpg','된장 1kg-1-10000-10,감자 1개-1-500-7,양파 1개-1-300-8, 두부 1모-1-1000-10','없음',11800,10,sysdate);
+insert into recipe values(recipeseq.nextval, 1, '국류','김치찌개','kimchisoup.jpg','소시지-1-1200-10,광어-1-2500-7,우럭-1-3500-8','없음',7200,10,'17/07/15');
+insert into recipe values(recipeseq.nextval, 1, '국류','김치전골','kimchistew.jpg','소시지-1-1200-10,광어-1-2500-7,우럭-1-3500-8','없음',7200,10,'17/07/16');
+insert into recipe values(recipeseq.nextval, 1, '밥류','규동','gudong.png','소시지-1-1200-10,광어-1-2500-7,우럭-1-3500-8','없음',7200,10,'17/07/17');
 commit;
 
 col rnum for 9;
