@@ -46,8 +46,8 @@
 		<br>
 			<table class="table" width="430" border="0" cellspacing="0" cellpadding="0" align="center">
 			<tr>
-			<td width="10%" align="center">레시피 정보</td>
-			<td width="330" align="left">
+			<td width="50%" align="center">레시피 정보</td>
+			<td width="50%" align="left">
 			<img width="250" height="250" src="./resources/${Recipe.rimage}">
 		</td>
 			</tr>
